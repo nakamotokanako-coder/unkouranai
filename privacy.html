@@ -11,9 +11,14 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Zen Maru Gothic',sans-serif;background:#fafafa;color:#2a1a3e;line-height:1.9;-webkit-font-smoothing:antialiased}
+body[data-lang="en"] [data-ja]{display:none !important}
+body[data-lang="ja"] [data-en]{display:none !important}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:100}
 .nav-logo{font-family:'Kaisei Decol',serif;font-size:17px;font-weight:700;color:#fff;text-decoration:none;text-shadow:0 0 20px rgba(100,255,200,0.6)}
 .nav-logo span{background:linear-gradient(90deg,#00ffcc,#ffea00,#ff6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;gap:10px;align-items:center}
+.lang-btn{font-size:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 10px;cursor:pointer;font-family:'Zen Maru Gothic',sans-serif;color:rgba(255,255,255,0.8);transition:background .15s}
+.lang-btn:hover{background:rgba(0,255,200,0.2);border-color:#00ffcc}
 .nav-back{font-size:11px;color:rgba(255,255,255,0.7);text-decoration:none;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:20px;transition:all .15s}
 .nav-back:hover{border-color:#00ffcc;color:#00ffcc}
 .wrap{max-width:760px;margin:0 auto;padding:56px 24px 80px}
@@ -30,76 +35,163 @@ li{margin-bottom:6px}
 @media(max-width:600px){.wrap{padding:40px 20px 60px}h1{font-size:24px}}
 </style>
 </head>
-<body>
+<body data-lang="ja">
 
 <nav class="nav">
   <a href="/" class="nav-logo">うんこ占い<span>.com</span></a>
-  <a href="/" class="nav-back">← トップへ</a>
+  <div class="nav-right">
+    <button class="lang-btn" id="lb" onclick="tl()">EN</button>
+    <a href="/" class="nav-back">
+      <span data-ja>← トップへ</span>
+      <span data-en>← Top</span>
+    </a>
+  </div>
 </nav>
 
 <main class="wrap">
-  <h1>プライバシーポリシー</h1>
-  <p class="lead">うんこ占い.com（以下「当サイト」）は、利用者のプライバシーを尊重し、個人情報を適切に取り扱うため、本ポリシーを定めます。</p>
+  <div data-ja>
+    <h1>プライバシーポリシー</h1>
+    <p class="lead">うんこ占い.com（以下「当サイト」）は、利用者のプライバシーを尊重し、個人情報を適切に取り扱うため、本ポリシーを定めます。</p>
 
-  <h2>1. 取得する情報</h2>
-  <p>当サイトでは、以下の情報を取得する場合があります：</p>
-  <ul>
-    <li><strong>診断のためにご入力いただく情報：</strong>生年月日</li>
-    <li><strong>自動的に取得される情報：</strong>IPアドレス、ブラウザ種別、参照元URL、閲覧ページ、滞在時間、Cookie等のアクセスログ情報</li>
-    <li><strong>お問い合わせ・有料コンテンツのご購入時にご提供いただく情報：</strong>お名前、メールアドレス、お問い合わせ内容、決済に必要な情報（決済情報は決済代行サービスを通じて処理されます）</li>
-  </ul>
-  <p>診断にご入力いただいた生年月日は、診断結果の表示にのみ利用し、運営者側のサーバーには保存されません（ブラウザ内で完結します）。</p>
+    <h2>1. 取得する情報</h2>
+    <p>当サイトでは、以下の情報を取得する場合があります：</p>
+    <ul>
+      <li><strong>診断のためにご入力いただく情報：</strong>生年月日</li>
+      <li><strong>自動的に取得される情報：</strong>IPアドレス、ブラウザ種別、参照元URL、閲覧ページ、滞在時間、Cookie等のアクセスログ情報</li>
+      <li><strong>お問い合わせ・有料コンテンツのご購入時にご提供いただく情報：</strong>お名前、メールアドレス、お問い合わせ内容、決済に必要な情報（決済情報は決済代行サービスを通じて処理されます）</li>
+    </ul>
+    <p>診断にご入力いただいた生年月日は、診断結果の表示にのみ利用し、運営者側のサーバーには保存されません（ブラウザ内で完結します）。</p>
 
-  <h2>2. 利用目的</h2>
-  <p>取得した情報は、以下の目的でのみ利用します：</p>
-  <ol>
-    <li>占い・診断サービスの提供および結果表示</li>
-    <li>有料コンテンツのご提供と決済処理</li>
-    <li>お問い合わせへの回答</li>
-    <li>サイトの利用状況の分析、機能改善、不具合対応</li>
-    <li>新コンテンツや更新情報のお知らせ（ご希望の方のみ）</li>
-  </ol>
+    <h2>2. 利用目的</h2>
+    <p>取得した情報は、以下の目的でのみ利用します：</p>
+    <ol>
+      <li>占い・診断サービスの提供および結果表示</li>
+      <li>有料コンテンツのご提供と決済処理</li>
+      <li>お問い合わせへの回答</li>
+      <li>サイトの利用状況の分析、機能改善、不具合対応</li>
+      <li>新コンテンツや更新情報のお知らせ（ご希望の方のみ）</li>
+    </ol>
 
-  <h2>3. 第三者への提供</h2>
-  <p>取得した個人情報を、ご本人の同意なく第三者に提供・販売・開示することはありません。ただし、以下の場合を除きます：</p>
-  <ul>
-    <li>法令にもとづく場合</li>
-    <li>人の生命、身体または財産の保護のために必要な場合</li>
-    <li>決済処理・コンテンツ配信のため、必要最小限の情報を業務委託先（決済代行サービス、配信プラットフォーム等）に提供する場合</li>
-  </ul>
+    <h2>3. 第三者への提供</h2>
+    <p>取得した個人情報を、ご本人の同意なく第三者に提供・販売・開示することはありません。ただし、以下の場合を除きます：</p>
+    <ul>
+      <li>法令にもとづく場合</li>
+      <li>人の生命、身体または財産の保護のために必要な場合</li>
+      <li>決済処理・コンテンツ配信のため、必要最小限の情報を業務委託先（決済代行サービス、配信プラットフォーム等）に提供する場合</li>
+    </ul>
 
-  <h2>4. Cookieおよびアクセス解析ツールの利用</h2>
-  <p>当サイトでは、利用状況の把握およびサービス改善のため、Cookieおよびアクセス解析ツール（Google Analytics等）を利用する場合があります。これらのツールはCookieを利用して情報を取得しますが、取得される情報は匿名化されており、個人を特定するものではありません。</p>
-  <p>Cookieの利用を希望されない場合は、ご利用のブラウザ設定からCookieを無効にすることができます。ただし、その場合は当サイトの一部機能がご利用いただけない場合があります。</p>
+    <h2>4. Cookieおよびアクセス解析ツールの利用</h2>
+    <p>当サイトでは、利用状況の把握およびサービス改善のため、Cookieおよびアクセス解析ツール（Google Analytics等）を利用する場合があります。これらのツールはCookieを利用して情報を取得しますが、取得される情報は匿名化されており、個人を特定するものではありません。</p>
+    <p>Cookieの利用を希望されない場合は、ご利用のブラウザ設定からCookieを無効にすることができます。ただし、その場合は当サイトの一部機能がご利用いただけない場合があります。</p>
 
-  <h2>5. 外部サービスとの連携</h2>
-  <p>当サイトには、X（旧Twitter）、LINE、Instagram、Gumroad等の外部サービスへのリンクおよびシェア機能が含まれます。これらの外部サービスをご利用になる際の情報の取り扱いについては、各サービス事業者のプライバシーポリシーをご確認ください。</p>
+    <h2>5. 外部サービスとの連携</h2>
+    <p>当サイトには、X（旧Twitter）、LINE、Instagram、Gumroad等の外部サービスへのリンクおよびシェア機能が含まれます。これらの外部サービスをご利用になる際の情報の取り扱いについては、各サービス事業者のプライバシーポリシーをご確認ください。</p>
 
-  <h2>6. 安全管理</h2>
-  <p>取得した情報の漏洩・滅失・改ざんを防ぐため、合理的な範囲で必要かつ適切な安全管理措置を講じます。</p>
+    <h2>6. 安全管理</h2>
+    <p>取得した情報の漏洩・滅失・改ざんを防ぐため、合理的な範囲で必要かつ適切な安全管理措置を講じます。</p>
 
-  <h2>7. 開示・訂正・削除のご請求</h2>
-  <p>ご本人から、ご自身に関する個人情報の開示・訂正・削除のご請求があった場合、本人確認のうえ、合理的な範囲で速やかに対応します。<a href="/contact.html" style="color:#a855f7">お問い合わせフォーム</a>よりご連絡ください。</p>
+    <h2>7. 開示・訂正・削除のご請求</h2>
+    <p>ご本人から、ご自身に関する個人情報の開示・訂正・削除のご請求があった場合、本人確認のうえ、合理的な範囲で速やかに対応します。<a href="/contact.html" style="color:#a855f7">お問い合わせフォーム</a>よりご連絡ください。</p>
 
-  <h2>8. 未成年の方のご利用について</h2>
-  <p>未成年の方がご利用になる場合は、保護者の方の同意を得たうえでご利用ください。有料コンテンツのご購入については、保護者の方の同意を必須とします。</p>
+    <h2>8. 未成年の方のご利用について</h2>
+    <p>未成年の方がご利用になる場合は、保護者の方の同意を得たうえでご利用ください。有料コンテンツのご購入については、保護者の方の同意を必須とします。</p>
 
-  <h2>9. ポリシーの変更</h2>
-  <p>本ポリシーは、必要に応じて変更することがあります。変更後のポリシーは、当サイトに掲載した時点から効力を生じます。重要な変更がある場合は、当サイト上で告知します。</p>
+    <h2>9. ポリシーの変更</h2>
+    <p>本ポリシーは、必要に応じて変更することがあります。変更後のポリシーは、当サイトに掲載した時点から効力を生じます。重要な変更がある場合は、当サイト上で告知します。</p>
 
-  <h2>10. お問い合わせ</h2>
-  <p>本ポリシーに関するご質問・個人情報の取り扱いに関するご相談は、<a href="/contact.html" style="color:#a855f7">お問い合わせフォーム</a>よりご連絡ください。</p>
+    <h2>10. お問い合わせ</h2>
+    <p>本ポリシーに関するご質問・個人情報の取り扱いに関するご相談は、<a href="/contact.html" style="color:#a855f7">お問い合わせフォーム</a>よりご連絡ください。</p>
 
-  <div class="note">
-    最終更新日：2026年5月1日<br>
-    制定：2026年5月1日
+    <div class="note">
+      最終更新日：2026年5月1日<br>
+      制定：2026年5月1日
+    </div>
+  </div>
+
+  <div data-en>
+    <h1>Privacy Policy</h1>
+    <p class="lead">Unko Oracle (unkouranai.com, hereinafter "the Site") respects user privacy and establishes this Policy to handle personal information appropriately.</p>
+
+    <h2>1. Information We Collect</h2>
+    <p>The Site may collect the following information:</p>
+    <ul>
+      <li><strong>Information you provide for diagnosis:</strong> date of birth</li>
+      <li><strong>Information collected automatically:</strong> IP address, browser type, referrer URL, pages viewed, time spent, and other access logs including cookies</li>
+      <li><strong>Information you provide when contacting us or purchasing paid content:</strong> name, email address, message contents, and payment information (payment data is processed by payment service providers)</li>
+    </ul>
+    <p>The date of birth you enter for diagnosis is used only to display the result and is not stored on our servers (the diagnosis runs entirely in your browser).</p>
+
+    <h2>2. Purpose of Use</h2>
+    <p>We use collected information solely for the following purposes:</p>
+    <ol>
+      <li>Providing fortune-telling and diagnosis services and displaying results</li>
+      <li>Providing paid content and processing payments</li>
+      <li>Responding to inquiries</li>
+      <li>Analyzing site usage, improving features, and fixing issues</li>
+      <li>Sending notices about new content or updates (only to those who wish to receive them)</li>
+    </ol>
+
+    <h2>3. Disclosure to Third Parties</h2>
+    <p>We do not provide, sell, or disclose collected personal information to third parties without your consent, except in the following cases:</p>
+    <ul>
+      <li>When required by law</li>
+      <li>When necessary to protect a person's life, body, or property</li>
+      <li>When providing the minimum necessary information to subcontractors (payment processors, content delivery platforms, etc.) for payment processing or content delivery</li>
+    </ul>
+
+    <h2>4. Cookies and Analytics Tools</h2>
+    <p>The Site may use cookies and analytics tools (such as Google Analytics) to understand usage and improve services. These tools collect information using cookies, but the information is anonymized and does not personally identify users.</p>
+    <p>If you do not wish to accept cookies, you can disable them in your browser settings. However, some features of the Site may not function properly in that case.</p>
+
+    <h2>5. Third-Party Services</h2>
+    <p>The Site contains links to and sharing features for external services such as X (formerly Twitter), LINE, Instagram, and Gumroad. For information handling on these services, please consult each provider's privacy policy.</p>
+
+    <h2>6. Security</h2>
+    <p>We take reasonable, necessary, and appropriate security measures to prevent leakage, loss, or alteration of collected information.</p>
+
+    <h2>7. Disclosure, Correction, and Deletion Requests</h2>
+    <p>If you request disclosure, correction, or deletion of your personal information, we will respond promptly within reasonable bounds after verifying your identity. Please use the <a href="/contact.html" style="color:#a855f7">contact form</a>.</p>
+
+    <h2>8. Use by Minors</h2>
+    <p>Minors should use the Site with the consent of a parent or guardian. Parental consent is required for purchases of paid content.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>This Policy may be revised as needed. Revised versions take effect when posted on the Site. Significant changes will be announced on the Site.</p>
+
+    <h2>10. Contact</h2>
+    <p>For questions about this Policy or how we handle personal information, please use the <a href="/contact.html" style="color:#a855f7">contact form</a>.</p>
+
+    <div class="note">
+      Last updated: May 1, 2026<br>
+      Established: May 1, 2026
+    </div>
   </div>
 </main>
 
 <footer class="footer">
-  <a href="/">トップ</a>・<a href="/contact.html">お問い合わせ</a>・<a href="/terms.html">利用規約</a>・<a href="/privacy.html">プライバシー</a>
+  <a href="/"><span data-ja>トップ</span><span data-en>Top</span></a>・<a href="/contact.html"><span data-ja>お問い合わせ</span><span data-en>Contact</span></a>・<a href="/terms.html"><span data-ja>利用規約</span><span data-en>Terms</span></a>・<a href="/privacy.html"><span data-ja>プライバシー</span><span data-en>Privacy</span></a>
   <div style="margin-top:8px">© 2026 Unko Oracle Project</div>
 </footer>
+
+<script>
+(function() {
+  var saved = localStorage.getItem('unko-lang') || 'ja';
+  document.body.setAttribute('data-lang', saved);
+  document.documentElement.lang = saved;
+  var btn = document.getElementById('lb');
+  if (btn) btn.textContent = saved === 'ja' ? 'EN' : '日';
+  document.title = saved === 'en' ? 'Privacy Policy | Unko Oracle' : 'プライバシーポリシー | うんこ占い.com';
+})();
+function tl() {
+  var current = document.body.getAttribute('data-lang');
+  var next = current === 'ja' ? 'en' : 'ja';
+  document.body.setAttribute('data-lang', next);
+  document.documentElement.lang = next;
+  localStorage.setItem('unko-lang', next);
+  document.getElementById('lb').textContent = next === 'ja' ? 'EN' : '日';
+  document.title = next === 'en' ? 'Privacy Policy | Unko Oracle' : 'プライバシーポリシー | うんこ占い.com';
+}
+</script>
 
 </body>
 </html>
