@@ -11,9 +11,14 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Zen Maru Gothic',sans-serif;background:#fafafa;color:#2a1a3e;line-height:1.9;-webkit-font-smoothing:antialiased}
+body[data-lang="en"] [data-ja]{display:none !important}
+body[data-lang="ja"] [data-en]{display:none !important}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:100}
 .nav-logo{font-family:'Kaisei Decol',serif;font-size:17px;font-weight:700;color:#fff;text-decoration:none;text-shadow:0 0 20px rgba(100,255,200,0.6)}
 .nav-logo span{background:linear-gradient(90deg,#00ffcc,#ffea00,#ff6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;gap:10px;align-items:center}
+.lang-btn{font-size:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 10px;cursor:pointer;font-family:'Zen Maru Gothic',sans-serif;color:rgba(255,255,255,0.8);transition:background .15s}
+.lang-btn:hover{background:rgba(0,255,200,0.2);border-color:#00ffcc}
 .nav-back{font-size:11px;color:rgba(255,255,255,0.7);text-decoration:none;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:20px;transition:all .15s}
 .nav-back:hover{border-color:#00ffcc;color:#00ffcc}
 .wrap{max-width:760px;margin:0 auto;padding:56px 24px 80px}
@@ -30,68 +35,147 @@ li{margin-bottom:6px}
 @media(max-width:600px){.wrap{padding:40px 20px 60px}h1{font-size:24px}}
 </style>
 </head>
-<body>
+<body data-lang="ja">
 
 <nav class="nav">
   <a href="/" class="nav-logo">うんこ占い<span>.com</span></a>
-  <a href="/" class="nav-back">← トップへ</a>
+  <div class="nav-right">
+    <button class="lang-btn" id="lb" onclick="tl()">EN</button>
+    <a href="/" class="nav-back">
+      <span data-ja>← トップへ</span>
+      <span data-en>← Top</span>
+    </a>
+  </div>
 </nav>
 
 <main class="wrap">
-  <h1>利用規約</h1>
-  <p class="lead">うんこ占い.com（以下「当サイト」）をご利用いただく前に、本規約をお読みください。当サイトをご利用いただいた時点で、本規約に同意いただいたものとみなします。</p>
+  <div data-ja>
+    <h1>利用規約</h1>
+    <p class="lead">うんこ占い.com（以下「当サイト」）をご利用いただく前に、本規約をお読みください。当サイトをご利用いただいた時点で、本規約に同意いただいたものとみなします。</p>
 
-  <h2>第1条（サービスの内容）</h2>
-  <p>当サイトは、生年月日にもとづくキャラクター診断、キャラクター図鑑、相性診断、月別運勢などの娯楽コンテンツを提供します。当サイトの占い結果は娯楽を目的としたものであり、医療・法律・投資・進路など、人生における重要な判断の根拠としてご利用いただくことは想定しておりません。</p>
+    <h2>第1条（サービスの内容）</h2>
+    <p>当サイトは、生年月日にもとづくキャラクター診断、キャラクター図鑑、相性診断、月別運勢などの娯楽コンテンツを提供します。当サイトの占い結果は娯楽を目的としたものであり、医療・法律・投資・進路など、人生における重要な判断の根拠としてご利用いただくことは想定しておりません。</p>
 
-  <h2>第2条（無料コンテンツと有料コンテンツ）</h2>
-  <p>当サイトには無料でご利用いただけるコンテンツと、有料でご提供する詳細鑑定レポート等が含まれます。有料コンテンツの販売条件・返金の可否などは、各販売ページに記載される内容に従います。</p>
+    <h2>第2条（無料コンテンツと有料コンテンツ）</h2>
+    <p>当サイトには無料でご利用いただけるコンテンツと、有料でご提供する詳細鑑定レポート等が含まれます。有料コンテンツの販売条件・返金の可否などは、各販売ページに記載される内容に従います。</p>
 
-  <h2>第3条（知的財産権）</h2>
-  <p>当サイトに掲載されている文章・キャラクター・イラスト・診断ロジック・世界観設定（便器界・12キャラクターを含む）等のすべての知的財産権は、運営者またはその正当な権利者に帰属します。</p>
-  <p>個人での閲覧・私的なSNSシェアを超える、以下の行為はお断りします：</p>
-  <ul>
-    <li>キャラクターや診断結果の無断転載・改変・再配布</li>
-    <li>商業目的での利用、グッズ化、二次創作の販売</li>
-    <li>当サイトのコンテンツを利用した類似サービスの構築</li>
-  </ul>
+    <h2>第3条（知的財産権）</h2>
+    <p>当サイトに掲載されている文章・キャラクター・イラスト・診断ロジック・世界観設定（便器界・12キャラクターを含む）等のすべての知的財産権は、運営者またはその正当な権利者に帰属します。</p>
+    <p>個人での閲覧・私的なSNSシェアを超える、以下の行為はお断りします：</p>
+    <ul>
+      <li>キャラクターや診断結果の無断転載・改変・再配布</li>
+      <li>商業目的での利用、グッズ化、二次創作の販売</li>
+      <li>当サイトのコンテンツを利用した類似サービスの構築</li>
+    </ul>
 
-  <h2>第4条（禁止事項）</h2>
-  <p>ご利用にあたっては、以下の行為を禁止します：</p>
-  <ol>
-    <li>法令または公序良俗に違反する行為</li>
-    <li>当サイトの運営を妨げる行為（過度なアクセス、不正アクセス、リバースエンジニアリング等）</li>
-    <li>他の利用者または第三者を誹謗中傷し、または名誉を傷つける行為</li>
-    <li>当サイトのコンテンツを第3条に違反して利用する行為</li>
-    <li>その他、運営者が不適切と判断する行為</li>
-  </ol>
+    <h2>第4条（禁止事項）</h2>
+    <p>ご利用にあたっては、以下の行為を禁止します：</p>
+    <ol>
+      <li>法令または公序良俗に違反する行為</li>
+      <li>当サイトの運営を妨げる行為（過度なアクセス、不正アクセス、リバースエンジニアリング等）</li>
+      <li>他の利用者または第三者を誹謗中傷し、または名誉を傷つける行為</li>
+      <li>当サイトのコンテンツを第3条に違反して利用する行為</li>
+      <li>その他、運営者が不適切と判断する行為</li>
+    </ol>
 
-  <h2>第5条（外部サービスとの連携）</h2>
-  <p>当サイトは、X（旧Twitter）、LINE、Instagram、Gumroad等の外部サービスへのリンクや連携機能を含みます。これら外部サービスのご利用にあたっては、各サービスの利用規約・プライバシーポリシーが適用されます。外部サービス上で発生した事項について、運営者は責任を負いません。</p>
+    <h2>第5条（外部サービスとの連携）</h2>
+    <p>当サイトは、X（旧Twitter）、LINE、Instagram、Gumroad等の外部サービスへのリンクや連携機能を含みます。これら外部サービスのご利用にあたっては、各サービスの利用規約・プライバシーポリシーが適用されます。外部サービス上で発生した事項について、運営者は責任を負いません。</p>
 
-  <h2>第6条（免責事項）</h2>
-  <p>当サイトの占い・診断結果はエンターテインメントとして提供されるものであり、その正確性・完全性・有用性について保証するものではありません。当サイトのご利用、または利用できなかったことによって生じたいかなる損害についても、運営者は責任を負いません。</p>
-  <p>当サイトは予告なくサービス内容の変更・中断・終了を行う場合があります。</p>
+    <h2>第6条（免責事項）</h2>
+    <p>当サイトの占い・診断結果はエンターテインメントとして提供されるものであり、その正確性・完全性・有用性について保証するものではありません。当サイトのご利用、または利用できなかったことによって生じたいかなる損害についても、運営者は責任を負いません。</p>
+    <p>当サイトは予告なくサービス内容の変更・中断・終了を行う場合があります。</p>
 
-  <h2>第7条（規約の変更）</h2>
-  <p>運営者は、必要に応じて本規約を変更することがあります。変更後の規約は、当サイトに掲載した時点から効力を生じるものとします。重要な変更がある場合は、当サイト上で告知します。</p>
+    <h2>第7条（規約の変更）</h2>
+    <p>運営者は、必要に応じて本規約を変更することがあります。変更後の規約は、当サイトに掲載した時点から効力を生じるものとします。重要な変更がある場合は、当サイト上で告知します。</p>
 
-  <h2>第8条（準拠法・管轄）</h2>
-  <p>本規約は日本法に準拠し、本規約またはサービスに関連して紛争が生じた場合は、運営者の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
+    <h2>第8条（準拠法・管轄）</h2>
+    <p>本規約は日本法に準拠し、本規約またはサービスに関連して紛争が生じた場合は、運営者の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
 
-  <h2>第9条（お問い合わせ）</h2>
-  <p>本規約に関するご質問は、<a href="/contact.html" style="color:#a855f7">お問い合わせフォーム</a>よりご連絡ください。</p>
+    <h2>第9条（お問い合わせ）</h2>
+    <p>本規約に関するご質問は、<a href="/contact.html" style="color:#a855f7">お問い合わせフォーム</a>よりご連絡ください。</p>
 
-  <div class="note">
-    最終更新日：2026年5月1日<br>
-    制定：2026年5月1日
+    <div class="note">
+      最終更新日：2026年5月1日<br>
+      制定：2026年5月1日
+    </div>
+  </div>
+
+  <div data-en>
+    <h1>Terms of Service</h1>
+    <p class="lead">Please read these Terms before using Unko Oracle (unkouranai.com, hereinafter "the Site"). By using the Site, you are deemed to have agreed to these Terms.</p>
+
+    <h2>1. Service Description</h2>
+    <p>The Site provides entertainment content including character diagnoses based on date of birth, a character index, compatibility readings, and monthly fortunes. The fortune-telling results provided on the Site are for entertainment purposes only and are not intended as a basis for important life decisions such as medical, legal, financial, or career choices.</p>
+
+    <h2>2. Free and Paid Content</h2>
+    <p>The Site includes both free content and paid content (such as detailed reading reports). The terms of sale and refund policies for paid content follow what is described on each respective sales page.</p>
+
+    <h2>3. Intellectual Property</h2>
+    <p>All intellectual property rights to the text, characters, illustrations, diagnostic logic, and worldbuilding (including the Toilet World and the 12 characters) appearing on the Site belong to the operator or to the rightful owners.</p>
+    <p>The following actions, beyond personal viewing and casual sharing on social media, are not permitted:</p>
+    <ul>
+      <li>Unauthorized reproduction, modification, or redistribution of characters or diagnosis results</li>
+      <li>Commercial use, merchandising, or sale of derivative works</li>
+      <li>Building similar services using content from the Site</li>
+    </ul>
+
+    <h2>4. Prohibited Actions</h2>
+    <p>The following actions are prohibited:</p>
+    <ol>
+      <li>Actions that violate laws or public order and morals</li>
+      <li>Actions that interfere with the operation of the Site (excessive access, unauthorized access, reverse engineering, etc.)</li>
+      <li>Defaming or harming the reputation of other users or third parties</li>
+      <li>Using content from the Site in violation of Section 3</li>
+      <li>Any other action the operator deems inappropriate</li>
+    </ol>
+
+    <h2>5. Third-Party Services</h2>
+    <p>The Site contains links and integrations with external services such as X (formerly Twitter), LINE, Instagram, and Gumroad. Use of these services is governed by their respective Terms of Service and Privacy Policies. The operator is not responsible for events that occur on external services.</p>
+
+    <h2>6. Disclaimer</h2>
+    <p>The fortune-telling and diagnosis results on the Site are provided as entertainment. We make no warranty as to their accuracy, completeness, or usefulness. The operator is not liable for any damages arising from your use of, or inability to use, the Site.</p>
+    <p>The Site may change, suspend, or terminate its services without prior notice.</p>
+
+    <h2>7. Changes to These Terms</h2>
+    <p>The operator may revise these Terms as needed. Revised Terms take effect when posted on the Site. Significant changes will be announced on the Site.</p>
+
+    <h2>8. Governing Law and Jurisdiction</h2>
+    <p>These Terms are governed by the laws of Japan. Any dispute arising in connection with these Terms or the Site shall be submitted to the exclusive jurisdiction of the court having jurisdiction over the operator's location, as the court of first instance.</p>
+
+    <h2>9. Contact</h2>
+    <p>For questions about these Terms, please use the <a href="/contact.html" style="color:#a855f7">contact form</a>.</p>
+
+    <div class="note">
+      Last updated: May 1, 2026<br>
+      Established: May 1, 2026
+    </div>
   </div>
 </main>
 
 <footer class="footer">
-  <a href="/">トップ</a>・<a href="/contact.html">お問い合わせ</a>・<a href="/terms.html">利用規約</a>・<a href="/privacy.html">プライバシー</a>
+  <a href="/"><span data-ja>トップ</span><span data-en>Top</span></a>・<a href="/contact.html"><span data-ja>お問い合わせ</span><span data-en>Contact</span></a>・<a href="/terms.html"><span data-ja>利用規約</span><span data-en>Terms</span></a>・<a href="/privacy.html"><span data-ja>プライバシー</span><span data-en>Privacy</span></a>
   <div style="margin-top:8px">© 2026 Unko Oracle Project</div>
 </footer>
+
+<script>
+(function() {
+  var saved = localStorage.getItem('unko-lang') || 'ja';
+  document.body.setAttribute('data-lang', saved);
+  document.documentElement.lang = saved;
+  var btn = document.getElementById('lb');
+  if (btn) btn.textContent = saved === 'ja' ? 'EN' : '日';
+  document.title = saved === 'en' ? 'Terms of Service | Unko Oracle' : '利用規約 | うんこ占い.com';
+})();
+function tl() {
+  var current = document.body.getAttribute('data-lang');
+  var next = current === 'ja' ? 'en' : 'ja';
+  document.body.setAttribute('data-lang', next);
+  document.documentElement.lang = next;
+  localStorage.setItem('unko-lang', next);
+  document.getElementById('lb').textContent = next === 'ja' ? 'EN' : '日';
+  document.title = next === 'en' ? 'Terms of Service | Unko Oracle' : '利用規約 | うんこ占い.com';
+}
+</script>
 
 </body>
 </html>
