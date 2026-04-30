@@ -10,12 +10,16 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Zen Maru Gothic',sans-serif;background:#000;color:#fff;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+body[data-lang="en"] [data-ja]{display:none !important}
+body[data-lang="ja"] [data-en]{display:none !important}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:rgba(0,0,0,0.6);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:100}
 .nav-logo{font-family:'Kaisei Decol',serif;font-size:17px;font-weight:700;color:#fff;text-decoration:none;text-shadow:0 0 20px rgba(100,255,200,0.6)}
 .nav-logo span{background:linear-gradient(90deg,#00ffcc,#ffea00,#ff6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;gap:10px;align-items:center}
+.lang-btn{font-size:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 10px;cursor:pointer;font-family:'Zen Maru Gothic',sans-serif;color:rgba(255,255,255,0.8);transition:background .15s}
+.lang-btn:hover{background:rgba(0,255,200,0.2);border-color:#00ffcc}
 .nav-back{font-size:11px;color:rgba(255,255,255,0.7);text-decoration:none;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:20px;transition:all .15s}
 .nav-back:hover{border-color:#00ffcc;color:#00ffcc}
-
 .main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 24px;text-align:center}
 .box{max-width:480px}
 .icon{font-size:80px;margin-bottom:20px;display:inline-block;animation:bounce 2s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(0,255,204,0.5))}
@@ -24,63 +28,84 @@ h1{font-family:'Kaisei Decol',serif;font-size:32px;font-weight:700;margin-bottom
 h1 .grad{background:linear-gradient(90deg,#00ffcc,#ffea00,#ff6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .lead{font-size:14px;color:rgba(255,255,255,0.7);line-height:2;margin-bottom:32px}
 .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px}
-.btn-neon{
-  background:transparent;border:2px solid #00ffcc;color:#00ffcc;
-  border-radius:40px;padding:12px 28px;font-size:13px;font-weight:700;
-  text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;
-  text-shadow:0 0 8px rgba(0,255,204,0.5);
-  box-shadow:0 0 12px rgba(0,255,200,0.3),inset 0 0 12px rgba(0,255,200,0.05);
-  transition:all .2s;
-}
+.btn-neon{background:transparent;border:2px solid #00ffcc;color:#00ffcc;border-radius:40px;padding:12px 28px;font-size:13px;font-weight:700;text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;text-shadow:0 0 8px rgba(0,255,204,0.5);box-shadow:0 0 12px rgba(0,255,200,0.3),inset 0 0 12px rgba(0,255,200,0.05);transition:all .2s}
 .btn-neon:hover{background:rgba(0,255,200,0.15);box-shadow:0 0 24px rgba(0,255,200,0.6);transform:translateY(-2px)}
-.btn-neon-y{
-  background:transparent;border:2px solid #ffea00;color:#ffea00;
-  border-radius:40px;padding:12px 28px;font-size:13px;font-weight:700;
-  text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;
-  text-shadow:0 0 8px rgba(255,234,0,0.5);
-  box-shadow:0 0 12px rgba(255,234,0,0.3);
-  transition:all .2s;
-}
+.btn-neon-y{background:transparent;border:2px solid #ffea00;color:#ffea00;border-radius:40px;padding:12px 28px;font-size:13px;font-weight:700;text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;text-shadow:0 0 8px rgba(255,234,0,0.5);box-shadow:0 0 12px rgba(255,234,0,0.3);transition:all .2s}
 .btn-neon-y:hover{background:rgba(255,234,0,0.15);box-shadow:0 0 24px rgba(255,234,0,0.6);transform:translateY(-2px)}
-
 .note{font-size:11px;color:rgba(255,255,255,0.4);margin-top:36px;line-height:1.8}
 .footer{text-align:center;padding:24px;font-size:10px;color:rgba(255,255,255,0.3);border-top:1px solid rgba(255,255,255,0.06)}
 @media(max-width:600px){.icon{font-size:64px}h1{font-size:26px}}
 </style>
 </head>
-<body>
+<body data-lang="ja">
 
 <nav class="nav">
   <a href="/" class="nav-logo">うんこ占い<span>.com</span></a>
-  <a href="/" class="nav-back">← トップへ</a>
+  <div class="nav-right">
+    <button class="lang-btn" id="lb" onclick="tl()">EN</button>
+    <a href="/" class="nav-back">
+      <span data-ja>← トップへ</span>
+      <span data-en>← Top</span>
+    </a>
+  </div>
 </nav>
 
 <main class="main">
   <div class="box">
     <div class="icon">💩</div>
-    <h1><span class="grad">送信完了！</span></h1>
-    <p class="lead">
+    <h1 data-ja><span class="grad">送信完了！</span></h1>
+    <h1 data-en><span class="grad">Sent!</span></h1>
+
+    <p class="lead" data-ja>
       お問い合わせいただきありがとうございました。<br>
       内容を確認のうえ、3営業日以内にご返信いたします。<br><br>
       返信は <strong style="color:#00ffcc">unkouranai@gmail.com</strong> よりお送りします。<br>
       迷惑メールフォルダもあわせてご確認くださいね。
     </p>
+    <p class="lead" data-en>
+      Thank you for reaching out.<br>
+      We'll review your message and reply within 3 business days.<br><br>
+      Our reply will come from <strong style="color:#00ffcc">unkouranai@gmail.com</strong>.<br>
+      Please also check your spam folder just in case.
+    </p>
 
     <div class="btn-row">
-      <a href="/" class="btn-neon">トップへ戻る</a>
-      <a href="/#diag" class="btn-neon-y">診断する</a>
+      <a href="/" class="btn-neon"><span data-ja>トップへ戻る</span><span data-en>Back to Top</span></a>
+      <a href="/#diag" class="btn-neon-y"><span data-ja>診断する</span><span data-en>Take the Quiz</span></a>
     </div>
 
-    <p class="note">
+    <p class="note" data-ja>
       しばらくしても返信が届かない場合は、お手数ですが<br>
       unkouranai@gmail.com まで直接ご連絡ください。
+    </p>
+    <p class="note" data-en>
+      If you don't receive a reply after a while,<br>
+      please contact us directly at unkouranai@gmail.com.
     </p>
   </div>
 </main>
 
-<footer class="footer">
-  © 2026 Unko Oracle Project
-</footer>
+<footer class="footer">© 2026 Unko Oracle Project</footer>
+
+<script>
+(function() {
+  var saved = localStorage.getItem('unko-lang') || 'ja';
+  document.body.setAttribute('data-lang', saved);
+  document.documentElement.lang = saved;
+  var btn = document.getElementById('lb');
+  if (btn) btn.textContent = saved === 'ja' ? 'EN' : '日';
+  document.title = saved === 'en' ? 'Sent | Unko Oracle' : '送信完了 | うんこ占い.com';
+})();
+function tl() {
+  var current = document.body.getAttribute('data-lang');
+  var next = current === 'ja' ? 'en' : 'ja';
+  document.body.setAttribute('data-lang', next);
+  document.documentElement.lang = next;
+  localStorage.setItem('unko-lang', next);
+  document.getElementById('lb').textContent = next === 'ja' ? 'EN' : '日';
+  document.title = next === 'en' ? 'Sent | Unko Oracle' : '送信完了 | うんこ占い.com';
+}
+</script>
 
 </body>
 </html>
