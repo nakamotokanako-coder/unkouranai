@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>送信完了 | うんこ占い.com</title>
+<meta name="description" content="お問い合わせありがとうございました。">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Kaisei+Decol:wght@700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Zen Maru Gothic',sans-serif;background:#000;color:#fff;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:rgba(0,0,0,0.6);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Kaisei Decol',serif;font-size:17px;font-weight:700;color:#fff;text-decoration:none;text-shadow:0 0 20px rgba(100,255,200,0.6)}
+.nav-logo span{background:linear-gradient(90deg,#00ffcc,#ffea00,#ff6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-back{font-size:11px;color:rgba(255,255,255,0.7);text-decoration:none;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:20px;transition:all .15s}
+.nav-back:hover{border-color:#00ffcc;color:#00ffcc}
+
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 24px;text-align:center}
+.box{max-width:480px}
+.icon{font-size:80px;margin-bottom:20px;display:inline-block;animation:bounce 2s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(0,255,204,0.5))}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+h1{font-family:'Kaisei Decol',serif;font-size:32px;font-weight:700;margin-bottom:18px;color:#fff;text-shadow:0 0 30px rgba(0,255,200,0.4)}
+h1 .grad{background:linear-gradient(90deg,#00ffcc,#ffea00,#ff6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:14px;color:rgba(255,255,255,0.7);line-height:2;margin-bottom:32px}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.btn-neon{
+  background:transparent;border:2px solid #00ffcc;color:#00ffcc;
+  border-radius:40px;padding:12px 28px;font-size:13px;font-weight:700;
+  text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;
+  text-shadow:0 0 8px rgba(0,255,204,0.5);
+  box-shadow:0 0 12px rgba(0,255,200,0.3),inset 0 0 12px rgba(0,255,200,0.05);
+  transition:all .2s;
+}
+.btn-neon:hover{background:rgba(0,255,200,0.15);box-shadow:0 0 24px rgba(0,255,200,0.6);transform:translateY(-2px)}
+.btn-neon-y{
+  background:transparent;border:2px solid #ffea00;color:#ffea00;
+  border-radius:40px;padding:12px 28px;font-size:13px;font-weight:700;
+  text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;
+  text-shadow:0 0 8px rgba(255,234,0,0.5);
+  box-shadow:0 0 12px rgba(255,234,0,0.3);
+  transition:all .2s;
+}
+.btn-neon-y:hover{background:rgba(255,234,0,0.15);box-shadow:0 0 24px rgba(255,234,0,0.6);transform:translateY(-2px)}
+
+.note{font-size:11px;color:rgba(255,255,255,0.4);margin-top:36px;line-height:1.8}
+.footer{text-align:center;padding:24px;font-size:10px;color:rgba(255,255,255,0.3);border-top:1px solid rgba(255,255,255,0.06)}
+@media(max-width:600px){.icon{font-size:64px}h1{font-size:26px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">うんこ占い<span>.com</span></a>
+  <a href="/" class="nav-back">← トップへ</a>
+</nav>
+
+<main class="main">
+  <div class="box">
+    <div class="icon">💩</div>
+    <h1><span class="grad">送信完了！</span></h1>
+    <p class="lead">
+      お問い合わせいただきありがとうございました。<br>
+      内容を確認のうえ、3営業日以内にご返信いたします。<br><br>
+      返信は <strong style="color:#00ffcc">unkouranai@gmail.com</strong> よりお送りします。<br>
+      迷惑メールフォルダもあわせてご確認くださいね。
+    </p>
+
+    <div class="btn-row">
+      <a href="/" class="btn-neon">トップへ戻る</a>
+      <a href="/#diag" class="btn-neon-y">診断する</a>
+    </div>
+
+    <p class="note">
+      しばらくしても返信が届かない場合は、お手数ですが<br>
+      unkouranai@gmail.com まで直接ご連絡ください。
+    </p>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2026 Unko Oracle Project
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | うんこ占い.com</title>
+<meta name="description" content="うんこ占い.com（unkouranai.com）のお問い合わせページです。">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://unkouranai.com/contact.html">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Kaisei+Decol:wght@700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Zen Maru Gothic',sans-serif;background:#fafafa;color:#2a1a3e;line-height:1.9;-webkit-font-smoothing:antialiased}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Kaisei Decol',serif;font-size:17px;font-weight:700;color:#fff;text-decoration:none;text-shadow:0 0 20px rgba(100,255,200,0.6)}
+.nav-logo span{background:linear-gradient(90deg,#00ffcc,#ffea00,#ff6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-back{font-size:11px;color:rgba(255,255,255,0.7);text-decoration:none;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:20px;transition:all .15s}
+.nav-back:hover{border-color:#00ffcc;color:#00ffcc}
+.wrap{max-width:680px;margin:0 auto;padding:56px 24px 80px}
+h1{font-family:'Kaisei Decol',serif;font-size:28px;font-weight:700;margin-bottom:8px;color:#1a0a2e;text-align:center}
+.lead{font-size:13px;color:#6b5a7e;margin-bottom:40px;text-align:center}
+.card{background:#fff;border-radius:14px;padding:28px;margin-bottom:18px;box-shadow:0 1px 3px rgba(42,26,62,0.06),0 1px 8px rgba(42,26,62,0.04)}
+.card h2{font-family:'Kaisei Decol',serif;font-size:17px;font-weight:700;margin-bottom:6px;color:#1a0a2e}
+.card-desc{font-size:13px;color:#6b5a7e;margin-bottom:18px}
+
+/* Form */
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:700;color:#1a0a2e;margin-bottom:6px}
+.field label .req{color:#e94560;font-weight:400;font-size:11px;margin-left:4px}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 14px;border:1.5px solid #e8e0f0;border-radius:8px;
+  font-family:'Zen Maru Gothic',sans-serif;font-size:14px;color:#2a1a3e;
+  background:#fafafa;transition:border-color .15s,background .15s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:#a855f7;background:#fff;
+}
+.field textarea{min-height:140px;resize:vertical;line-height:1.7}
+.field .hint{font-size:11px;color:#999;margin-top:4px}
+
+.submit{
+  display:inline-block;padding:13px 36px;border-radius:30px;font-size:14px;font-weight:700;
+  background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;
+  border:none;cursor:pointer;font-family:'Zen Maru Gothic',sans-serif;
+  transition:transform .15s,box-shadow .15s;width:100%;margin-top:6px;
+}
+.submit:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(168,85,247,0.3)}
+.submit:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+
+/* SNS */
+.btn{display:inline-block;padding:11px 22px;border-radius:30px;font-size:13px;font-weight:700;text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.btn-x{background:#000;color:#fff}
+.btn-line{background:#06c755;color:#fff}
+.btn-mail{background:#f5f0ff;color:#7c3aed;border:1px solid #e8d5ff}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+
+.divider{display:flex;align-items:center;gap:12px;margin:32px 0 18px;color:#aaa;font-size:11px;letter-spacing:.15em}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:#e8e0f0}
+
+.note{background:#fff8f0;border-left:3px solid #ffea00;padding:14px 18px;font-size:13px;color:#6b5a7e;border-radius:0 6px 6px 0;margin-top:16px}
+
+/* FAQ */
+.faq-q{font-weight:700;color:#1a0a2e;margin-bottom:6px;font-size:14px}
+.faq-a{font-size:13.5px;color:#6b5a7e;margin-bottom:18px}
+.faq-a:last-child{margin-bottom:0}
+
+.footer{text-align:center;padding:32px 24px;font-size:11px;color:#aaa;border-top:1px solid #eee;margin-top:60px}
+.footer a{color:#888;text-decoration:none;margin:0 8px}
+.footer a:hover{color:#00ccaa}
+@media(max-width:600px){.wrap{padding:40px 20px 60px}h1{font-size:24px}.card{padding:22px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">うんこ占い<span>.com</span></a>
+  <a href="/" class="nav-back">← トップへ</a>
+</nav>
+
+<main class="wrap">
+  <h1>お問い合わせ</h1>
+  <p class="lead">うんこ占い.comに関するご質問・ご感想・ご依頼など、お気軽にどうぞ。</p>
+
+  <div class="card">
+    <h2>📮 お問い合わせフォーム</h2>
+    <p class="card-desc">3営業日以内にご返信いたします。</p>
+
+    <form action="https://formsubmit.co/unkouranai@gmail.com" method="POST">
+      <!-- FormSubmit設定 -->
+      <input type="hidden" name="_subject" value="【うんこ占い.com】お問い合わせ">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://unkouranai.com/thanks.html">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="field">
+        <label for="name">お名前 <span class="req">必須</span></label>
+        <input type="text" id="name" name="お名前" required placeholder="例：山田 花子">
+      </div>
+
+      <div class="field">
+        <label for="email">メールアドレス <span class="req">必須</span></label>
+        <input type="email" id="email" name="メールアドレス" required placeholder="例：example@gmail.com">
+        <div class="hint">ご返信先としてご利用します</div>
+      </div>
+
+      <div class="field">
+        <label for="category">お問い合わせ種別 <span class="req">必須</span></label>
+        <select id="category" name="お問い合わせ種別" required>
+          <option value="">選んでください</option>
+          <option value="サイトに関する質問">サイトに関する質問</option>
+          <option value="診断結果について">診断結果について</option>
+          <option value="有料鑑定について">有料鑑定について</option>
+          <option value="ご感想・ファンレター">ご感想・ファンレター</option>
+          <option value="商用利用・コラボ依頼">商用利用・コラボ依頼</option>
+          <option value="不具合の報告">不具合の報告</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">お問い合わせ内容 <span class="req">必須</span></label>
+        <textarea id="message" name="お問い合わせ内容" required placeholder="お気軽にどうぞ。"></textarea>
+      </div>
+
+      <button type="submit" class="submit">送信する</button>
+    </form>
+  </div>
+
+  <div class="divider">他の連絡手段</div>
+
+  <div class="card">
+    <h2>💬 SNS・メールでも</h2>
+    <p class="card-desc">カジュアルなご感想やご質問は、こちらからもどうぞ。</p>
+    <div class="btn-row">
+      <a href="mailto:unkouranai@gmail.com?subject=【うんこ占い.com】お問い合わせ" class="btn btn-mail">メール</a>
+      <a href="https://www.threads.net/" target="_blank" rel="noopener" class="btn btn-x">Threads</a>
+      <a href="https://line.me/" target="_blank" rel="noopener" class="btn btn-line">LINE公式</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>よくあるお問い合わせ</h2>
+    <p class="card-desc" style="margin-bottom:20px">お問い合わせの前にご確認ください。</p>
+
+    <div class="faq-q">Q. 診断結果は本当に当たりますか？</div>
+    <div class="faq-a">A. 当サイトの診断はエンターテインメントとしてご提供しています。「ちょっと笑える」「ちょっと救われる」を大切にしているので、結果を楽しんでいただければ幸いです。</div>
+
+    <div class="faq-q">Q. 詳細鑑定レポートの内容について教えてください</div>
+    <div class="faq-a">A. 詳細鑑定レポートは、無料診断よりも深い洞察（恋愛・仕事・相性・開運アクションなど）をPDFでお届けします。販売ページにサンプルを掲載しております。</div>
+
+    <div class="faq-q">Q. キャラクターを商用利用したいのですが</div>
+    <div class="faq-a">A. キャラクターおよびコンテンツの商用利用には、事前にライセンス契約が必要です。お問い合わせフォームの種別「商用利用・コラボ依頼」よりご相談ください。</div>
+  </div>
+
+  <div class="note">
+    お問い合わせいただく前に、<a href="/terms.html" style="color:#a855f7">利用規約</a>および<a href="/privacy.html" style="color:#a855f7">プライバシーポリシー</a>もあわせてご確認ください。
+  </div>
+</main>
+
+<footer class="footer">
+  <a href="/">トップ</a>・<a href="/contact.html">お問い合わせ</a>・<a href="/terms.html">利用規約</a>・<a href="/privacy.html">プライバシー</a>
+  <div style="margin-top:8px">© 2026 Unko Oracle Project</div>
+</footer>
+
+</body>
+</html>
