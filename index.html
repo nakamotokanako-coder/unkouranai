@@ -1050,6 +1050,7 @@ function updateZukan(){
 
 function tl(){
   lang=lang==='ja'?'en':'ja';
+  try{localStorage.setItem('unko-lang', lang);}catch(e){}
   document.getElementById('lb').textContent=lang==='ja'?'EN':'日';
   updateInstaMsg();
   renderMonthly();
@@ -2689,6 +2690,12 @@ function updateCompat() {
   if(el('cr-share-copy')) el('cr-share-copy').textContent = isEn ? 'Copy' : 'コピー';
 }
 
+// ===== Cross-page language sync =====
+try {
+  if (localStorage.getItem('unko-lang') === 'en') {
+    setTimeout(function(){ if (typeof tl === 'function' && lang === 'ja') tl(); }, 50);
+  }
+} catch(e) {}
 
 </script>
 
