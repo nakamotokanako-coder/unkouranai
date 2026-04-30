@@ -11,9 +11,14 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Zen Maru Gothic',sans-serif;background:#fafafa;color:#2a1a3e;line-height:1.9;-webkit-font-smoothing:antialiased}
+body[data-lang="en"] [data-ja]{display:none !important}
+body[data-lang="ja"] [data-en]{display:none !important}
 .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:#0a0a0a;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:100}
 .nav-logo{font-family:'Kaisei Decol',serif;font-size:17px;font-weight:700;color:#fff;text-decoration:none;text-shadow:0 0 20px rgba(100,255,200,0.6)}
 .nav-logo span{background:linear-gradient(90deg,#00ffcc,#ffea00,#ff6ef7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-right{display:flex;gap:10px;align-items:center}
+.lang-btn{font-size:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 10px;cursor:pointer;font-family:'Zen Maru Gothic',sans-serif;color:rgba(255,255,255,0.8);transition:background .15s}
+.lang-btn:hover{background:rgba(0,255,200,0.2);border-color:#00ffcc}
 .nav-back{font-size:11px;color:rgba(255,255,255,0.7);text-decoration:none;padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:20px;transition:all .15s}
 .nav-back:hover{border-color:#00ffcc;color:#00ffcc}
 .wrap{max-width:680px;margin:0 auto;padding:56px 24px 80px}
@@ -22,72 +27,60 @@ h1{font-family:'Kaisei Decol',serif;font-size:28px;font-weight:700;margin-bottom
 .card{background:#fff;border-radius:14px;padding:28px;margin-bottom:18px;box-shadow:0 1px 3px rgba(42,26,62,0.06),0 1px 8px rgba(42,26,62,0.04)}
 .card h2{font-family:'Kaisei Decol',serif;font-size:17px;font-weight:700;margin-bottom:6px;color:#1a0a2e}
 .card-desc{font-size:13px;color:#6b5a7e;margin-bottom:18px}
-
-/* Form */
 .field{margin-bottom:16px}
 .field label{display:block;font-size:13px;font-weight:700;color:#1a0a2e;margin-bottom:6px}
 .field label .req{color:#e94560;font-weight:400;font-size:11px;margin-left:4px}
-.field input,.field select,.field textarea{
-  width:100%;padding:11px 14px;border:1.5px solid #e8e0f0;border-radius:8px;
-  font-family:'Zen Maru Gothic',sans-serif;font-size:14px;color:#2a1a3e;
-  background:#fafafa;transition:border-color .15s,background .15s;
-}
-.field input:focus,.field select:focus,.field textarea:focus{
-  outline:none;border-color:#a855f7;background:#fff;
-}
+.field input,.field select,.field textarea{width:100%;padding:11px 14px;border:1.5px solid #e8e0f0;border-radius:8px;font-family:'Zen Maru Gothic',sans-serif;font-size:14px;color:#2a1a3e;background:#fafafa;transition:border-color .15s,background .15s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:#a855f7;background:#fff}
 .field textarea{min-height:140px;resize:vertical;line-height:1.7}
 .field .hint{font-size:11px;color:#999;margin-top:4px}
-
-.submit{
-  display:inline-block;padding:13px 36px;border-radius:30px;font-size:14px;font-weight:700;
-  background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;
-  border:none;cursor:pointer;font-family:'Zen Maru Gothic',sans-serif;
-  transition:transform .15s,box-shadow .15s;width:100%;margin-top:6px;
-}
+.submit{display:inline-block;padding:13px 36px;border-radius:30px;font-size:14px;font-weight:700;background:linear-gradient(135deg,#a855f7,#7c3aed);color:#fff;border:none;cursor:pointer;font-family:'Zen Maru Gothic',sans-serif;transition:transform .15s,box-shadow .15s;width:100%;margin-top:6px}
 .submit:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(168,85,247,0.3)}
-.submit:disabled{opacity:0.6;cursor:not-allowed;transform:none}
-
-/* SNS */
 .btn{display:inline-block;padding:11px 22px;border-radius:30px;font-size:13px;font-weight:700;text-decoration:none;font-family:'Zen Maru Gothic',sans-serif;transition:transform .15s,box-shadow .15s}
 .btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
 .btn-x{background:#000;color:#fff}
 .btn-line{background:#06c755;color:#fff}
 .btn-mail{background:#f5f0ff;color:#7c3aed;border:1px solid #e8d5ff}
 .btn-row{display:flex;gap:10px;flex-wrap:wrap}
-
 .divider{display:flex;align-items:center;gap:12px;margin:32px 0 18px;color:#aaa;font-size:11px;letter-spacing:.15em}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:#e8e0f0}
-
 .note{background:#fff8f0;border-left:3px solid #ffea00;padding:14px 18px;font-size:13px;color:#6b5a7e;border-radius:0 6px 6px 0;margin-top:16px}
-
-/* FAQ */
 .faq-q{font-weight:700;color:#1a0a2e;margin-bottom:6px;font-size:14px}
 .faq-a{font-size:13.5px;color:#6b5a7e;margin-bottom:18px}
 .faq-a:last-child{margin-bottom:0}
-
 .footer{text-align:center;padding:32px 24px;font-size:11px;color:#aaa;border-top:1px solid #eee;margin-top:60px}
 .footer a{color:#888;text-decoration:none;margin:0 8px}
 .footer a:hover{color:#00ccaa}
 @media(max-width:600px){.wrap{padding:40px 20px 60px}h1{font-size:24px}.card{padding:22px}}
 </style>
 </head>
-<body>
+<body data-lang="ja">
 
 <nav class="nav">
   <a href="/" class="nav-logo">うんこ占い<span>.com</span></a>
-  <a href="/" class="nav-back">← トップへ</a>
+  <div class="nav-right">
+    <button class="lang-btn" id="lb" onclick="tl()">EN</button>
+    <a href="/" class="nav-back">
+      <span data-ja>← トップへ</span>
+      <span data-en>← Top</span>
+    </a>
+  </div>
 </nav>
 
 <main class="wrap">
-  <h1>お問い合わせ</h1>
-  <p class="lead">うんこ占い.comに関するご質問・ご感想・ご依頼など、お気軽にどうぞ。</p>
+  <h1 data-ja>お問い合わせ</h1>
+  <h1 data-en>Contact</h1>
+
+  <p class="lead" data-ja>うんこ占い.comに関するご質問・ご感想・ご依頼など、お気軽にどうぞ。</p>
+  <p class="lead" data-en>Questions, comments, or requests about Unko Oracle — feel free to reach out.</p>
 
   <div class="card">
-    <h2>📮 お問い合わせフォーム</h2>
-    <p class="card-desc">3営業日以内にご返信いたします。</p>
+    <h2 data-ja>📮 お問い合わせフォーム</h2>
+    <h2 data-en>📮 Contact Form</h2>
+    <p class="card-desc" data-ja>3営業日以内にご返信いたします。</p>
+    <p class="card-desc" data-en>We'll reply within 3 business days.</p>
 
     <form action="https://formsubmit.co/unkouranai@gmail.com" method="POST">
-      <!-- FormSubmit設定 -->
       <input type="hidden" name="_subject" value="【うんこ占い.com】お問い合わせ">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
@@ -95,74 +88,152 @@ h1{font-family:'Kaisei Decol',serif;font-size:28px;font-weight:700;margin-bottom
       <input type="text" name="_honey" style="display:none">
 
       <div class="field">
-        <label for="name">お名前 <span class="req">必須</span></label>
-        <input type="text" id="name" name="お名前" required placeholder="例：山田 花子">
+        <label for="name">
+          <span data-ja>お名前 <span class="req">必須</span></span>
+          <span data-en>Name <span class="req">required</span></span>
+        </label>
+        <input type="text" id="name" name="Name" required data-placeholder-ja="例：山田 花子" data-placeholder-en="e.g. Hanako Yamada">
       </div>
 
       <div class="field">
-        <label for="email">メールアドレス <span class="req">必須</span></label>
-        <input type="email" id="email" name="メールアドレス" required placeholder="例：example@gmail.com">
-        <div class="hint">ご返信先としてご利用します</div>
+        <label for="email">
+          <span data-ja>メールアドレス <span class="req">必須</span></span>
+          <span data-en>Email <span class="req">required</span></span>
+        </label>
+        <input type="email" id="email" name="Email" required data-placeholder-ja="例：example@gmail.com" data-placeholder-en="e.g. example@gmail.com">
+        <div class="hint" data-ja>ご返信先としてご利用します</div>
+        <div class="hint" data-en>We'll use this address to reply</div>
       </div>
 
       <div class="field">
-        <label for="category">お問い合わせ種別 <span class="req">必須</span></label>
-        <select id="category" name="お問い合わせ種別" required>
-          <option value="">選んでください</option>
-          <option value="サイトに関する質問">サイトに関する質問</option>
-          <option value="診断結果について">診断結果について</option>
-          <option value="有料鑑定について">有料鑑定について</option>
-          <option value="ご感想・ファンレター">ご感想・ファンレター</option>
-          <option value="商用利用・コラボ依頼">商用利用・コラボ依頼</option>
-          <option value="不具合の報告">不具合の報告</option>
-          <option value="その他">その他</option>
+        <label for="category">
+          <span data-ja>お問い合わせ種別 <span class="req">必須</span></span>
+          <span data-en>Category <span class="req">required</span></span>
+        </label>
+        <select id="category" name="Category" required>
+          <option value="" data-ja>選んでください</option>
+          <option value="" data-en>Please select</option>
+          <option value="サイトに関する質問" data-ja>サイトに関する質問</option>
+          <option value="About the site" data-en>About the site</option>
+          <option value="診断結果について" data-ja>診断結果について</option>
+          <option value="About diagnosis results" data-en>About diagnosis results</option>
+          <option value="有料鑑定について" data-ja>有料鑑定について</option>
+          <option value="About paid readings" data-en>About paid readings</option>
+          <option value="ご感想・ファンレター" data-ja>ご感想・ファンレター</option>
+          <option value="Feedback / fan mail" data-en>Feedback / fan mail</option>
+          <option value="商用利用・コラボ依頼" data-ja>商用利用・コラボ依頼</option>
+          <option value="Commercial use / collab" data-en>Commercial use / collab</option>
+          <option value="不具合の報告" data-ja>不具合の報告</option>
+          <option value="Bug report" data-en>Bug report</option>
+          <option value="その他" data-ja>その他</option>
+          <option value="Other" data-en>Other</option>
         </select>
       </div>
 
       <div class="field">
-        <label for="message">お問い合わせ内容 <span class="req">必須</span></label>
-        <textarea id="message" name="お問い合わせ内容" required placeholder="お気軽にどうぞ。"></textarea>
+        <label for="message">
+          <span data-ja>お問い合わせ内容 <span class="req">必須</span></span>
+          <span data-en>Message <span class="req">required</span></span>
+        </label>
+        <textarea id="message" name="Message" required data-placeholder-ja="お気軽にどうぞ。" data-placeholder-en="Feel free to write whatever you'd like."></textarea>
       </div>
 
-      <button type="submit" class="submit">送信する</button>
+      <button type="submit" class="submit">
+        <span data-ja>送信する</span>
+        <span data-en>Send</span>
+      </button>
     </form>
   </div>
 
-  <div class="divider">他の連絡手段</div>
+  <div class="divider">
+    <span data-ja>他の連絡手段</span>
+    <span data-en>Other ways to reach us</span>
+  </div>
 
   <div class="card">
-    <h2>💬 SNS・メールでも</h2>
-    <p class="card-desc">カジュアルなご感想やご質問は、こちらからもどうぞ。</p>
+    <h2 data-ja>💬 SNS・メールでも</h2>
+    <h2 data-en>💬 Social & Email</h2>
+    <p class="card-desc" data-ja>カジュアルなご感想やご質問は、こちらからもどうぞ。</p>
+    <p class="card-desc" data-en>For casual messages or quick questions, feel free to use these too.</p>
     <div class="btn-row">
-      <a href="mailto:unkouranai@gmail.com?subject=【うんこ占い.com】お問い合わせ" class="btn btn-mail">メール</a>
+      <a href="mailto:unkouranai@gmail.com?subject=【うんこ占い.com】お問い合わせ" class="btn btn-mail">
+        <span data-ja>メール</span>
+        <span data-en>Email</span>
+      </a>
       <a href="https://www.threads.net/" target="_blank" rel="noopener" class="btn btn-x">Threads</a>
-      <a href="https://line.me/" target="_blank" rel="noopener" class="btn btn-line">LINE公式</a>
+      <a href="https://line.me/" target="_blank" rel="noopener" class="btn btn-line">
+        <span data-ja>LINE公式</span>
+        <span data-en>LINE</span>
+      </a>
     </div>
   </div>
 
   <div class="card">
-    <h2>よくあるお問い合わせ</h2>
-    <p class="card-desc" style="margin-bottom:20px">お問い合わせの前にご確認ください。</p>
+    <h2 data-ja>よくあるお問い合わせ</h2>
+    <h2 data-en>Frequently Asked</h2>
+    <p class="card-desc" data-ja style="margin-bottom:20px">お問い合わせの前にご確認ください。</p>
+    <p class="card-desc" data-en style="margin-bottom:20px">Please check these before reaching out.</p>
 
-    <div class="faq-q">Q. 診断結果は本当に当たりますか？</div>
-    <div class="faq-a">A. 当サイトの診断はエンターテインメントとしてご提供しています。「ちょっと笑える」「ちょっと救われる」を大切にしているので、結果を楽しんでいただければ幸いです。</div>
+    <div data-ja>
+      <div class="faq-q">Q. 診断結果は本当に当たりますか？</div>
+      <div class="faq-a">A. 当サイトの診断はエンターテインメントとしてご提供しています。「ちょっと笑える」「ちょっと救われる」を大切にしているので、結果を楽しんでいただければ幸いです。</div>
+      <div class="faq-q">Q. 詳細鑑定レポートの内容について教えてください</div>
+      <div class="faq-a">A. 詳細鑑定レポートは、無料診断よりも深い洞察（恋愛・仕事・相性・開運アクションなど）をPDFでお届けします。販売ページにサンプルを掲載しております。</div>
+      <div class="faq-q">Q. キャラクターを商用利用したいのですが</div>
+      <div class="faq-a">A. キャラクターおよびコンテンツの商用利用には、事前にライセンス契約が必要です。お問い合わせフォームの種別「商用利用・コラボ依頼」よりご相談ください。</div>
+    </div>
 
-    <div class="faq-q">Q. 詳細鑑定レポートの内容について教えてください</div>
-    <div class="faq-a">A. 詳細鑑定レポートは、無料診断よりも深い洞察（恋愛・仕事・相性・開運アクションなど）をPDFでお届けします。販売ページにサンプルを掲載しております。</div>
-
-    <div class="faq-q">Q. キャラクターを商用利用したいのですが</div>
-    <div class="faq-a">A. キャラクターおよびコンテンツの商用利用には、事前にライセンス契約が必要です。お問い合わせフォームの種別「商用利用・コラボ依頼」よりご相談ください。</div>
+    <div data-en>
+      <div class="faq-q">Q. Are the diagnoses really accurate?</div>
+      <div class="faq-a">A. Our diagnoses are entertainment. We aim for "a little funny, a little comforting" — please enjoy the results in that spirit.</div>
+      <div class="faq-q">Q. What's in the detailed reading report?</div>
+      <div class="faq-a">A. The detailed reading report is a PDF that goes deeper than the free diagnosis (love, work, compatibility, lucky actions, etc.). Sample previews are available on the sales page.</div>
+      <div class="faq-q">Q. Can I use the characters commercially?</div>
+      <div class="faq-a">A. Commercial use of our characters and content requires a prior license agreement. Please reach out via the contact form using the "Commercial use / collab" category.</div>
+    </div>
   </div>
 
-  <div class="note">
+  <div class="note" data-ja>
     お問い合わせいただく前に、<a href="/terms.html" style="color:#a855f7">利用規約</a>および<a href="/privacy.html" style="color:#a855f7">プライバシーポリシー</a>もあわせてご確認ください。
+  </div>
+  <div class="note" data-en>
+    Before contacting us, please also review our <a href="/terms.html" style="color:#a855f7">Terms of Service</a> and <a href="/privacy.html" style="color:#a855f7">Privacy Policy</a>.
   </div>
 </main>
 
 <footer class="footer">
-  <a href="/">トップ</a>・<a href="/contact.html">お問い合わせ</a>・<a href="/terms.html">利用規約</a>・<a href="/privacy.html">プライバシー</a>
+  <a href="/"><span data-ja>トップ</span><span data-en>Top</span></a>・<a href="/contact.html"><span data-ja>お問い合わせ</span><span data-en>Contact</span></a>・<a href="/terms.html"><span data-ja>利用規約</span><span data-en>Terms</span></a>・<a href="/privacy.html"><span data-ja>プライバシー</span><span data-en>Privacy</span></a>
   <div style="margin-top:8px">© 2026 Unko Oracle Project</div>
 </footer>
+
+<script>
+function applyPlaceholders(){
+  var lang = document.body.getAttribute('data-lang');
+  var attr = 'data-placeholder-' + lang;
+  document.querySelectorAll('[' + attr + ']').forEach(function(el){
+    el.setAttribute('placeholder', el.getAttribute(attr));
+  });
+}
+(function() {
+  var saved = localStorage.getItem('unko-lang') || 'ja';
+  document.body.setAttribute('data-lang', saved);
+  document.documentElement.lang = saved;
+  var btn = document.getElementById('lb');
+  if (btn) btn.textContent = saved === 'ja' ? 'EN' : '日';
+  document.title = saved === 'en' ? 'Contact | Unko Oracle' : 'お問い合わせ | うんこ占い.com';
+  applyPlaceholders();
+})();
+function tl() {
+  var current = document.body.getAttribute('data-lang');
+  var next = current === 'ja' ? 'en' : 'ja';
+  document.body.setAttribute('data-lang', next);
+  document.documentElement.lang = next;
+  localStorage.setItem('unko-lang', next);
+  document.getElementById('lb').textContent = next === 'ja' ? 'EN' : '日';
+  document.title = next === 'en' ? 'Contact | Unko Oracle' : 'お問い合わせ | うんこ占い.com';
+  applyPlaceholders();
+}
+</script>
 
 </body>
 </html>
