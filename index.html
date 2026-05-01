@@ -195,7 +195,12 @@ body{font-family:'Zen Maru Gothic',sans-serif;background:#0a0a0a;color:#fff;over
 .char-img-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 @media(max-width:600px){
-  .nav{padding:11px 14px}
+  .nav{padding:11px 14px;flex-wrap:nowrap;gap:8px}
+  .nav-logo{font-size:14px;flex-shrink:0}
+  .nav-right{flex-wrap:nowrap;gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex-shrink:1;min-width:0}
+  .nav-right::-webkit-scrollbar{display:none}
+  .nav-right button{font-size:11px;white-space:nowrap;padding:0;flex-shrink:0}
+  .lang-btn{flex-shrink:0;font-size:9px;padding:3px 8px}
   .diag-box{padding:28px 18px}
   .home-wrap{padding:70px 16px 30px}
 }
@@ -585,11 +590,11 @@ img {
 <nav class="nav">
   <div class="nav-logo" onclick="go('home')">うんこ占い<span>💩</span></div>
   <div class="nav-right">
-    <button onclick="go('home')">トップ</button>
-    <button onclick="go('diag')">診断</button>
-    <button onclick="go('zukan')">図鑑</button>
-    <button onclick="go('genesis')">創世記</button>
-    <button onclick="go('compat')">相性</button>
+    <button onclick="go('home')" data-nav="home">トップ</button>
+    <button onclick="go('diag')" data-nav="diag">診断</button>
+    <button onclick="go('zukan')" data-nav="zukan">キャラ図鑑</button>
+    <button onclick="go('genesis')" data-nav="genesis">創世記</button>
+    <button onclick="go('compat')" data-nav="compat">相性</button>
     <button class="lang-btn" id="lb" onclick="tl()">EN</button>
   </div>
 </nav>
@@ -1048,10 +1053,17 @@ function updateZukan(){
   renderGrid('zg', e);
 }
 
+function updateNav(){
+  const isEn=lang==='en';
+  const t={home:[isEn?'Top':'トップ'],diag:[isEn?'Quiz':'診断'],zukan:[isEn?'Characters':'キャラ図鑑'],genesis:[isEn?'Story':'創世記'],compat:[isEn?'Match':'相性']};
+  document.querySelectorAll('[data-nav]').forEach(b=>{const k=b.getAttribute('data-nav');if(t[k])b.textContent=t[k][0];});
+}
+
 function tl(){
   lang=lang==='ja'?'en':'ja';
   try{localStorage.setItem('unko-lang', lang);}catch(e){}
   document.getElementById('lb').textContent=lang==='ja'?'EN':'日';
+  updateNav();
   updateInstaMsg();
   renderMonthly();
   const sl=document.getElementById('unsei-share-label');if(sl)sl.textContent=lang==='en'?'Share on X':'Xでシェア';
