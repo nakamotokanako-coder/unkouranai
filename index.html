@@ -46,11 +46,18 @@ body{font-family:'Zen Maru Gothic',sans-serif;background:#0a0a0a;color:#fff;over
 /* Floating mini poops */
 @keyframes floatPoop{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-14px) rotate(5deg)}}
 .mini-poop{position:absolute;font-size:28px;animation:floatPoop ease-in-out infinite;filter:drop-shadow(0 0 8px currentColor)}
+.poop-tl{left:-8%}
+.poop-tr{right:-10%}
+.poop-bl{left:-5%}
+.poop-br{right:-6%}
 
 .home-inner{position:relative;z-index:2;text-align:center;padding:20px}
+.home-title-wrap{position:relative;z-index:3;text-align:center;padding:0 20px;margin-bottom:-20px}
 .home-title{font-family:'Kaisei Decol',serif;font-size:clamp(36px,8vw,72px);font-weight:700;color:#fff;line-height:1.05;margin-bottom:14px;text-shadow:0 0 30px rgba(0,255,200,0.4)}
-.home-sub{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:32px}
+.home-sub{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.9;margin-bottom:0}
 .home-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.btn-hero{padding:9px 20px !important;font-size:12px !important;letter-spacing:0.03em;box-shadow:0 0 20px rgba(255,234,0,0.5),inset 0 0 16px rgba(255,234,0,0.08) !important}
+.btn-hero:hover{box-shadow:0 0 32px rgba(255,234,0,0.8),inset 0 0 20px rgba(255,234,0,0.12) !important}
 
 /* Neon buttons */
 .btn-neon{background:transparent;border:2px solid #00ffcc;color:#00ffcc;border-radius:40px;padding:13px 28px;font-size:13px;font-family:'Zen Maru Gothic',sans-serif;font-weight:700;cursor:pointer;transition:all .2s;text-shadow:0 0 8px #00ffcc88;box-shadow:0 0 12px rgba(0,255,200,0.3),inset 0 0 12px rgba(0,255,200,0.05)}
@@ -203,6 +210,19 @@ body{font-family:'Zen Maru Gothic',sans-serif;background:#0a0a0a;color:#fff;over
   .lang-btn{flex-shrink:0;font-size:9px;padding:3px 8px}
   .diag-box{padding:28px 18px}
   .home-wrap{padding:70px 16px 30px}
+  /* Floating poops - inside screen on mobile */
+  .mini-poop{font-size:22px}
+  .poop-tl{left:4%}
+  .poop-tr{right:4%}
+  .poop-bl{left:5%}
+  .poop-br{right:5%}
+  /* Push hero button down to belly area of neon */
+  .home-cta{margin-top:140px;margin-bottom:30px}
+  .home-tagline{font-size:9px;letter-spacing:.05em;white-space:nowrap;margin-top:18px}
+  /* Pull title into neon head: shrink title and overlap neon on top */
+  .home-title-wrap{position:relative !important;margin-bottom:-45% !important;z-index:3;padding:0 24px}
+  .home-title{font-size:28px !important;margin-bottom:32px !important}
+  .home-sub{font-size:9px !important;line-height:1.6 !important}
 }
 
 /* ===== SHARE & MONETIZE ===== */
@@ -602,6 +622,11 @@ img {
 <!-- ===== HOME JA ===== -->
 <div id="pg-home-ja" class="page active">
   <div class="home-wrap">
+    <!-- Title above neon -->
+    <div class="home-title-wrap">
+      <h1 class="home-title" id="home-title-ja">うんこ占い</h1>
+      <p class="home-sub" id="home-sub-ja">出すことは生きること<br>詰まりを笑って流し、心を軽くする占い</p>
+    </div>
     <!-- Neon poop SVG silhouette -->
     <div class="neon-poop-wrap">
       <svg class="neon-poop-svg" viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
@@ -636,17 +661,14 @@ img {
       </svg>
 
       <!-- Floating mini poops around silhouette -->
-      <div class="mini-poop" style="top:10%;left:-8%;color:#00ffcc;animation-duration:3.2s;animation-delay:0s">💩</div>
-      <div class="mini-poop" style="top:30%;right:-10%;color:#ffea00;animation-duration:4s;animation-delay:1s">💩</div>
-      <div class="mini-poop" style="bottom:15%;left:-5%;color:#ff6ef7;animation-duration:3.6s;animation-delay:0.5s">💩</div>
-      <div class="mini-poop" style="bottom:5%;right:-6%;color:#00ffcc;animation-duration:4.4s;animation-delay:1.8s">💩</div>
+      <div class="mini-poop poop-tl" style="top:10%;color:#00ffcc;animation-duration:3.2s;animation-delay:0s">💩</div>
+      <div class="mini-poop poop-tr" style="top:30%;color:#ffea00;animation-duration:4s;animation-delay:1s">💩</div>
+      <div class="mini-poop poop-bl" style="bottom:15%;color:#ff6ef7;animation-duration:3.6s;animation-delay:0.5s">💩</div>
+      <div class="mini-poop poop-br" style="bottom:5%;color:#00ffcc;animation-duration:4.4s;animation-delay:1.8s">💩</div>
 
       <div class="home-inner">
-        <h1 class="home-title" id="home-title-ja">うんこ占い</h1>
-        <p class="home-sub" id="home-sub-ja">出すことは生きること<br>詰まりを笑って流し、心を軽くする占い</p>
         <div class="home-cta">
-          <button class="btn-neon-y" onclick="go('diag')">うんこを占う 💩</button>
-          <button class="btn-neon" onclick="go('zukan')">📘 図鑑を見る</button>
+          <button class="btn-neon-y btn-hero" onclick="go('diag')">うんこを占う 💩</button>
         </div>
         <p class="home-tagline">生年月日を入れると"便器界キャラ"が出現！</p>
         <button class="btn-unsei" onclick="openUnsei()">💩 今月のうん勢を見る</button>
@@ -664,6 +686,10 @@ img {
 <!-- ===== HOME EN ===== -->
 <div id="pg-home-en" class="page">
   <div class="home-wrap">
+    <div class="home-title-wrap">
+      <h1 class="home-title">Unko Oracle</h1>
+      <p class="home-sub">To release is to live.<br>Laugh, flush, and let it all go.</p>
+    </div>
     <div class="neon-poop-wrap">
       <svg class="neon-poop-svg" viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -695,15 +721,12 @@ img {
           fill="none" stroke="url(#ng2)" stroke-width="5"
           stroke-linecap="round" stroke-linejoin="round" filter="url(#nf2)"/>
       </svg>
-      <div class="mini-poop" style="top:10%;left:-8%;color:#00ffcc;animation-duration:3.2s">💩</div>
-      <div class="mini-poop" style="top:30%;right:-10%;color:#ffea00;animation-duration:4s;animation-delay:1s">💩</div>
-      <div class="mini-poop" style="bottom:15%;left:-5%;color:#ff6ef7;animation-duration:3.6s;animation-delay:0.5s">💩</div>
+      <div class="mini-poop poop-tl" style="top:10%;color:#00ffcc;animation-duration:3.2s">💩</div>
+      <div class="mini-poop poop-tr" style="top:30%;color:#ffea00;animation-duration:4s;animation-delay:1s">💩</div>
+      <div class="mini-poop poop-bl" style="bottom:15%;color:#ff6ef7;animation-duration:3.6s;animation-delay:0.5s">💩</div>
       <div class="home-inner">
-        <h1 class="home-title">Unko Oracle</h1>
-        <p class="home-sub">To release is to live.<br>Laugh, flush, and let it all go.</p>
         <div class="home-cta">
-          <button class="btn-neon-y" onclick="go('diag')">Start Diagnosis 💩</button>
-          <button class="btn-neon" onclick="go('zukan')">📘 Characters</button>
+          <button class="btn-neon-y btn-hero" onclick="go('diag')">Start Diagnosis 💩</button>
         </div>
         <p class="home-tagline">Enter your birthday → Your unko appears!</p>
         <button class="btn-unsei" onclick="openUnsei()">💩 This Month's Unsei</button>
