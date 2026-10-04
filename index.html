@@ -2617,7 +2617,7 @@ function shareUnsei() {
   const text = isEn
     ? 'Check out this month\'s Unsei (Unko Fortune) for all 12 characters! Which one are you? 💩✨'
     : monthLabel + 'のうん勢（うんこ運勢）が公開中！あなたのキャラは？💩✨';
-  const url = 'https://unkouranai.com';
+  const url = 'https://unkouranai.com/?unsei=1';
   const hashtags = isEn ? 'UnkoOracle,UnkoFortune' : 'うんこ占い,うん勢,便器界';
   const xUrl = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url) + '&hashtags=' + encodeURIComponent(hashtags);
   window.open(xUrl, '_blank');
@@ -2628,14 +2628,14 @@ function shareUnseiLine() {
   const now = new Date();
   const m = now.getMonth() + 1;
   const text = isEn
-    ? 'Check out this month\'s Unsei for all 12 unko characters! 💩✨ https://unkouranai.com'
-    : m + '月のうん勢（うんこ運勢）が公開中！あなたのキャラは？💩✨ https://unkouranai.com';
-  window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent('https://unkouranai.com') + '&text=' + encodeURIComponent(text), '_blank');
+    ? 'Check out this month\'s Unsei for all 12 unko characters! 💩✨ https://unkouranai.com/?unsei=1'
+    : m + '月のうん勢（うんこ運勢）が公開中！あなたのキャラは？💩✨ https://unkouranai.com/?unsei=1';
+  window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent('https://unkouranai.com/?unsei=1') + '&text=' + encodeURIComponent(text), '_blank');
 }
 
 function copyUnseiLink() {
   const isEn = lang === 'en';
-  navigator.clipboard.writeText('https://unkouranai.com').then(() => {
+  navigator.clipboard.writeText('https://unkouranai.com/?unsei=1').then(() => {
     const label = document.getElementById('unsei-copy-label');
     const orig = label.textContent;
     label.textContent = isEn ? 'Copied!' : 'コピーしました！';
@@ -2769,6 +2769,8 @@ try {
 
 // つくった人のページに、芸術家うんこの絵を出す
 document.addEventListener('DOMContentLoaded', function() {
+  // シェアされたリンク（?unsei=1）から来た人には、今月のうん勢をすぐ開く
+  try { if (new URLSearchParams(location.search).has('unsei') && unseiReady()) openUnsei(); } catch(e) {}
   try { const mc = CHARS.find(x => x.num === 33); if (mc && mc.img && mc.img.startsWith('data:')) document.getElementById('maker-type-img').innerHTML = '<img src="' + mc.img + '" alt="">'; } catch(e) {}
 });
 // 今月のうん勢のボタンは、12体ぶんの文がそろっている月だけ出す
