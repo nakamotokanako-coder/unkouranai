@@ -105,7 +105,10 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
 .oracle-diag .d-arch { width: 52%; left: 25%; bottom: -3%; }
 .oracle-diag .d-poop { width: 21%; left: 40.5%; bottom: 6%; }
 .oracle-diag .d-cherub { width: 24%; left: 3%; bottom: 0; filter: grayscale(1) contrast(1.08); }
-.oracle-diag .d-crystal { width: 15%; right: 3%; bottom: 3%; transform: rotate(8deg); }
+.oracle-diag .d-toilet { width: 27%; right: 1%; bottom: 0; }
+.oracle-diag .d-chain { width: 11%; right: 27%; top: -3%; transform-origin: 50% 0; animation: od-swing 3.4s ease-in-out infinite alternate; }
+@keyframes od-swing { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
+@media (prefers-reduced-motion: reduce) { .oracle-diag .d-chain { animation: none; } }
 .oracle-diag .d-star1 { width: 6%; left: 20%; top: 44%; }
 .oracle-diag .d-star2 { width: 4%; right: 22%; top: 50%; }
 
@@ -249,6 +252,26 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
 .oracle-detail .ox-card-title span, .oracle-detail .ox-advice-title span { display: inline-block; white-space: nowrap; }
 .oracle-detail .ox-tagline, .oracle-detail .ox-quote p, .oracle-detail .ox-advice li, .oracle-detail .ox-more-cta p { text-wrap: balance; }
 
+
+/* Faucet with falling drops. The wrapper is its own size container, so the fall distance scales with it. */
+.oracle-detail .ox-faucet { container-type: inline-size; --fall: 70cqw; }
+.oracle-detail .ox-faucet img { display: block; width: 100%; height: auto; }
+.oracle-detail .ox-faucet .wd { position: absolute; left: 80.5%; top: 95%; width: 6.2cqw; height: 8.6cqw; min-width: 5px; min-height: 7px;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(circle at 35% 32%, #f4fcff 0 16%, #a9dbea 46%, #5fb1cc 100%);
+  opacity: 0; animation: ox-drop 2.6s cubic-bezier(.5, 0, .9, .5) infinite; }
+.oracle-detail .ox-faucet .wd2 { animation-delay: 1.3s; }
+.oracle-detail .ox-faucet .wr { position: absolute; left: 83.6%; top: calc(95% + var(--fall) + 6cqw); width: 16cqw; height: 5cqw; margin-left: -8cqw; border: 1px solid #7fc4dc; border-radius: 50%; opacity: 0; animation: ox-ripple 1.3s linear infinite; }
+@keyframes ox-drop {
+  0% { opacity: 0; transform: translateY(-2cqw) scale(.3); }
+  14% { opacity: 1; transform: translateY(0) scale(1); }
+  34% { opacity: 1; transform: translateY(0) scale(1.05, 1.15); }
+  86% { opacity: 1; transform: translateY(var(--fall)) scale(.95, 1.2); }
+  100% { opacity: 0; transform: translateY(var(--fall)) scale(1.8, .3); }
+}
+@keyframes ox-ripple { 0%, 58% { opacity: 0; transform: scale(.2); } 66% { opacity: .9; } 100% { opacity: 0; transform: scale(1.5); } }
+@media (prefers-reduced-motion: reduce) { .oracle-detail .ox-faucet .wd, .oracle-detail .ox-faucet .wr { animation: none; } }
+.oracle-detail .hr-faucet { width: 27%; right: 30%; top: 26%; --fall: 46cqw; z-index: 5; }
+
 /* body */
 .oracle-detail .ox-body { position: relative; z-index: 6; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 48px); padding: clamp(34px, 3.4vw, 54px) var(--pad) 0; align-items: start; }
 .oracle-detail .ox-card, .oracle-detail .ox-tile {
@@ -320,7 +343,7 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
   .oracle-detail .ox .ox-quote { position: relative; right: auto; top: auto; width: min(86%, 440px); min-height: 300px; margin: 34px auto 0; padding: 44px 40px 46px 48px; }
   .oracle-detail .ox-quote p { font-size: 15px; }
   .oracle-detail .ox-art { width: 30vw; }
-  .oracle-detail .hr-hand { display: none; }
+  .oracle-detail .hr-hand, .oracle-detail .hr-faucet { display: none; }
   .oracle-detail .ox-body { grid-template-columns: 1fr; }
   .oracle-detail .ox-main { order: -1; }
   .oracle-detail .ox-trio, .oracle-detail .ox-more { grid-template-columns: 1fr; }
@@ -378,7 +401,7 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
 .oracle-zukan .z-bust { width: 44%; left: 28%; top: 8%; }
 .oracle-zukan .z-moon { width: 17%; left: 8%; top: 12%; transform: rotate(-10deg); }
 .oracle-zukan .z-book { width: 46%; right: -6%; bottom: -8%; transform: rotate(-8deg); }
-.oracle-zukan .z-crystal { width: 9%; left: 16%; bottom: 8%; transform: rotate(-12deg); }
+.oracle-zukan .z-valve { width: 22%; left: 4%; bottom: -6%; }
 .oracle-zukan .z-star1 { width: 5%; left: 6%; top: 56%; }
 .oracle-zukan .z-star2 { width: 4%; right: 12%; top: 12%; }
 
@@ -614,6 +637,7 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
 .oracle-compat .u-line { width: 86%; left: 7%; top: 6%; opacity: .9; }
 .oracle-compat .u-pink { width: 36%; left: 8%; top: 12%; transform: rotate(-14deg); }
 .oracle-compat .u-moon { width: 19%; right: 8%; top: 8%; }
+.oracle-compat .u-pipe { width: 118%; left: -9%; top: 60%; transform: rotate(-3deg); }
 .oracle-compat .u-hands { width: 112%; left: -6%; top: 42%; filter: grayscale(1) contrast(1.08); }
 .oracle-compat .u-heart { width: 13%; left: 45%; top: 31%; }
 .oracle-compat .u-pearl { width: 7%; left: 24%; top: 66%; }

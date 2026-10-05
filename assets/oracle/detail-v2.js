@@ -52,6 +52,7 @@
       ${img('hr-hand', 'hand-open')}
       ${img('hr-crystal', 'crystal')}
       ${img('hr-star', 'star-four')}
+      <span class="ox-l ox-faucet hr-faucet"><img src="assets/oracle/home/faucet.webp" alt=""><i class="wd"></i><i class="wd wd2"></i><i class="wr"></i></span>
     </div>
     <blockquote class="ox-quote">
       <p>${pick('quote')}</p>
