@@ -321,7 +321,8 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
   .oracle-detail .ox-hero { display: flex; flex-direction: column; padding-bottom: 10px; }
   .oracle-detail .ox-center { order: 1; width: min(56vw, 520px); }
   .oracle-detail .ox .ox-quote { order: 2; }
-  .oracle-detail .ox .ox-quote { position: relative; right: auto; top: auto; width: min(86%, 440px); min-height: 300px; margin: 34px auto 0; padding: 44px 40px 46px 48px; }
+  .oracle-detail .ox .ox-quote { position: relative; right: auto; top: auto; width: min(90%, 440px); min-height: 320px; margin: 34px auto 0; padding: 70px 17% 84px 27%; text-align: center; }
+  .oracle-detail .ox-quote cite { text-align: center; }
   .oracle-detail .ox-quote p { font-size: 15px; }
   .oracle-detail .ox-art { width: 30vw; }
   .oracle-detail .hr-hand { display: none; }
