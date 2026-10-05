@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="うんこ占い.com | 便器界診断">
 <meta name="twitter:description" content="生年月日から便器界キャラを診断。あなたの流れと詰まりを、12体のうんこキャラが読み解きます。">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Kaisei+Decol:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Zen Maru Gothic',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden}
@@ -631,183 +632,515 @@ img {
 .maker-lp:hover{transform:translateY(-2px)}
 .maker-back{display:block;margin:28px auto 0;background:none;border:none;color:rgba(255,255,255,.5);font-size:12px;font-family:'Zen Maru Gothic',sans-serif;cursor:pointer}
 </style>
+<style id="oracle-home-redesign">
+/* UNKO ORACLE HOME redesign — scoped to the two HOME roots only */
+:root{--oracle-paper:#f1eadc;--oracle-ink:#171613;--oracle-gold:#a8864d;--oracle-pink:#ff2b91;--oracle-muted:#766f63;--oracle-rule:rgba(23,22,19,.22);--oracle-display:Georgia,'Times New Roman',serif}
+#pg-home-ja,#pg-home-en{background:var(--oracle-paper);color:var(--oracle-ink);min-height:calc(100vh - 56px);overflow:hidden}
+#pg-home-ja .oracle-home,#pg-home-en .oracle-home{background:var(--oracle-paper);color:var(--oracle-ink);overflow:hidden}
+#pg-home-ja .oracle-navline,#pg-home-en .oracle-navline{display:flex;justify-content:space-between;align-items:center;padding:18px clamp(22px,4vw,64px);border-bottom:1px solid var(--oracle-rule);font:10px/1.2 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.oracle-wordmark{font:700 13px/1 var(--oracle-display);letter-spacing:.04em}
+.oracle-navlinks{display:flex;gap:clamp(14px,3vw,38px);color:var(--oracle-muted)}
+.oracle-navlinks button{border:0;background:none;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;padding:0}
+.oracle-hero{position:relative;min-height:calc(100vh - 112px);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,38vw);align-items:center;padding:clamp(70px,10vh,140px) clamp(24px,8vw,130px) clamp(72px,10vh,132px);border-bottom:1px solid var(--oracle-rule)}
+.oracle-hero-copy{position:relative;z-index:4;max-width:720px}
+.oracle-kicker,.oracle-caption{font:10px/1.5 Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--oracle-muted)}
+.oracle-title{font:clamp(74px,13vw,190px)/.78 var(--oracle-display);font-weight:400;letter-spacing:-.075em;margin:28px 0 40px;color:var(--oracle-ink)}
+.oracle-title span{display:block}
+.oracle-jp{max-width:300px;font:15px/2 'Yu Mincho',serif;letter-spacing:.08em;margin-bottom:34px}
+.oracle-cta{display:inline-flex;align-items:center;gap:18px;border:1px solid var(--oracle-ink);border-radius:0;background:transparent;color:var(--oracle-ink);padding:14px 20px;font:700 12px/1.2 Arial,sans-serif;letter-spacing:.12em;cursor:pointer;transition:background .2s,color .2s}
+.oracle-cta:hover{background:var(--oracle-ink);color:var(--oracle-paper)}
+.oracle-hero-art{position:absolute;inset:0;pointer-events:none;z-index:1}
+.oracle-asset{position:absolute;display:block;height:auto;pointer-events:none;user-select:none}
+.oracle-bust{width:clamp(220px,31vw,480px);right:5%;bottom:-8%;filter:grayscale(1) contrast(1.1)}
+.oracle-orbit{width:clamp(270px,36vw,560px);right:-7%;top:12%;opacity:.76}
+.oracle-pink{width:clamp(100px,13vw,220px);right:23%;top:20%;transform:rotate(-13deg);opacity:.92}
+.oracle-hero-note{position:absolute;right:clamp(22px,4vw,64px);bottom:28px;z-index:4;max-width:150px;font:10px/1.6 Arial,sans-serif;color:var(--oracle-muted);text-align:right}
+.oracle-story{display:grid;grid-template-columns:minmax(120px,.34fr) minmax(0,1fr);gap:clamp(30px,7vw,120px);padding:clamp(84px,12vw,170px) clamp(24px,8vw,130px);border-bottom:1px solid var(--oracle-rule)}
+.oracle-story-num{font:12px/1 Arial,sans-serif;letter-spacing:.2em;color:var(--oracle-gold)}
+.oracle-story h2{font:clamp(42px,7vw,108px)/.88 var(--oracle-display);font-weight:400;letter-spacing:-.05em;margin:0 0 24px;max-width:800px}
+.oracle-story h2 small{display:block;font:12px/1.6 Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--oracle-muted);margin-bottom:18px}
+.oracle-story p{max-width:450px;font:14px/2 'Yu Mincho',serif;color:#484238}
+.oracle-archive{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;margin-top:52px}
+.oracle-specimen{border-top:1px solid var(--oracle-ink);padding-top:12px;min-height:190px;position:relative}
+.oracle-specimen-num{font:10px/1 Arial,sans-serif;color:var(--oracle-gold);letter-spacing:.18em}
+.oracle-specimen-name{font:26px/1 var(--oracle-display);margin:18px 0 14px;letter-spacing:-.04em}
+.oracle-specimen-meta{font:9px/1.7 Arial,sans-serif;letter-spacing:.12em;color:var(--oracle-muted);text-transform:uppercase}
+.oracle-specimen:after{content:'ARCHETYPE';position:absolute;right:0;top:14px;font:8px Arial,sans-serif;letter-spacing:.16em;color:var(--oracle-muted);writing-mode:vertical-rl}
+.oracle-wide{grid-template-columns:1fr minmax(260px,36vw);align-items:end;background:#e9e0d0}
+.oracle-wide h2{max-width:620px}
+.oracle-side-note{font:10px/1.7 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--oracle-muted);border-left:1px solid var(--oracle-gold);padding-left:18px}
+.oracle-about{background:#171613;color:var(--oracle-paper);border-bottom:0}
+.oracle-about .oracle-story-num,.oracle-about .oracle-caption{color:#c6a768}
+.oracle-about h2{color:var(--oracle-paper)}
+.oracle-about p{color:#d1c7b6}
+.oracle-footer{display:flex;justify-content:space-between;gap:20px;padding:28px clamp(24px,8vw,130px);background:#171613;color:#b7ad9d;font:10px/1.6 Arial,sans-serif;letter-spacing:.12em}
+.oracle-footer a{color:inherit;text-decoration:none}
+@media(max-width:720px){
+  #pg-home-ja .oracle-navline,#pg-home-en .oracle-navline{padding:15px 18px}.oracle-navlinks{gap:12px;font-size:8px}.oracle-navlinks button:nth-child(n+3){display:none}
+  .oracle-hero{display:block;min-height:calc(100svh - 48px);padding:70px 22px 88px}.oracle-title{font-size:clamp(70px,22vw,112px);margin:24px 0 34px}.oracle-jp{font-size:13px}.oracle-hero-art{opacity:.88}.oracle-bust{width:66vw;right:-15%;bottom:-5%}.oracle-orbit{width:74vw;right:-29%;top:34%;opacity:.55}.oracle-pink{width:27vw;right:26%;top:38%}.oracle-hero-note{right:18px;bottom:22px;font-size:8px}
+  .oracle-story{display:block;padding:72px 22px}.oracle-story-num{display:block;margin-bottom:42px}.oracle-story h2{font-size:clamp(48px,16vw,78px)}.oracle-story p{font-size:13px}.oracle-archive{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px;margin-top:42px}.oracle-specimen{min-height:150px}.oracle-specimen-name{font-size:21px}.oracle-wide{display:block}.oracle-side-note{margin-top:50px}.oracle-footer{display:block;padding:24px 22px}.oracle-footer span{display:block;margin-top:12px}
+}
+</style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="nav">
-  <div class="nav-logo" onclick="go('home')">うんこ占い<span>💩</span></div>
-  <div class="nav-right">
-    <button onclick="go('home')" data-nav="home">トップ</button>
-    <button onclick="go('diag')" data-nav="diag">診断</button>
-    <button onclick="go('zukan')" data-nav="zukan">キャラ図鑑</button>
-    <button onclick="go('genesis')" data-nav="genesis">創世記</button>
-    <button onclick="go('compat')" data-nav="compat">相性</button>    <button class="lang-btn" id="lb" onclick="tl()">EN</button>
+<nav class="nav on-nav" aria-label="サイト全体の案内">
+  <button class="on-logo" type="button" onclick="go('home')" aria-label="UNKO ORACLE ホーム">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.7 7.2 4.8 11.3 12 12-7.2.7-11.3 4.8-12 12-.7-7.2-4.8-11.3-12-12C7.2 11.3 11.3 7.2 12 0z"/></svg>
+    <span>UNKO ORACLE</span>
+  </button>
+  <div class="on-links">
+    <button type="button" data-p="home" onclick="go('home')">HOME</button>
+    <button type="button" data-p="maker" onclick="go('maker')">ABOUT</button>
+    <button type="button" data-p="zukan" onclick="go('zukan')">CHARACTERS</button>
+    <button type="button" data-p="diag" onclick="go('diag')">DIAGNOSIS</button>
+    <button type="button" data-p="genesis" onclick="go('genesis')">LIBRARY</button>
+    <span class="on-soon" title="準備中">SHOP</span>
+    <span class="on-soon" title="準備中">COLUMN</span>
+  </div>
+  <div class="on-right">
+    <button class="on-pill" type="button" onclick="go('diag')">診断をはじめる <span aria-hidden="true">→</span></button>
+    <button class="lang-btn" id="lb" type="button" onclick="tl()">EN</button>
+    <details class="on-menu">
+      <summary aria-label="メニュー"><span></span><span></span><span></span></summary>
+      <div class="on-menu-panel">
+        <button type="button" onclick="this.closest('details').open=false;go('home')">HOME</button>
+        <button type="button" onclick="this.closest('details').open=false;go('maker')">ABOUT<small>うんこ占いとは</small></button>
+        <button type="button" onclick="this.closest('details').open=false;go('zukan')">CHARACTERS<small>キャラクター図鑑</small></button>
+        <button type="button" onclick="this.closest('details').open=false;go('diag')">DIAGNOSIS<small>無料でうんこ診断</small></button>
+        <button type="button" onclick="this.closest('details').open=false;go('genesis')">LIBRARY<small>便器界創世記</small></button>
+        <button type="button" onclick="this.closest('details').open=false;openUnsei()">MONTHLY FLOW<small>今月のうん勢</small></button>
+        <button type="button" onclick="this.closest('details').open=false;go('compat')">SACRED UNION<small>相性占い</small></button>
+      </div>
+    </details>
   </div>
 </nav>
 
+<link rel="stylesheet" href="assets/oracle/home.css?v=20261005-18">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/oracle/home-v2.css?v=20261005-18">
+<link rel="stylesheet" href="assets/oracle/pages-v2.css?v=20261005-18">
 <!-- ===== HOME JA ===== -->
 <div id="pg-home-ja" class="page active">
-  <div class="home-wrap">
-    <!-- Title above neon -->
-    <div class="home-title-wrap">
-      <h1 class="home-title" id="home-title-ja">うんこ占い</h1>
-      <p class="home-sub" id="home-sub-ja">出すことは生きること<br>詰まりを笑って流し、心を軽くする占い</p>
-    </div>
-    <!-- Neon poop SVG silhouette -->
-    <div class="neon-poop-wrap">
-      <svg class="neon-poop-svg" viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ng1" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#ffea00"/>
-            <stop offset="45%" stop-color="#00ffcc"/>
-            <stop offset="100%" stop-color="#ff6ef7"/>
-          </linearGradient>
-          <filter id="nf">
-            <feGaussianBlur stdDeviation="4" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <path d="M 150 305
-  C 75 308 18 290 14 258
-  C 10 230 42 215 60 208
-  C 40 196 30 175 36 154
-  C 42 133 70 122 90 120
-  C 74 106 66 84 78 68
-  C 88 54 112 50 130 56
-  C 132 42 144 26 162 22
-  C 174 26 178 42 174 56
-  C 188 50 212 54 222 68
-  C 234 84 226 106 210 120
-  C 230 122 258 133 264 154
-  C 270 175 260 196 240 208
-  C 258 215 290 230 286 258
-  C 282 290 225 308 150 305 Z"
-          fill="none" stroke="url(#ng1)" stroke-width="5"
-          stroke-linecap="round" stroke-linejoin="round" filter="url(#nf)"/>
-      </svg>
+  <div class="oracle-home-v2">
 
-      <!-- Floating mini poops around silhouette -->
-      <div class="mini-poop poop-tl" style="top:10%;color:#00ffcc;animation-duration:3.2s;animation-delay:0s">💩</div>
-      <div class="mini-poop poop-tr" style="top:30%;color:#ffea00;animation-duration:4s;animation-delay:1s">💩</div>
-      <div class="mini-poop poop-bl" style="bottom:15%;color:#ff6ef7;animation-duration:3.6s;animation-delay:0.5s">💩</div>
-      <div class="mini-poop poop-br" style="bottom:5%;color:#00ffcc;animation-duration:4.4s;animation-delay:1.8s">💩</div>
-
-      <div class="home-inner">
-        <div class="home-cta">
-          <button class="btn-neon-y btn-hero" onclick="go('diag')">うんこを占う 💩</button>
-        </div>
-        <p class="home-tagline">生年月日を入れると"便器界キャラ"が出現！</p>
-        <button class="btn-unsei" id="btn-unsei-ja" style="display:none" onclick="openUnsei()">💩 今月のうん勢を見る</button>
-        <a href="https://www.instagram.com/unkouranai" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:rgba(255,255,255,0.55);font-size:11px;text-decoration:none;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:5px 14px">📸 @unkouranai</a>
-        <div><button onclick="go('maker')" style="margin-top:12px;background:none;border:none;border-bottom:1px solid rgba(255,234,0,0.5);color:#ffea00;font-size:11px;font-family:'Zen Maru Gothic',sans-serif;font-weight:700;letter-spacing:.08em;padding:2px 2px;cursor:pointer">つくった人 ›</button></div>
+    <!-- 01 HEADER -->
+    <header class="oh2-header">
+      <button class="oh2-logo" type="button" onclick="go('home')" aria-label="UNKO ORACLE ホーム">
+        <svg class="oh2-logo-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.7 7.2 4.8 11.3 12 12-7.2.7-11.3 4.8-12 12-.7-7.2-4.8-11.3-12-12C7.200 11.300 11.300 7.200 12 0z"/></svg>
+        <span>UNKO ORACLE</span>
+      </button>
+      <nav class="oh2-nav" aria-label="主な案内">
+        <button type="button" class="is-current" onclick="go('home')">HOME</button>
+        <button type="button" onclick="go('maker')">ABOUT</button>
+        <button type="button" onclick="go('zukan')">CHARACTERS</button>
+        <button type="button" onclick="go('diag')">DIAGNOSIS</button>
+        <button type="button" onclick="go('genesis')">LIBRARY</button>
+        <span class="oh2-soon" title="準備中">SHOP</span>
+        <span class="oh2-soon" title="準備中">COLUMN</span>
+      </nav>
+      <div class="oh2-header-right">
+        <button class="oh2-pill" type="button" onclick="go('diag')">診断をはじめる <span aria-hidden="true">→</span></button>
+        <details class="oh2-menu">
+          <summary aria-label="メニュー"><span></span><span></span><span></span></summary>
+          <div class="oh2-menu-panel">
+            <button type="button" onclick="this.closest('details').open=false;go('home')">HOME</button>
+            <button type="button" onclick="this.closest('details').open=false;go('maker')">ABOUT<small>うんこ占いとは</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('zukan')">CHARACTERS<small>キャラクター図鑑</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('diag')">DIAGNOSIS<small>無料でうんこ診断</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('genesis')">LIBRARY<small>便器界創世記</small></button>
+            <button type="button" onclick="this.closest('details').open=false;openUnsei()">MONTHLY FLOW<small>今月のうん勢</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('compat')">SACRED UNION<small>相性占い</small></button>
+            <button type="button" onclick="this.closest('details').open=false;tl()">ENGLISH<small>言語を切り替える</small></button>
+          </div>
+        </details>
       </div>
-    </div>
-  </div>
-  <div class="home-footer">
-    <div class="f-logo">うんこ占い / Unko-dō</div>
-    <div class="f-links"><a onclick="go('maker')">つくった人</a><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
-    <div class="f-copy">© 2026 Unko-dō Project. All Rights Reserved.</div>
+    </header>
+
+    <!-- 02 HERO -->
+    <section class="oh2-hero" aria-labelledby="oh2-hero-title">
+      <div class="oh2-hero-top">
+        <p class="oh2-kicker">THE ANCIENT ORDER<br>OF THE SACRED FLOW</p>
+        <h1 class="oh2-title" id="oh2-hero-title"><span>UNKO</span><span>ORACLE</span></h1>
+      </div>
+      <div class="oh2-stage" aria-hidden="true">
+        <div class="oh2-stage-l">
+          <img class="oh2-l l-orbit" src="assets/oracle/home/line-orbit.webp" alt="">
+          <img class="oh2-l l-pink" src="assets/oracle/home/pink-torn-a.webp" alt="">
+          <img class="oh2-l l-moon" src="assets/oracle/home/moon-crescent.webp" alt="">
+          <img class="oh2-l l-bust" src="assets/oracle/home/hero-bust.webp" alt="">
+          <img class="oh2-l l-hand" src="assets/oracle/home/hand-reaching.webp" alt="">
+          <div class="oh2-l l-altar">
+            <img src="assets/oracle/home/gold-poop.webp" alt="">
+            <img src="assets/oracle/home/column.webp" alt="">
+          </div>
+          <img class="oh2-l l-star1" src="assets/oracle/home/star-eight.webp" alt="">
+          <img class="oh2-l l-star2" src="assets/oracle/home/star-four.webp" alt="">
+        </div>
+        <div class="oh2-stage-r">
+          <img class="oh2-l r-night" src="assets/oracle/home/night-paper.webp" alt="">
+          <img class="oh2-l r-orbit" src="assets/oracle/home/gold-orbit-moon.webp" alt="">
+          <img class="oh2-l r-pink" src="assets/oracle/home/pink-torn-b.webp" alt="">
+          <img class="oh2-l r-moon" src="assets/oracle/home/moon-full.webp" alt="">
+          <img class="oh2-l r-arch" src="assets/oracle/home/arch-night.webp" alt="">
+          <img class="oh2-l r-char" src="assets/oracle/home/characters/01.webp" alt="">
+          <img class="oh2-l r-crystal" src="assets/oracle/home/crystal.webp" alt="">
+          <img class="oh2-l r-star1" src="assets/oracle/home/star-eight.webp" alt="">
+          <img class="oh2-l r-star2" src="assets/oracle/home/star-four.webp" alt="">
+        </div>
+      </div>
+      <div class="oh2-hero-bottom">
+        <p class="oh2-hero-jp">うんこ占い</p>
+        <p class="oh2-hero-tag">魂の流れを、やさしく、いまに。</p>
+        <button class="oh2-pill oh2-pill-lg" type="button" onclick="go('diag')">無料で診断をはじめる <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <!-- 04 FIVE VISUAL NAVIGATION -->
+    <nav class="oh2-five" aria-label="ページ案内">
+      <button type="button" class="oh2-five-cell" onclick="go('maker')">
+        <span class="oh2-five-art" aria-hidden="true">
+          <img class="oh2-l f1-pink" src="assets/oracle/home/pink-brush.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f1-head" src="assets/oracle/home/head-sculpture.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f1-star" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="oh2-five-en">ABOUT</span>
+        <span class="oh2-five-jp">うんこ占いとは<i aria-hidden="true">→</i></span>
+      </button>
+      <button type="button" class="oh2-five-cell" onclick="go('zukan')">
+        <span class="oh2-five-art" aria-hidden="true">
+          <img class="oh2-l f2-line" src="assets/oracle/home/line-twelve.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f2-char-a" src="assets/oracle/home/characters/03.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f2-char-b" src="assets/oracle/home/characters/11.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f2-char-c" src="assets/oracle/home/characters/02.webp" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="oh2-five-en">CHARACTERS</span>
+        <span class="oh2-five-jp">キャラクター図鑑<i aria-hidden="true">→</i></span>
+      </button>
+      <button type="button" class="oh2-five-cell" onclick="go('diag')">
+        <span class="oh2-five-art" aria-hidden="true">
+          <img class="oh2-l f3-line" src="assets/oracle/home/line-orbit-b.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f3-palm" src="assets/oracle/home/palm.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f3-eye" src="assets/oracle/home/eye.webp" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="oh2-five-en">DIAGNOSIS</span>
+        <span class="oh2-five-jp">無料でうんこ診断<i aria-hidden="true">→</i></span>
+      </button>
+      <button type="button" class="oh2-five-cell" onclick="go('genesis')">
+        <span class="oh2-five-art" aria-hidden="true">
+          <img class="oh2-l f4-pink" src="assets/oracle/home/pink-torn-b.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f4-book" src="assets/oracle/home/book-open.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f4-quill" src="assets/oracle/home/quill-hand.webp" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="oh2-five-en">LIBRARY</span>
+        <span class="oh2-five-jp">読みもの<i aria-hidden="true">→</i></span>
+      </button>
+      <div class="oh2-five-cell is-soon">
+        <span class="oh2-five-art" aria-hidden="true">
+          <img class="oh2-l f5-env" src="assets/oracle/home/parcel.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f5-key" src="assets/oracle/home/key.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l f5-heart" src="assets/oracle/home/pink-heart.webp" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="oh2-five-en">SHOP <em>準備中</em></span>
+        <span class="oh2-five-jp">グッズ・ダウンロード</span>
+      </div>
+    </nav>
+
+    <!-- 05 BLACK MESSAGE BAND -->
+    <section class="oh2-band" aria-label="UNKO ORACLE のことば">
+      <div class="oh2-band-art-l" aria-hidden="true">
+        <img class="oh2-l b-line" src="assets/oracle/home/line-twelve.webp" alt="" loading="lazy" decoding="async">
+        <img class="oh2-l b-hand" src="assets/oracle/home/hand-open.webp" alt="" loading="lazy" decoding="async">
+        <img class="oh2-l b-pearl" src="assets/oracle/home/pearl.webp" alt="" loading="lazy" decoding="async">
+      </div>
+      <blockquote class="oh2-band-quote">
+        <p>うんこはね、<br>どんな自分も受け止めて流してくれる。<br>だから、あなたはもっと自由でいいんだよ。</p>
+        <cite>— UNKO ORACLE</cite>
+      </blockquote>
+      <div class="oh2-band-art-r">
+        <img class="oh2-l b-bust" src="assets/oracle/home/bust-gazing.webp" alt="" loading="lazy" decoding="async" aria-hidden="true">
+        <button class="oh2-band-note" type="button" onclick="go('diag')">
+          <img src="assets/oracle/home/pink-wide.webp" alt="" loading="lazy" decoding="async" aria-hidden="true">
+          <span>あなたの中に眠る<br>本当のうんこを、<br>見つけにいこう。<i aria-hidden="true">→</i></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 06 LATEST / CENTRAL COLLAGE / LETTER -->
+    <section class="oh2-trio">
+      <div class="oh2-latest">
+        <h2 class="oh2-h-sm">LATEST<small>最新の読みもの</small></h2>
+        <ul class="oh2-latest-list">
+          <li><button type="button" onclick="go('genesis')"><span class="oh2-tag">LIBRARY</span><strong>便器界創世記</strong><em>すべての流れは、ここから始まった。</em><i aria-hidden="true">→</i></button></li>
+          <li><button type="button" onclick="openUnsei()"><span class="oh2-tag">MONTHLY FLOW</span><strong>今月のうん勢</strong><em>十二の原型、それぞれの今月の流れ。</em><i aria-hidden="true">→</i></button></li>
+          <li><button type="button" onclick="go('maker')"><span class="oh2-tag">ABOUT</span><strong>つくった人、ぶりちゃん</strong><em>とにかく、みんなに笑ってほしくって。</em><i aria-hidden="true">→</i></button></li>
+        </ul>
+        <p class="oh2-fine">COLUMN は準備中です。</p>
+      </div>
+      <div class="oh2-trio-art" aria-hidden="true">
+        <img class="oh2-l t-line" src="assets/oracle/home/line-sun.webp" alt="" loading="lazy" decoding="async">
+        <img class="oh2-l t-pink" src="assets/oracle/home/pink-scraps.webp" alt="" loading="lazy" decoding="async">
+        <img class="oh2-l t-moon" src="assets/oracle/home/moon-black.webp" alt="" loading="lazy" decoding="async">
+        <img class="oh2-l t-door" src="assets/oracle/home/door.webp" alt="" loading="lazy" decoding="async">
+        <img class="oh2-l t-stairs" src="assets/oracle/home/staircase.webp" alt="" loading="lazy" decoding="async">
+        <img class="oh2-l t-lily" src="assets/oracle/home/lily.webp" alt="" loading="lazy" decoding="async">
+        <img class="oh2-l t-cat" src="assets/oracle/home/cat.webp" alt="" loading="lazy" decoding="async">
+        <img class="oh2-l t-star" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="oh2-letter">
+        <h2 class="oh2-h-sm">UNKO LETTER<small>うんこレター</small></h2>
+        <p>便器界からのおたよりを、ときどき。<br>うん勢や新しい読みものをお届けします。</p>
+        <form class="oh2-letter-form" onsubmit="return false" aria-disabled="true">
+          <div class="oh2-letter-row">
+            <input type="email" placeholder="メールアドレス" disabled aria-label="メールアドレス（準備中）">
+            <button type="button" disabled>登録</button>
+          </div>
+          <label class="oh2-letter-check"><input type="checkbox" disabled> プライバシーポリシーに同意する</label>
+          <p class="oh2-fine">メール登録は準備中です。</p>
+        </form>
+        <a class="oh2-textlink" href="https://lin.ee/WhhLB2R" target="_blank" rel="noopener noreferrer">いまはLINEで受け取る <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- 07 THE TWELVE ARCHETYPES / 08 THE BOOK OF ORIGIN -->
+    <section class="oh2-duo">
+      <div class="oh2-arche" aria-labelledby="oh2-arche-title">
+        <div class="oh2-arche-head">
+          <div>
+            <h2 class="oh2-h" id="oh2-arche-title"><span>THE TWELVE</span><span>ARCHETYPES</span></h2>
+            <p class="oh2-h-jp">便器界十二原型</p>
+          </div>
+          <div class="oh2-arche-lede">
+            <p>この世界には、十二のうんこがいる。<br>あなたの中にも、必ずそのひとつが宿っています。</p>
+            <button class="oh2-textlink" type="button" onclick="go('zukan')">VIEW ALL <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+        <ul class="oh2-arche-grid">
+          <li><button type="button" onclick="showDetail(1)"><img src="assets/oracle/home/characters/01.webp" alt="ノンストップうんこ" loading="lazy" decoding="async"><strong>ノンストップ</strong></button></li>
+          <li><button type="button" onclick="showDetail(2)"><img src="assets/oracle/home/characters/02.webp" alt="癒しうんこ" loading="lazy" decoding="async"><strong>癒し</strong></button></li>
+          <li><button type="button" onclick="showDetail(3)"><img src="assets/oracle/home/characters/03.webp" alt="カラフルうんこ" loading="lazy" decoding="async"><strong>カラフル</strong></button></li>
+          <li><button type="button" onclick="showDetail(4)"><img src="assets/oracle/home/characters/04.webp" alt="カチカチうんこ" loading="lazy" decoding="async"><strong>カチカチ</strong></button></li>
+          <li><button type="button" onclick="showDetail(5)"><img src="assets/oracle/home/characters/05.webp" alt="アメーバうんこ" loading="lazy" decoding="async"><strong>アメーバ</strong></button></li>
+          <li><button type="button" onclick="showDetail(6)"><img src="assets/oracle/home/characters/06.webp" alt="おかんうんこ" loading="lazy" decoding="async"><strong>おかん</strong></button></li>
+          <li><button type="button" onclick="showDetail(7)"><img src="assets/oracle/home/characters/07.webp" alt="孤高の一本うんこ" loading="lazy" decoding="async"><strong>孤高の一本</strong></button></li>
+          <li><button type="button" onclick="showDetail(8)"><img src="assets/oracle/home/characters/08.webp" alt="サバイバルうんこ" loading="lazy" decoding="async"><strong>サバイバル</strong></button></li>
+          <li><button type="button" onclick="showDetail(9)"><img src="assets/oracle/home/characters/09.webp" alt="悟りうんこ" loading="lazy" decoding="async"><strong>悟り</strong></button></li>
+          <li><button type="button" onclick="showDetail(11)"><img src="assets/oracle/home/characters/11.webp" alt="第六感うんこ" loading="lazy" decoding="async"><strong>第六感</strong></button></li>
+          <li><button type="button" onclick="showDetail(22)"><img src="assets/oracle/home/characters/22.webp" alt="建築家うんこ" loading="lazy" decoding="async"><strong>建築家</strong></button></li>
+          <li><button type="button" onclick="showDetail(33)"><img src="assets/oracle/home/characters/33.webp" alt="芸術家うんこ" loading="lazy" decoding="async"><strong>芸術家</strong></button></li>
+        </ul>
+      </div>
+      <div class="oh2-origin" aria-labelledby="oh2-origin-title">
+        <div class="oh2-origin-copy">
+          <h2 class="oh2-h" id="oh2-origin-title"><span>THE BOOK</span><span>OF ORIGIN</span></h2>
+          <p class="oh2-h-jp">便器界創世記</p>
+          <p>すべての流れは、ここから始まった。<br>便器界に伝わる、はじまりの物語。</p>
+          <button class="oh2-pill" type="button" onclick="go('genesis')">読む <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="oh2-origin-art" aria-hidden="true">
+          <img class="oh2-l o-line" src="assets/oracle/home/line-orbit.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l o-pink" src="assets/oracle/home/pink-torn-b.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l o-bust" src="assets/oracle/home/bust-crowned.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l o-book" src="assets/oracle/home/book-open.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l o-crystal" src="assets/oracle/home/crystal-point.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l o-star" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 LOWER FEATURE ROW -->
+    <section class="oh2-lower">
+      <div class="oh2-feat oh2-feat-monthly">
+        <div class="oh2-feat-copy">
+          <h2 class="oh2-h oh2-h-md"><span>THE</span><span>MONTHLY</span><span>FLOW</span></h2>
+          <p class="oh2-h-jp">今月のうん勢</p>
+          <button id="btn-unsei-ja" class="oh2-pill" type="button" onclick="openUnsei()">今月のうん勢をみる <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="oh2-feat-art" aria-hidden="true">
+          <img class="oh2-l m-line" src="assets/oracle/home/line-moonphase.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l m-moon" src="assets/oracle/home/moon-crescent.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l m-book" src="assets/oracle/home/book-open.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l m-crystal" src="assets/oracle/home/crystal.webp" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="oh2-feat oh2-feat-union">
+        <div class="oh2-feat-copy">
+          <h2 class="oh2-h oh2-h-md"><span>THE SACRED</span><span>UNION</span></h2>
+          <p class="oh2-h-jp">相性占い</p>
+          <button class="oh2-pill" type="button" onclick="go('compat')">相性をみる <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="oh2-feat-art" aria-hidden="true">
+          <img class="oh2-l u-line" src="assets/oracle/home/line-twelve.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l u-hands" src="assets/oracle/home/hands-reaching.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l u-heart" src="assets/oracle/home/heart-gem.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l u-pearl" src="assets/oracle/home/pearl.webp" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+      <div class="oh2-feat oh2-feat-goods">
+        <div class="oh2-feat-copy">
+          <h2 class="oh2-h oh2-h-md"><span>GOODS</span></h2>
+          <p class="oh2-h-jp">グッズ・ダウンロード</p>
+          <span class="oh2-pill is-ghost">COMING SOON ／ 準備中</span>
+        </div>
+        <div class="oh2-feat-art" aria-hidden="true">
+          <img class="oh2-l g-pink" src="assets/oracle/home/pink-brush.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l g-arm" src="assets/oracle/home/parcel.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l g-butterfly" src="assets/oracle/home/butterfly.webp" alt="" loading="lazy" decoding="async">
+          <img class="oh2-l g-star" src="assets/oracle/home/star-four.webp" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 FOOTER -->
+    <footer class="oh2-footer">
+      <div class="oh2-footer-brand">
+        <p class="oh2-footer-logo">UNKO ORACLE</p>
+        <p class="oh2-footer-sub">THE ANCIENT ORDER OF THE SACRED FLOW</p>
+      </div>
+      <nav class="oh2-footer-nav" aria-label="フッター案内">
+        <button type="button" onclick="go('maker')">ABOUT</button>
+        <button type="button" onclick="go('zukan')">CHARACTERS</button>
+        <button type="button" onclick="go('diag')">DIAGNOSIS</button>
+        <button type="button" onclick="go('genesis')">LIBRARY</button>
+        <span class="oh2-soon">SHOP</span>
+        <span class="oh2-soon">COLUMN</span>
+      </nav>
+      <div class="oh2-footer-right">
+        <img class="oh2-footer-orn" src="assets/oracle/home/line-sun.webp" alt="" loading="lazy" decoding="async" aria-hidden="true">
+        <a href="https://www.instagram.com/unkouranai" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+        <a href="https://lin.ee/WhhLB2R" target="_blank" rel="noopener noreferrer">LINE</a>
+      </div>
+      <div class="oh2-footer-legal">
+        <a href="/contact.html">CONTACT</a><a href="/privacy.html">PRIVACY</a><a href="/terms.html">TERMS</a>
+        <button type="button" onclick="tl()">ENGLISH</button>
+        <span>© UNKO ORACLE</span>
+      </div>
+    </footer>
   </div>
 </div>
 
 <!-- ===== HOME EN ===== -->
 <div id="pg-home-en" class="page">
-  <div class="home-wrap">
-    <div class="home-title-wrap">
-      <h1 class="home-title">Unko Oracle</h1>
-      <p class="home-sub">To release is to live.<br>Laugh, flush, and let it all go.</p>
-    </div>
-    <div class="neon-poop-wrap">
-      <svg class="neon-poop-svg" viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ng2" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#ffea00"/>
-            <stop offset="45%" stop-color="#00ffcc"/>
-            <stop offset="100%" stop-color="#ff6ef7"/>
-          </linearGradient>
-          <filter id="nf2">
-            <feGaussianBlur stdDeviation="4" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <path d="M 150 305
-  C 75 308 18 290 14 258
-  C 10 230 42 215 60 208
-  C 40 196 30 175 36 154
-  C 42 133 70 122 90 120
-  C 74 106 66 84 78 68
-  C 88 54 112 50 130 56
-  C 132 42 144 26 162 22
-  C 174 26 178 42 174 56
-  C 188 50 212 54 222 68
-  C 234 84 226 106 210 120
-  C 230 122 258 133 264 154
-  C 270 175 260 196 240 208
-  C 258 215 290 230 286 258
-  C 282 290 225 308 150 305 Z"
-          fill="none" stroke="url(#ng2)" stroke-width="5"
-          stroke-linecap="round" stroke-linejoin="round" filter="url(#nf2)"/>
-      </svg>
-      <div class="mini-poop poop-tl" style="top:10%;color:#00ffcc;animation-duration:3.2s">💩</div>
-      <div class="mini-poop poop-tr" style="top:30%;color:#ffea00;animation-duration:4s;animation-delay:1s">💩</div>
-      <div class="mini-poop poop-bl" style="bottom:15%;color:#ff6ef7;animation-duration:3.6s;animation-delay:0.5s">💩</div>
-      <div class="home-inner">
-        <div class="home-cta">
-          <button class="btn-neon-y btn-hero" onclick="go('diag')">Start Diagnosis 💩</button>
-        </div>
-        <p class="home-tagline">Enter your birthday → Your unko appears!</p>
-        <a href="https://www.instagram.com/unkouranai" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:rgba(255,255,255,0.55);font-size:11px;text-decoration:none;border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:5px 14px">📸 @unkouranai</a>
-      </div>
-    </div>
-  </div>
-  <div class="home-footer">
-    <div class="f-logo">うんこ占い / Unko Oracle</div>
-    <div class="f-links"><a href="/contact.html">Contact</a><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a></div>
-    <div class="f-copy">© 2026 Unko Oracle Project. All Rights Reserved.</div>
+  <div class="oracle-home">
+    <div class="oracle-navline"><div class="oracle-wordmark">UNKO ORACLE</div><div class="oracle-navlinks"><button onclick="go('diag')">ORACLE</button><button onclick="go('zukan')">ARCHETYPES</button><button onclick="go('genesis')">ORIGIN</button><button onclick="go('compat')">UNION</button></div></div>
+    <section class="oracle-hero"><div class="oracle-hero-copy"><div class="oracle-kicker">THE ANCIENT ORDER / OF THE SACRED FLOW</div><h1 class="oracle-title"><span>UNKO</span><span>ORACLE</span></h1><p class="oracle-jp">To release is to live.<br>Laugh, flush, and let it all go.</p><button class="oracle-cta" onclick="go('diag')">Summon your archetype <span>→</span></button></div><div class="oracle-hero-art"><img class="oracle-asset oracle-bust" src="assets/oracle/cutouts/cutout_classical_bust_style-master.png" loading="lazy" decoding="async" alt="classical sculpture bust"><img class="oracle-asset oracle-orbit" src="assets/oracle/sigils/sacred-line_celestial-orbit_style-master.png" loading="lazy" decoding="async" alt=""><img class="oracle-asset oracle-pink" src="assets/oracle/pink/pink_torn-paper_style-master.png" loading="lazy" decoding="async" alt=""></div><div class="oracle-hero-note">A contemporary reading of an old secret tradition.<br><br>SCROLL TO ENTER</div></section>
+    <section class="oracle-chapter oracle-collection" aria-labelledby="oracle-archive-en">
+      <span class="oracle-chapter-index">02 / 07 — THE COLLECTION</span>
+      <div class="oracle-collection-head"><div><h2 id="oracle-archive-en"><span>THE TWELVE</span><span>ARCHETYPES</span></h2><p class="oracle-chapter-subtitle">Twelve inhabitants of the Toilet World</p></div><p>Twelve archetypes. Twelve ways of being.<br>Somewhere here, you may find yourself.</p></div>
+      <ul class="oracle-archive" data-oracle-characters="en" aria-label="The twelve official archetypes"></ul>
+      <div class="oracle-collection-footer"><button class="oracle-cta" onclick="go('zukan')">Open the archive <span aria-hidden="true">→</span></button><p class="oracle-caption">TWELVE ARCHETYPES / THE COMPLETE INDEX<br>SELECT AN ARCHETYPE TO READ ITS STORY.</p></div>
+    </section>
+    <section class="oracle-chapter oracle-reading" aria-labelledby="oracle-reading-en">
+      <span class="oracle-chapter-index">03 / 07 — THE ORACLE</span>
+      <div class="oracle-chapter-copy"><h2 id="oracle-reading-en"><span>YOUR</span><span>ARCHETYPE</span></h2><p class="oracle-chapter-subtitle">A reading of your own flow</p><p>Enter your birthday.<br>One inhabitant of the Toilet World will appear.</p><button class="oracle-cta" onclick="go('diag')">Start the reading <span aria-hidden="true">→</span></button></div>
+      <div class="oracle-chapter-art" aria-hidden="true"><img class="oracle-reading-circle" data-oracle-asset="sacred-line-twelve-division" alt="" width="1262" height="1246" loading="lazy" decoding="async"></div>
+    </section>
+    <section class="oracle-chapter oracle-origin" aria-labelledby="oracle-origin-en">
+      <span class="oracle-chapter-index">04 / 07 — THE ORIGIN</span>
+      <div class="oracle-chapter-copy"><h2 id="oracle-origin-en"><span>THE BOOK</span><span>OF ORIGIN</span></h2><p class="oracle-chapter-subtitle">The genesis of the Toilet World</p><p>A story of beginnings, and of flow.<br>Discover the Toilet World, one chapter at a time.</p><button class="oracle-cta" onclick="go('genesis')">Read the origin <span aria-hidden="true">→</span></button></div>
+      <div class="oracle-chapter-art" aria-hidden="true"><img class="oracle-chapter-photo oracle-origin-book" data-oracle-asset="cutout-antique-open-book" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div>
+    </section>
+    <section class="oracle-chapter oracle-monthly" aria-labelledby="oracle-monthly-en">
+      <span class="oracle-chapter-index">05 / 07 — THE MONTHLY FLOW</span>
+      <div class="oracle-chapter-copy"><h2 id="oracle-monthly-en"><span>THE</span><span>MONTHLY</span><span>FLOW</span></h2><p class="oracle-chapter-subtitle">Your monthly reading</p><p>What kind of flow awaits this month?<br>A reading for each of the twelve archetypes.</p><button id="btn-unsei-en" class="oracle-cta" onclick="openUnsei()">See this month's flow <span aria-hidden="true">→</span></button></div>
+      <div class="oracle-chapter-art" aria-hidden="true"><img class="oracle-chapter-photo oracle-monthly-moon" data-oracle-asset="cutout-crescent-moon" alt="" width="1295" height="1214" loading="lazy" decoding="async"></div>
+    </section>
+    <section class="oracle-chapter oracle-union" aria-labelledby="oracle-union-en">
+      <span class="oracle-chapter-index">06 / 07 — THE SACRED UNION</span>
+      <div class="oracle-chapter-copy"><h2 id="oracle-union-en"><span>THE SACRED</span><span>UNION</span></h2><p class="oracle-chapter-subtitle">Two lives, one reading</p><p>When two currents meet.<br>Explore your compatibility through the Toilet World.</p><button class="oracle-cta" onclick="go('compat')">Read the union <span aria-hidden="true">→</span></button></div>
+      <div class="oracle-chapter-art" aria-hidden="true"><img class="oracle-chapter-photo oracle-union-hand" data-oracle-asset="cutout-hand-reaching-downward" alt="" width="1024" height="1536" loading="lazy" decoding="async"><img class="oracle-union-heart" data-oracle-asset="pink-hand-drawn-heart" alt="" width="1297" height="1213" loading="lazy" decoding="async"></div>
+    </section>
+    <section class="oracle-chapter oracle-maker" aria-labelledby="oracle-maker-en">
+      <div><span class="oracle-chapter-index">07 / 07 — ABOUT / BURI-CHAN</span><h2 id="oracle-maker-en"><span>THE</span><span>HUMAN.</span></h2><p class="oracle-chapter-subtitle">Meet Buri-chan, the creator</p></div>
+      <div class="oracle-maker-note"><p>Hey! It's Buri-chan!</p><blockquote>I made Unko Uranai because, above all, I wanted to make everyone laugh.</blockquote><button class="oracle-cta" onclick="go('maker')">Meet the maker <span aria-hidden="true">→</span></button></div>
+    </section>
+    <footer class="oracle-footer"><span>UNKO ORACLE / TO RELEASE IS TO LIVE.</span><div class="oracle-footer-links"><a href="https://www.instagram.com/unkouranai" target="_blank" rel="noopener noreferrer">INSTAGRAM</a><a href="/contact.html">CONTACT</a><a href="/privacy.html">PRIVACY</a><a href="/terms.html">TERMS</a></div></footer>
   </div>
 </div>
 
 <!-- ===== DIAG ===== -->
 <div id="pg-diag" class="page">
-  <div class="pastel-body">
-    <section class="sec">
-      <span class="s-tag" id="dt">うんこキャラ診断</span>
-      <h2 class="s-title" id="ds">あなたのうんこキャラを召喚する</h2>
-      <div class="diag-wrap">
-        <div class="diag-box">
-          <h3 class="d-title" id="dh">生年月日を入力してください</h3>
-          <p class="d-sub" id="dd">生年月日からあなたの便器界キャラがポン！と現れます。</p>
-          <div class="date-row">
-            <select id="sy"></select><span class="d-lbl" id="ly">年</span>
-            <select id="sm"></select><span class="d-lbl" id="lm">月</span>
-            <select id="sd"></select><span class="d-lbl" id="ld">日</span>
+  <div class="oracle-diag">
+    <section class="od-main">
+      <div class="od-copy">
+        <span class="od-kicker" id="dt">うんこキャラ診断</span>
+        <p class="od-title" aria-hidden="true"><span>REVEAL</span><span>YOUR</span><span>ARCHETYPE</span></p>
+        <h2 class="od-sub" id="ds">あなたのうんこキャラを召喚する</h2>
+        <div class="od-form">
+          <h3 class="od-form-title" id="dh">生年月日を入力してください</h3>
+          <p class="od-form-desc" id="dd">生年月日からあなたの便器界キャラがポン！と現れます。</p>
+          <div class="od-date">
+            <label><select id="sy"></select><span id="ly">年</span></label>
+            <label><select id="sm"></select><span id="lm">月</span></label>
+            <label><select id="sd"></select><span id="ld">日</span></label>
           </div>
-          <button class="btn-p" onclick="diagnose()" id="db">うんこキャラを出す 💩</button>
+          <button class="od-btn" onclick="diagnose()" id="db">うんこキャラを出す 💩</button>
           <div class="r-area" id="ra"></div>
         </div>
+        <ol class="od-steps" aria-hidden="true">
+          <li><i>01</i><b>INPUT</b><span>生年月日を入力</span></li>
+          <li><i>02</i><b>ANALYSIS</b><span>便器界の図鑑を照合</span></li>
+          <li><i>03</i><b>REVEAL</b><span>あなたのうんこが現れる</span></li>
+        </ol>
+      </div>
+      <div class="od-art" aria-hidden="true">
+        <img class="od-l d-line" src="assets/oracle/home/line-twelve.webp" alt="">
+        <img class="od-l d-night" src="assets/oracle/home/night-paper.webp" alt="">
+        <img class="od-l d-pink" src="assets/oracle/home/pink-torn-b.webp" alt="">
+        <img class="od-l d-moon" src="assets/oracle/home/moon-full.webp" alt="">
+        <img class="od-l d-arch" src="assets/oracle/home/arch-night.webp" alt="">
+        <img class="od-l d-poop" src="assets/oracle/home/gold-poop.webp" alt="">
+        <img class="od-l d-cherub" src="assets/oracle/home/cherub.webp" alt="">
+        <img class="od-l d-star1" src="assets/oracle/home/star-eight.webp" alt="">
+        <img class="od-l d-star2" src="assets/oracle/home/star-four.webp" alt="">
+        <img class="od-l d-crystal" src="assets/oracle/home/crystal.webp" alt="">
       </div>
     </section>
-    <footer class="pastel-footer">
-      <div class="f-logo">うんこ占い / Unko-dō</div>
-      <div class="f-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
-      <div class="f-copy">© 2026 Unko-dō Project.</div>
+    <footer class="od-footer">
+      <div class="od-footer-logo">UNKO ORACLE<small>うんこ占い / Unko-dō</small></div>
+      <div class="od-footer-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
+      <div class="od-footer-copy">© 2026 Unko-dō Project.</div>
     </footer>
   </div>
 </div>
 
 <!-- ===== ZUKAN ===== -->
 <div id="pg-zukan" class="page">
-  <div class="pastel-body">
+  <div class="pastel-body oracle-zukan">
     <section class="sec" style="padding-left:0;padding-right:0;max-width:100%">
-      <div style="padding:0 22px"><span class="s-tag" id="zt">便器界図鑑</span>
-      <h2 class="s-title" id="zs">12体の便器界住民</h2>
-      <p class="s-desc" id="zd">それぞれの詰まりと流れを読み解く、12の存在たち。</p></div>
+      <div class="oz-head">
+        <div class="oz-copy">
+          <span class="s-tag" id="zt">便器界図鑑</span>
+          <p class="oz-title" aria-hidden="true"><span>THE TWELVE</span><span>ARCHETYPES</span></p>
+          <h2 class="s-title" id="zs">12体の便器界住民</h2>
+          <p class="s-desc" id="zd">それぞれの詰まりと流れを読み解く、12の存在たち。</p>
+        </div>
+        <div class="oz-art" aria-hidden="true">
+          <img class="oz-l z-orbit" src="assets/oracle/home/line-orbit.webp" alt="" loading="lazy" decoding="async">
+          <img class="oz-l z-pink" src="assets/oracle/home/pink-torn-a.webp" alt="" loading="lazy" decoding="async">
+          <img class="oz-l z-moon" src="assets/oracle/home/moon-crescent.webp" alt="" loading="lazy" decoding="async">
+          <img class="oz-l z-bust" src="assets/oracle/home/bust-gazing.webp" alt="" loading="lazy" decoding="async">
+          <img class="oz-l z-book" src="assets/oracle/home/book-open.webp" alt="" loading="lazy" decoding="async">
+          <img class="oz-l z-crystal" src="assets/oracle/home/crystal-point.webp" alt="" loading="lazy" decoding="async">
+          <img class="oz-l z-star1" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
+          <img class="oz-l z-star2" src="assets/oracle/home/star-four.webp" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
       <div class="view-toggle">
   <button class="view-btn" id="btn-mag" onclick="setView('mag')">📖 マガジン</button>
   <button class="view-btn active" id="btn-grid" onclick="setView('grid')">⊞ グリッド</button>
 </div>
 <div class="char-grid" id="zg"></div>
+      <ul class="oz-grid" id="oz-grid"></ul>
+      <div class="oz-cta">
+        <img class="oz-l c-line" src="assets/oracle/home/line-twelve.webp" alt="" loading="lazy" decoding="async">
+        <img class="oz-l c-hand" src="assets/oracle/home/hand-open.webp" alt="" loading="lazy" decoding="async">
+        <img class="oz-l c-pink" src="assets/oracle/home/pink-torn-b.webp" alt="" loading="lazy" decoding="async">
+        <img class="oz-l c-bust" src="assets/oracle/home/bust-gazing.webp" alt="" loading="lazy" decoding="async">
+        <p id="oz-cta-text">あなたの中にいるのは、どのうんこ？</p>
+        <button type="button" id="oz-cta-btn" onclick="go('diag')">無料で診断をはじめる <span aria-hidden="true">→</span></button>
+      </div>
     </section>
     <footer class="pastel-footer">
       <div class="f-logo">うんこ占い / Unko-dō</div>
@@ -1010,7 +1343,7 @@ function diagnose(){
       <div class="r-name" onclick="showDetail(${c.num})">${isEn?c.e:c.n}</div>
       <div class="r-desc">${isEn?c.de:c.d}</div>
       <button class="r-detail-btn" onclick="showDetail(${c.num})">
-        <span>✨ ${isEn?'Your way of being in the toilet realm':'あなたの便器界での生き様'}</span>
+        <span>${isEn?'See more':'もっと詳しくみる'}</span>
         <span class="r-detail-btn-arrow">→</span>
       </button>
       <div class="share-area">
@@ -2819,10 +3152,10 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
           <span id="unsei-share-label">Xでシェア</span>
         </button>
         <button onclick="shareUnseiLine()" style="background:#06C755;border:none;color:#fff;border-radius:40px;padding:8px 16px;font-size:11px;font-family:'Zen Maru Gothic',sans-serif;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:opacity .2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-          💬 <span id="unsei-line-label">LINEでシェア</span>
+          <span id="unsei-line-label">LINEでシェア</span>
         </button>
         <button onclick="copyUnseiLink()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.8);border-radius:40px;padding:8px 16px;font-size:11px;font-family:'Zen Maru Gothic',sans-serif;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .2s" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-          🔗 <span id="unsei-copy-label">リンクをコピー</span>
+          <span id="unsei-copy-label">リンクをコピー</span>
         </button>
       </div>
     </div>
@@ -2832,45 +3165,90 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
 
 
 <!-- ===== つくった人 ===== -->
-<!-- 吹き出しの文と「うんこ占いほったらかしで〜」は本人の文そのまま。足したのは改行だけ -->
+<!-- 本文は本人の文そのまま（2026-10-05 に差し替え）。足したのは改行と見せ方だけ -->
 <div id="pg-maker" class="page">
   <div class="maker-wrap">
     <div class="maker-inner">
+      <div class="om-art" aria-hidden="true">
+        <img class="om-l a-sun" src="assets/oracle/home/line-sun.webp" alt="" loading="lazy" decoding="async">
+        <img class="om-l a-orbit" src="assets/oracle/home/line-orbit.webp" alt="" loading="lazy" decoding="async">
+        <img class="om-l a-pink" src="assets/oracle/home/pink-torn-a.webp" alt="" loading="lazy" decoding="async">
+        <img class="om-l a-mic" src="assets/oracle/home/microphone.webp" alt="" loading="lazy" decoding="async">
+        <img class="om-l a-butterfly" src="assets/oracle/home/butterfly.webp" alt="" loading="lazy" decoding="async">
+        <img class="om-l a-brush" src="assets/oracle/home/pink-brush.webp" alt="" loading="lazy" decoding="async">
+        <span class="om-l a-frame"></span>
+        <img class="om-l a-char" src="assets/oracle/home/characters/33.webp" alt="" loading="lazy" decoding="async">
+        <img class="om-l a-star1" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
+        <img class="om-l a-star2" src="assets/oracle/home/star-four.webp" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="om-head">
       <div class="maker-tag">つくった人</div>
+      <p class="om-title" aria-hidden="true">ABOUT</p>
       <div class="maker-name">ぶりちゃん</div>
       <div class="maker-type"><button onclick="showDetail(33)"><span id="maker-type-img"></span>うんこタイプ：芸術家うんこ ›</button></div>
       <div class="maker-motto">出すことは、生きること</div>
-
-      <div>
-        <div class="maker-talk">どうも～！！ぶりちゃんだよっ！
-ふだんめちゃ真面目に占いの研究してきたんだけど、
-考えすぎて頭のねじ飛んでっちゃって
-ついに思いついたのがうんこ占いっ！！
-だって悩みとか嫌なことって笑ったら全部どうでもよくなるじゃんっ
-みんなの悩みをうんこ占いでトイレにそのまま流しちゃえ～って本気で考えた！！</div>
-        <div class="maker-talk">で、どうやってうんこ占いを形にしようって思ってたらAIってやつに出会った。
-その時は頭に雷落ちてきたよね！
-だってこれって、ある意味ドラえもんだよ。
-頭の中で思ってたことがAI使ったらなんでも形にできちゃうじゃん！！！
-ぶりちゃん超感動してしまって
-それから寝ないでAIとうんこの話毎日１０時間くらいしたよっ</div>
-        <div class="maker-talk">そんで、うんこ占いが完成してみんなに見せてみたら、みんな大喜び！！
-嫌いな旦那とかもうんこにたとえたら笑えてくるじゃん！！
-あいつはカチカチうんこっぽいもんな！ってｗｗｗ
-でも、どうじに私は孤高の一本うんこかい！！！ｗｗってずっこけるんだけどさ～ｗｗ</div>
-        <div class="maker-talk">とにかく、みんなに笑ってほしくってうんこ占いつくったんだよ</div>
-        <div class="maker-talk">でもさ、作った後、これどうすんの？ってなったｗｗ
-ぶりちゃんその先のこと考えるの苦手ｗｗ
-でも、うんこ占いのおかげで、知らない人たちといっぱい出会えた💕
-いろんな人にうんこ占い楽しいって言ってもらった💕
-ぶりちゃんの世界が変わり始めた・・・</div>
       </div>
 
-      <div class="maker-now">
-        <div class="maker-now-q">ぶりちゃん、最近なにしてたの？</div>
-        <div class="maker-now-a">うんこ占いほったらかしで、<br>AIとアプリつくってましたｗｗｗ</div>
-        <a class="maker-lp" href="https://brichan-works.vercel.app/lp" target="_blank" rel="noopener">ぶりちゃんの どうぐや をのぞく ›</a>
+      <div class="om-letter">
+        <p>どうも～！！ぶりちゃんだよっ！</p>
+        <p>ふだんはめちゃ真面目に占いの研究してきたんだけど、<br>考えすぎて頭のねじが飛んでっちゃって、<br>ついに思いついたのが</p>
+        <p class="om-em">うんこ占いっ！！</p>
+        <p>だってさ、悩みとか嫌なことって、<br>笑ったら急にどうでもよくなったりするじゃん。</p>
+        <p>だったらみんなの悩みも、<br>うんこ占いで笑って、<br>そのままトイレに流しちゃえばいいじゃん！！</p>
+        <p>って、本気で考えたｗｗ</p>
+        <p>で、</p>
+        <p>「これ、どうやって形にするんだ？」</p>
+        <p>って思ってたときに、AIってやつに出会った。</p>
+        <p>そのときはもう、頭に雷落ちてきたよね。</p>
+        <p class="om-em">これ、ある意味ドラえもんじゃん！！</p>
+        <p>頭の中でずっと想像してたものが、<br>AIを使ったら、本当に形になっていく。</p>
+        <p>ぶりちゃん超感動してしまって、<br>それから寝ないで毎日10時間くらい<br>AIとうんこの話をしたよっｗｗ</p>
+        <p>「このうんこはどんな性格？」<br>「こいつ闇落ちしたらどうなる？」<br>「便器界ってどんな世界？」</p>
+        <p>とかさ。</p>
+        <p>冷静に考えたら、<br>何をそんな真剣に話してんだって感じなんだけどｗｗｗ</p>
+        <p>そんで、うんこ占いが完成して<br>みんなに見せてみたら、</p>
+        <p>みんな大喜び！！</p>
+        <p>嫌いな旦那だって、<br>うんこにたとえたらちょっと笑えてくるじゃん。</p>
+        <p>「あいつ絶対カチカチうんこっぽい！！」とかｗｗ</p>
+        <p>でも同時に、</p>
+        <p class="om-em">「え、私は孤高の一本うんこなの！？」</p>
+        <p>って自分もずっこけるんだけどさｗｗｗ</p>
+        <p>でも、それでいいんだと思う。</p>
+        <p class="om-pull">とにかく、みんなに笑ってほしくって、<br>うんこ占いをつくったんだよ。</p>
+        <p>でさ。</p>
+        <p>作ったあと、</p>
+        <p class="om-em">「……これ、この先どうすんの？」</p>
+        <p>ってなったｗｗｗ</p>
+        <p>ぶりちゃん、その先のこと考えるの苦手ｗｗ</p>
+        <p>でもね。</p>
+        <p>うんこ占いのおかげで、<br>今まで知らなかった人たちとたくさん出会えた。</p>
+        <p>「うんこ占い楽しい！」って笑ってもらえたり、<br>誰かが誰かに教えてくれたり。</p>
+        <p>最初はただ、</p>
+        <p class="om-em">「こんなのあったらおもしろくない？」</p>
+        <p>って思っただけだったのに。</p>
+        <p>気づいたら、<br>そこから人と人がつながってた。</p>
+        <p>そしてたぶん一番変わったのは、<br>ぶりちゃん自身でした。</p>
+        <p>頭の中だけにあったものを、<br>「こんなのくだらないよな」ってしまっておくんじゃなくて、</p>
+        <p class="om-em">ちゃんと外に出してみる。</p>
+        <p>そうすると、<br>誰かが笑ってくれたり、<br>誰かが見つけてくれたり、<br>そこからまた新しい何かが始まったりする。</p>
+        <p>うんこってさ。</p>
+        <p>ずっとお腹の中に溜めてたら苦しいじゃん。</p>
+        <p>悩みも、アイデアも、気持ちも、<br>案外おんなじなのかもしれない。</p>
+        <p class="om-pull">出してみたら、何かが動き出す。</p>
+        <p>だからこのサイトには、</p>
+        <p class="om-close">出すことは、生きること</p>
+        <p>って書いてあります。</p>
+        <p>めちゃくちゃ壮大なこと言ってるけど、<br>うんこの話ですｗｗｗ</p>
+        <p>でも、</p>
+        <p>ちょっと嫌なことがあった日とか、<br>考えすぎて頭がいっぱいになった日とか、</p>
+        <p>「そういえば変なうんこのサイトあったな」</p>
+        <p>って思い出して、</p>
+        <p>また便器界に遊びにきてくれたらうれしいです。</p>
+        <p>笑って、出して、流して。</p>
+        <p>そしたらまた、<br>新しい一日が始まるから。</p>
+        <p class="om-sign">ぶりちゃん</p>
       </div>
+      <p class="om-follow"><span>INSTAGRAM</span><a href="https://www.instagram.com/brichan_unkouranai/" target="_blank" rel="noopener noreferrer">@brichan_unkouranai <i aria-hidden="true">→</i></a></p>
       <button class="maker-back" onclick="go('home')">← トップへ</button>
     </div>
     <div class="home-footer">
@@ -2883,8 +3261,11 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
 
 <!-- ===== COMPATIBILITY ===== -->
 <div id="pg-compat" class="page">
-  <div class="compat-wrap">
+  <div class="compat-wrap oracle-compat">
+   <div class="oc-main">
     <div class="compat-inner">
+      <span class="oc-kicker">COMPATIBILITY</span>
+      <p class="oc-title" aria-hidden="true"><span>THE SACRED</span><span>UNION</span></p>
       <h1 class="compat-title" id="ct">💩 相性占い</h1>
       <p class="compat-sub" id="cs">二人の生年月日から、便器界の相性を診断</p>
 
@@ -2897,7 +3278,7 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
             <select class="compat-select" id="cd1"><option value="">日</option></select>
           </div>
         </div>
-        <div class="compat-divider">💞</div>
+        <div class="compat-divider" aria-hidden="true"><img src="assets/oracle/home/heart-gem.webp" alt=""></div>
         <div class="compat-person">
           <span class="compat-person-label" id="cp2">🚽 相手</span>
           <div class="compat-selects">
@@ -2915,7 +3296,7 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
             <div class="compat-char-img" id="cr-img1"></div>
             <div class="compat-char-name" id="cr-name1"></div>
           </div>
-          <div class="compat-heart">💞</div>
+          <div class="compat-heart" aria-hidden="true"><img src="assets/oracle/home/heart-gem.webp" alt=""></div>
           <div class="compat-char">
             <div class="compat-char-img" id="cr-img2"></div>
             <div class="compat-char-name" id="cr-name2"></div>
@@ -2927,24 +3308,48 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
           <p class="compat-text" id="cr-text"></p>
           <div id="cr-point" style="margin-top:14px;font-size:12px;color:#a855f7;font-weight:700;letter-spacing:.05em"></div>
         </div>
-        <div style="background:linear-gradient(135deg,#fef0ff,#e8f4ff);border:1.5px solid #d8b4fe;border-radius:16px;padding:18px 20px;margin-bottom:16px">
-          <div style="font-size:9px;letter-spacing:.15em;color:#a855f7;margin-bottom:10px;font-weight:700">💩 もっと知りたい？</div>
-          <p id="cr-tease" style="font-size:13px;color:#2d1060;line-height:2;white-space:pre-line"></p>
+        <div class="oc-tease">
+          <div class="oc-tease-label">MORE</div>
+          <p id="cr-tease"></p>
         </div>
         <div class="compat-share-row">
           <button class="compat-share-btn" onclick="shareCompat()">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="#a855f7"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.26 5.632L18.245 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.26 5.632L18.245 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             <span id="cr-share-x">Xでシェア</span>
           </button>
           <button class="compat-share-btn" onclick="copyCompatLink()">
-            🔗 <span id="cr-share-copy">コピー</span>
+            <span id="cr-share-copy">コピー</span>
           </button>
         </div>
       </div>
     </div>
+    <div class="oc-art" aria-hidden="true">
+      <img class="oc-l u-line" src="assets/oracle/home/line-twelve.webp" alt="" loading="lazy" decoding="async">
+      <img class="oc-l u-pink" src="assets/oracle/home/pink-torn-a.webp" alt="" loading="lazy" decoding="async">
+      <img class="oc-l u-moon" src="assets/oracle/home/moon-full.webp" alt="" loading="lazy" decoding="async">
+      <img class="oc-l u-rose" src="assets/oracle/home/rose.webp" alt="" loading="lazy" decoding="async">
+      <img class="oc-l u-key" src="assets/oracle/home/key.webp" alt="" loading="lazy" decoding="async">
+      <img class="oc-l u-hands" src="assets/oracle/home/hands-reaching.webp" alt="" loading="lazy" decoding="async">
+      <img class="oc-l u-heart" src="assets/oracle/home/heart-gem.webp" alt="" loading="lazy" decoding="async">
+      <img class="oc-l u-pearl" src="assets/oracle/home/pearl.webp" alt="" loading="lazy" decoding="async">
+      <img class="oc-l u-star1" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
+      <img class="oc-l u-star2" src="assets/oracle/home/star-four.webp" alt="" loading="lazy" decoding="async">
+    </div>
+   </div>
+   <footer class="oc-footer">
+     <div class="oc-footer-logo">UNKO ORACLE<small>うんこ占い / Unko-dō</small></div>
+     <div class="oc-footer-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
+     <div class="oc-footer-copy">© 2026 Unko-dō Project.</div>
+   </footer>
   </div>
 </div>
 
+
+<script defer src="assets/oracle/home.js?v=20261005-18"></script>
+<script defer src="assets/oracle/detail-v2.js?v=20261005-18"></script>
+<script defer src="assets/oracle/zukan-v2.js?v=20261005-18"></script>
+<script defer src="assets/oracle/compat-v2.js?v=20261005-18"></script>
+<script defer src="assets/oracle/unsei-v2.js?v=20261005-18"></script>
 <!-- Vercel Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

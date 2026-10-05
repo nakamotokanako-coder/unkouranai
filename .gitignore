@@ -1,0 +1,21 @@
+# 作業途中のバックアップ（手元にだけ置く）
+index.before-*.html
+
+# 素材庫のうち、サイトが実際には読み込まない重い原本
+assets/oracle/README.md
+assets/oracle/alchemy/
+assets/oracle/assemblages/
+assets/oracle/characters/
+assets/oracle/collage/
+assets/oracle/objects/
+assets/oracle/cutouts/*
+!assets/oracle/cutouts/cutout_antique_open-book.webp
+!assets/oracle/cutouts/cutout_classical_bust_style-master.png
+!assets/oracle/cutouts/cutout_crescent-moon.webp
+!assets/oracle/cutouts/cutout_hand_reaching-downward.webp
+assets/oracle/pink/*
+!assets/oracle/pink/pink_hand-drawn_heart.webp
+!assets/oracle/pink/pink_torn-paper_style-master.png
+assets/oracle/sigils/*
+!assets/oracle/sigils/sacred-line_celestial-orbit_style-master.png
+!assets/oracle/sigils/sacred-line_twelve-division.webp
