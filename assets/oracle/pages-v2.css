@@ -401,7 +401,7 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
 .oracle-zukan .z-bust { width: 44%; left: 28%; top: 8%; }
 .oracle-zukan .z-moon { width: 17%; left: 8%; top: 12%; transform: rotate(-10deg); }
 .oracle-zukan .z-book { width: 46%; right: -6%; bottom: -8%; transform: rotate(-8deg); }
-.oracle-zukan .z-valve { width: 22%; left: 4%; bottom: -6%; }
+.oracle-zukan .z-valve { width: 20%; left: 5%; bottom: 5%; }
 .oracle-zukan .z-star1 { width: 5%; left: 6%; top: 56%; }
 .oracle-zukan .z-star2 { width: 4%; right: 12%; top: 12%; }
 
