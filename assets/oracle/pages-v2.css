@@ -256,11 +256,11 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
 /* Faucet with falling drops. The wrapper is its own size container, so the fall distance scales with it. */
 .oracle-detail .ox-faucet { container-type: inline-size; --fall: 70cqw; }
 .oracle-detail .ox-faucet img { display: block; width: 100%; height: auto; }
-.oracle-detail .ox-faucet .wd { position: absolute; left: 80.5%; top: 95%; width: 6.2cqw; height: 8.6cqw; min-width: 5px; min-height: 7px;
+.oracle-detail .ox-faucet .wd { position: absolute; left: 78%; top: 94%; width: 11cqw; height: 15.5cqw; min-width: 9px; min-height: 13px;
   border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(circle at 35% 32%, #f4fcff 0 16%, #a9dbea 46%, #5fb1cc 100%);
   opacity: 0; animation: ox-drop 2.6s cubic-bezier(.5, 0, .9, .5) infinite; }
 .oracle-detail .ox-faucet .wd2 { animation-delay: 1.3s; }
-.oracle-detail .ox-faucet .wr { position: absolute; left: 83.6%; top: calc(95% + var(--fall) + 6cqw); width: 16cqw; height: 5cqw; margin-left: -8cqw; border: 1px solid #7fc4dc; border-radius: 50%; opacity: 0; animation: ox-ripple 1.3s linear infinite; }
+.oracle-detail .ox-faucet .wr { position: absolute; left: 83.5%; top: calc(94% + var(--fall) + 11cqw); width: 30cqw; height: 9cqw; margin-left: -15cqw; border: 1.5px solid #7fc4dc; border-radius: 50%; opacity: 0; animation: ox-ripple 1.3s linear infinite; }
 @keyframes ox-drop {
   0% { opacity: 0; transform: translateY(-2cqw) scale(.3); }
   14% { opacity: 1; transform: translateY(0) scale(1); }

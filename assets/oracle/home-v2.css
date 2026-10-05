@@ -78,7 +78,7 @@
   }
 }
 .oracle-home-v2 .oh2-stage .oh2-tape, .oracle-home-v2 .oh2-five-art .oh2-tape, .oracle-home-v2 .oh2-band-art-l .oh2-tape { position: absolute; }
-.oracle-home-v2 .tp-hero-l { left: 7%; bottom: 7%; transform: rotate(-5deg); font-size: clamp(9px, .8vw, 12px); }
+.oracle-home-v2 .tp-hero-l { left: 10%; bottom: 8%; transform: rotate(-5deg); font-size: clamp(9px, .8vw, 12px); }
 .oracle-home-v2 .tp-hero-r { right: 4%; top: 46%; transform: rotate(4deg); font-size: clamp(9px, .8vw, 12px); }
 .oracle-home-v2 .tp-shop { left: 50%; bottom: 7%; transform: translateX(-50%) rotate(-3deg); font-size: 9.5px; }
 .oracle-home-v2 .tp-band { left: 10%; bottom: 13%; transform: rotate(-4deg); font-size: clamp(10px, .9vw, 13px); letter-spacing: .2em; }
@@ -157,11 +157,11 @@
 /* Faucet with falling drops. The wrapper is its own size container, so the fall distance scales with it. */
 .oracle-home-v2 .oh2-faucet { container-type: inline-size; --fall: 70cqw; }
 .oracle-home-v2 .oh2-faucet img { display: block; width: 100%; height: auto; }
-.oracle-home-v2 .oh2-faucet .wd { position: absolute; left: 80.5%; top: 95%; width: 6.2cqw; height: 8.6cqw; min-width: 5px; min-height: 7px;
+.oracle-home-v2 .oh2-faucet .wd { position: absolute; left: 78%; top: 94%; width: 11cqw; height: 15.5cqw; min-width: 9px; min-height: 13px;
   border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(circle at 35% 32%, #f4fcff 0 16%, #a9dbea 46%, #5fb1cc 100%);
   opacity: 0; animation: oh2-drop 2.6s cubic-bezier(.5, 0, .9, .5) infinite; }
 .oracle-home-v2 .oh2-faucet .wd2 { animation-delay: 1.3s; }
-.oracle-home-v2 .oh2-faucet .wr { position: absolute; left: 83.6%; top: calc(95% + var(--fall) + 6cqw); width: 16cqw; height: 5cqw; margin-left: -8cqw; border: 1px solid #7fc4dc; border-radius: 50%; opacity: 0; animation: oh2-ripple 1.3s linear infinite; }
+.oracle-home-v2 .oh2-faucet .wr { position: absolute; left: 83.5%; top: calc(94% + var(--fall) + 11cqw); width: 30cqw; height: 9cqw; margin-left: -15cqw; border: 1.5px solid #7fc4dc; border-radius: 50%; opacity: 0; animation: oh2-ripple 1.3s linear infinite; }
 @keyframes oh2-drop {
   0% { opacity: 0; transform: translateY(-2cqw) scale(.3); }
   14% { opacity: 1; transform: translateY(0) scale(1); }
@@ -171,8 +171,8 @@
 }
 @keyframes oh2-ripple { 0%, 58% { opacity: 0; transform: scale(.2); } 66% { opacity: .9; } 100% { opacity: 0; transform: scale(1.5); } }
 @media (prefers-reduced-motion: reduce) { .oracle-home-v2 .oh2-faucet .wd, .oracle-home-v2 .oh2-faucet .wr { animation: none; } }
-.oracle-home-v2 .l-faucet { width: 22%; left: 56%; top: 44%; --fall: 62cqw; z-index: 3; }
-.oracle-home-v2 .l-plunger { width: 27%; left: 81%; bottom: -2%; transform: rotate(8deg); }
+.oracle-home-v2 .l-faucet { width: 22%; left: 56%; top: 44%; --fall: 52cqw; z-index: 3; }
+.oracle-home-v2 .l-plunger { width: 27%; left: 80%; bottom: 2.5%; transform: rotate(8deg); }
 
 /* ---------- 04 five visual navigation ---------- */
 .oracle-home-v2 .oh2-five { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-bottom: 1px solid var(--rule); }
