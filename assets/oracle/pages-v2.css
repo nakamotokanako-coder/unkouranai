@@ -637,7 +637,6 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
 .oracle-compat .u-line { width: 86%; left: 7%; top: 6%; opacity: .9; }
 .oracle-compat .u-pink { width: 36%; left: 8%; top: 12%; transform: rotate(-14deg); }
 .oracle-compat .u-moon { width: 19%; right: 8%; top: 8%; }
-.oracle-compat .u-pipe { width: 118%; left: -9%; top: 60%; transform: rotate(-3deg); }
 .oracle-compat .u-hands { width: 112%; left: -6%; top: 42%; filter: grayscale(1) contrast(1.08); }
 .oracle-compat .u-heart { width: 13%; left: 45%; top: 31%; }
 .oracle-compat .u-pearl { width: 7%; left: 24%; top: 66%; }
