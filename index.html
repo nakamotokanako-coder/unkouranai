@@ -546,6 +546,9 @@ body{font-family:'Zen Maru Gothic',sans-serif;background:#0a0a0a;color:#fff;over
 .unsei-card-msg{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:10px}
 .unsei-card-lucky{font-size:11px;color:#a855f7;display:flex;align-items:baseline;gap:6px}
 .unsei-card-lucky span{opacity:0.6;font-size:10px;letter-spacing:.1em}
+.unsei-card-kao .unsei-card-img{width:96px;height:96px}
+.unsei-lucky-kao{align-items:center;gap:10px}
+.unsei-lucky-kao img{width:44px;height:44px;border-radius:50%;flex-shrink:0}
 
 
 /* ===== COMPATIBILITY PAGE ===== */
@@ -2566,8 +2569,26 @@ function unseiFor(num) {
   const now = new Date();
   let monthNum = (String(now.getFullYear()) + String(now.getMonth() + 1)).split('').map(Number).reduce((a, b) => a + b, 0);
   while (monthNum > 9) monthNum = String(monthNum).split('').map(Number).reduce((a, b) => a + b, 0);
-  return UNSEI_TEXT[num + '-' + unseiReduce(num + monthNum)];
+  const theme = unseiReduce(num + monthNum);
+  const m = UNSEI_TEXT[num + '-' + theme];
+  return m && Object.assign({theme: theme}, m);
 }
+// 今月のうん勢に出す表情。キーはキャラの数、中はテーマの数ごとの絵（kao フォルダ）。困り顔は月の顔に使わない。
+// 表情の絵が無い時は、いつもの絵を出す。
+const UNSEI_FACE = {
+  1: {1:'warai', 2:'niko', 3:'warai', 4:'niko', 5:'bikkuri', 6:'niko', 7:'doya', 8:'doya', 9:'niko', 11:'hirameki', 22:'hirameki', 33:'warai', lucky:'hirameki'},
+  2: {1:'hirameki', 2:'niko', 3:'warai', 4:'hotto', 5:'bikkuri', 6:'kandou', 7:'hotto', 8:'tere', 9:'shinmiri', 11:'hirameki', 22:'tere', 33:'kandou', lucky:'hirameki'},
+  3: {1:'yaruki', 2:'niko', 3:'warai', 4:'niko', 5:'warai', 6:'niko', 7:'doya', 8:'doya', 9:'niko', 11:'hirameki', 22:'yaruki', 33:'warai', lucky:'hirameki'},
+  4: {1:'doya', 2:'niko', 3:'bikkuri', 4:'majime', 5:'bikkuri', 6:'niko', 7:'kangae', 8:'doya', 9:'niko', 11:'bikkuri', 22:'kangae', 33:'niko', lucky:'kangae'},
+  5: {1:'warai', 2:'niko', 3:'warai', 4:'niko', 5:'warai', 6:'niko', 7:'niko', 8:'warai', 9:'niko', 11:'bikkuri', 22:'bikkuri', 33:'niko', lucky:'warai'},
+  6: {1:'doya', 2:'niko', 3:'warai', 4:'niko', 5:'bikkuri', 6:'kandou', 7:'niko', 8:'doya', 9:'warai', 11:'bikkuri', 22:'doya', 33:'kandou', lucky:'warai'},
+  7: {1:'hirameki', 2:'tere', 3:'tere', 4:'majime', 5:'hirameki', 6:'tere', 7:'kangae', 8:'doya', 9:'majime', 11:'hirameki', 22:'kangae', 33:'tere', lucky:'hirameki'},
+  8: {1:'warai', 2:'niko', 3:'warai', 4:'majime', 5:'bikkuri', 6:'niko', 7:'majime', 8:'doya', 9:'niko', 11:'bikkuri', 22:'doya', 33:'warai', lucky:'niko'},
+  9: {1:'niko', 2:'niko', 3:'warai', 4:'inori', 5:'bikkuri', 6:'niko', 7:'inori', 8:'doya', 9:'warai', 11:'bikkuri', 22:'doya', 33:'niko', lucky:'niko'},
+  11: {1:'hirameki', 2:'yasashii', 3:'niko', 4:'niko', 5:'bikkuri', 6:'yasashii', 7:'niko', 8:'niko', 9:'yasashii', 11:'hirameki', 22:'bikkuri', 33:'yasashii', lucky:'hirameki'},
+  22: {1:'hirameki', 2:'niko', 3:'warai', 4:'niko', 5:'warai', 6:'niko', 7:'kangae', 8:'doya', 9:'niko', 11:'hirameki', 22:'kangae', 33:'warai', lucky:'hirameki'},
+  33: {1:'yaruki', 2:'niko', 3:'warai', 4:'niko', 5:'warai', 6:'ai', 7:'niko', 8:'yaruki', 9:'kandou', 11:'warai', 22:'yaruki', 33:'ai', lucky:'yaruki'}
+};
 function unseiReady() {
   return CHARS.every(c => unseiFor(c.num));
 }
@@ -2589,6 +2610,15 @@ function openUnsei() {
     const imgHtml = c.img && c.img.startsWith('data:')
       ? '<img src="' + c.img + '" alt="" onerror="this.style.opacity=0">'
       : '<span>' + c.em + '</span>';
+    const face = UNSEI_FACE[c.num];
+    if (face && face[m.theme]) return '<div class="unsei-card unsei-card-kao">' +
+      '<div class="unsei-card-img"><img src="kao/' + c.num + '_' + face[m.theme] + '.jpg" alt=""></div>' +
+      '<div class="unsei-card-body">' +
+        '<div class="unsei-card-name">' + c.n + '</div>' +
+        '<div class="unsei-card-msg">' + m.ja + '</div>' +
+        '<div class="unsei-card-lucky unsei-lucky-kao"><img src="kao/' + c.num + '_' + face.lucky + '.jpg" alt=""><div><span style="display:block;margin-bottom:2px">✦ 開うん行動</span>' + m.lucky + '</div></div>' +
+      '</div>' +
+    '</div>';
     return '<div class="unsei-card">' +
       '<div class="unsei-card-img">' + imgHtml + '</div>' +
       '<div class="unsei-card-body">' +
