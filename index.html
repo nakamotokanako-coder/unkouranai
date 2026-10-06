@@ -697,7 +697,7 @@ img {
     <button type="button" data-p="diag" onclick="go('diag')">DIAGNOSIS</button>
     <button type="button" data-p="genesis" onclick="go('genesis')">LIBRARY</button>
     <span class="on-soon" title="準備中">SHOP</span>
-    <span class="on-soon" title="準備中">COLUMN</span>
+    <button type="button" data-p="column" onclick="go('column')">COLUMN</button>
   </div>
   <div class="on-right">
     <button class="on-pill" type="button" onclick="go('diag')">診断をはじめる <span aria-hidden="true">→</span></button>
@@ -710,6 +710,7 @@ img {
         <button type="button" onclick="this.closest('details').open=false;go('zukan')">CHARACTERS<small>キャラクター図鑑</small></button>
         <button type="button" onclick="this.closest('details').open=false;go('diag')">DIAGNOSIS<small>無料でうんこ診断</small></button>
         <button type="button" onclick="this.closest('details').open=false;go('genesis')">LIBRARY<small>便器界創世記</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('column')">COLUMN<small>読みもの</small></button>
         <button type="button" onclick="this.closest('details').open=false;openUnsei()">MONTHLY FLOW<small>今月のうん勢</small></button>
         <button type="button" onclick="this.closest('details').open=false;go('compat')">SACRED UNION<small>相性占い</small></button>
       </div>
@@ -717,10 +718,10 @@ img {
   </div>
 </nav>
 
-<link rel="stylesheet" href="assets/oracle/home.css?v=20261006-14">
+<link rel="stylesheet" href="assets/oracle/home.css?v=20261006-15">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/oracle/home-v2.css?v=20261006-14">
-<link rel="stylesheet" href="assets/oracle/pages-v2.css?v=20261006-14">
+<link rel="stylesheet" href="assets/oracle/home-v2.css?v=20261006-15">
+<link rel="stylesheet" href="assets/oracle/pages-v2.css?v=20261006-15">
 <!-- ===== HOME JA ===== -->
 <div id="pg-home-ja" class="page active">
   <div class="oracle-home-v2">
@@ -738,7 +739,7 @@ img {
         <button type="button" onclick="go('diag')">DIAGNOSIS</button>
         <button type="button" onclick="go('genesis')">LIBRARY</button>
         <span class="oh2-soon" title="準備中">SHOP</span>
-        <span class="oh2-soon" title="準備中">COLUMN</span>
+        <button type="button" onclick="go('column')">COLUMN</button>
       </nav>
       <div class="oh2-header-right">
         <button class="oh2-pill" type="button" onclick="go('diag')">診断をはじめる <span aria-hidden="true">→</span></button>
@@ -750,6 +751,7 @@ img {
             <button type="button" onclick="this.closest('details').open=false;go('zukan')">CHARACTERS<small>キャラクター図鑑</small></button>
             <button type="button" onclick="this.closest('details').open=false;go('diag')">DIAGNOSIS<small>無料でうんこ診断</small></button>
             <button type="button" onclick="this.closest('details').open=false;go('genesis')">LIBRARY<small>便器界創世記</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('column')">COLUMN<small>読みもの</small></button>
             <button type="button" onclick="this.closest('details').open=false;openUnsei()">MONTHLY FLOW<small>今月のうん勢</small></button>
             <button type="button" onclick="this.closest('details').open=false;go('compat')">SACRED UNION<small>相性占い</small></button>
             <button type="button" onclick="this.closest('details').open=false;tl()">ENGLISH<small>言語を切り替える</small></button>
@@ -878,9 +880,8 @@ img {
         <ul class="oh2-latest-list">
           <li><button type="button" onclick="go('genesis')"><span class="oh2-tag">LIBRARY</span><strong>便器界創世記</strong><em>すべての流れは、ここから始まった。</em><i aria-hidden="true">→</i></button></li>
           <li><button type="button" onclick="openUnsei()"><span class="oh2-tag">MONTHLY FLOW</span><strong>今月のうん勢</strong><em>十二の原型、それぞれの今月の流れ。</em><i aria-hidden="true">→</i></button></li>
-          <li><button type="button" onclick="go('maker')"><span class="oh2-tag">ABOUT</span><strong>つくった人、ぶりちゃん</strong><em>とにかく、みんなに笑ってほしくって。</em><i aria-hidden="true">→</i></button></li>
+          <li><button type="button" onclick="go('column')"><span class="oh2-tag">COLUMN</span><strong>なんで、うんこ占いをつくったの？</strong><em>とにかく、みんなに笑ってほしくって。</em><i aria-hidden="true">→</i></button></li>
         </ul>
-        <p class="oh2-fine">COLUMN は準備中です。</p>
       </div>
       <div class="oh2-trio-art" aria-hidden="true">
         <img class="oh2-l t-line" src="assets/oracle/home/line-sun.webp" alt="" loading="lazy" decoding="async">
@@ -1008,7 +1009,7 @@ img {
         <button type="button" onclick="go('diag')">DIAGNOSIS</button>
         <button type="button" onclick="go('genesis')">LIBRARY</button>
         <span class="oh2-soon">SHOP</span>
-        <span class="oh2-soon">COLUMN</span>
+        <button type="button" onclick="go('column')">COLUMN</button>
       </nav>
       <div class="oh2-footer-right">
         <img class="oh2-footer-orn" src="assets/oracle/home/line-sun.webp" alt="" loading="lazy" decoding="async" aria-hidden="true">
@@ -3170,7 +3171,7 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
 
 
 <!-- ===== つくった人 ===== -->
-<!-- 本文は本人の文そのまま（2026-10-05 に差し替え）。足したのは改行と見せ方だけ -->
+<!-- プロフィール。手紙の本文は pg-column（コラム）へ移した -->
 <div id="pg-maker" class="page">
   <div class="maker-wrap">
     <div class="maker-inner">
@@ -3194,6 +3195,53 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
       <div class="maker-motto">出すことは、生きること</div>
       </div>
 
+      <div class="om-profile">
+        <p class="om-thanks">うんこ占いに遊びに来てくれて<br>ありがとう♡</p>
+        <p class="om-bio">ぶりちゃんです。<br>占い師で、つくる人。</p>
+        <p class="om-bio">ふだんはめちゃ真面目に占いの研究をしていて、<br>うんこ占いと、占い師さんの道具をつくってます。</p>
+        <dl class="om-works">
+          <dt>作品</dt><dd>うんこ占い</dd>
+          <dt>仕事</dt><dd>占い師さんのどうぐや</dd>
+        </dl>
+      </div>
+      <div class="om-excerpt">
+        <p class="om-excerpt-label">COLUMN</p>
+        <p class="om-excerpt-title">なんで、うんこ占いをつくったの？</p>
+        <blockquote>とにかく、みんなに笑ってほしくって、<br>うんこ占いをつくったんだよ。</blockquote>
+        <button type="button" class="om-more" onclick="go('column')">つづきを読む <i aria-hidden="true">→</i></button>
+      </div>
+      <div class="om-follow">
+        <p class="is-latin"><span>INSTAGRAM</span><a href="https://www.instagram.com/brichan_unkouranai/" target="_blank" rel="noopener noreferrer">@brichan_unkouranai <i aria-hidden="true">→</i></a></p>
+        <p><span>WORKS</span><a href="https://brichan-works.vercel.app/" target="_blank" rel="noopener noreferrer">ぶりちゃんのポートフォリオ <i aria-hidden="true">→</i></a></p>
+        <p><span>REQUEST</span><a href="https://brichan-works.vercel.app/lp" target="_blank" rel="noopener noreferrer">占い師さんのどうぐや <i aria-hidden="true">→</i></a></p>
+      </div>
+      <button class="maker-back" onclick="go('home')">← トップへ</button>
+    </div>
+    <div class="home-footer">
+      <div class="f-logo">うんこ占い / Unko-dō</div>
+      <div class="f-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
+      <div class="f-copy">© 2026 Unko-dō Project.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== COLUMN ===== -->
+<!-- 本文は本人の文そのまま。足したのは改行と見せ方だけ -->
+<div id="pg-column" class="page">
+  <div class="maker-wrap">
+    <div class="maker-inner">
+      <div class="oc-head">
+        <div class="oc-art" aria-hidden="true">
+          <img class="om-l c-sun" src="assets/oracle/home/line-sun.webp" alt="" loading="lazy" decoding="async">
+          <img class="om-l c-pink" src="assets/oracle/home/pink-torn-a.webp" alt="" loading="lazy" decoding="async">
+          <img class="om-l c-quill" src="assets/oracle/home/quill-hand.webp" alt="" loading="lazy" decoding="async">
+          <img class="om-l c-book" src="assets/oracle/home/book-open.webp" alt="" loading="lazy" decoding="async">
+          <img class="om-l c-star" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
+        </div>
+        <p class="oc-kicker">COLUMN</p>
+        <h1 class="oc-title">なんで、うんこ占いを<br>つくったの？</h1>
+        <p class="oc-by">文　ぶりちゃん</p>
+      </div>
       <div class="om-letter">
         <p>どうも～！！ぶりちゃんだよっ！</p>
         <p>ふだんはめちゃ真面目に占いの研究してきたんだけど、<br>考えすぎて頭のねじが飛んでっちゃって、<br>ついに思いついたのが</p>
@@ -3253,10 +3301,9 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
         <p>そしたらまた、<br>新しい一日が始まるから。</p>
         <p class="om-sign">ぶりちゃん</p>
       </div>
-      <div class="om-follow">
-        <p class="is-latin"><span>INSTAGRAM</span><a href="https://www.instagram.com/brichan_unkouranai/" target="_blank" rel="noopener noreferrer">@brichan_unkouranai <i aria-hidden="true">→</i></a></p>
-        <p><span>WORKS</span><a href="https://brichan-works.vercel.app/" target="_blank" rel="noopener noreferrer">ぶりちゃんのポートフォリオ <i aria-hidden="true">→</i></a></p>
-        <p><span>REQUEST</span><a href="https://brichan-works.vercel.app/lp" target="_blank" rel="noopener noreferrer">占い師さんのどうぐや <i aria-hidden="true">→</i></a></p>
+      <div class="oc-end">
+        <button type="button" class="om-more" onclick="go('maker')">ぶりちゃんのプロフィール <i aria-hidden="true">→</i></button>
+        <button type="button" class="om-more is-line" onclick="go('diag')">無料で診断をはじめる <i aria-hidden="true">→</i></button>
       </div>
       <button class="maker-back" onclick="go('home')">← トップへ</button>
     </div>
@@ -3354,11 +3401,11 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
 </div>
 
 
-<script defer src="assets/oracle/home.js?v=20261006-14"></script>
-<script defer src="assets/oracle/detail-v2.js?v=20261006-14"></script>
-<script defer src="assets/oracle/zukan-v2.js?v=20261006-14"></script>
-<script defer src="assets/oracle/compat-v2.js?v=20261006-14"></script>
-<script defer src="assets/oracle/unsei-v2.js?v=20261006-14"></script>
+<script defer src="assets/oracle/home.js?v=20261006-15"></script>
+<script defer src="assets/oracle/detail-v2.js?v=20261006-15"></script>
+<script defer src="assets/oracle/zukan-v2.js?v=20261006-15"></script>
+<script defer src="assets/oracle/compat-v2.js?v=20261006-15"></script>
+<script defer src="assets/oracle/unsei-v2.js?v=20261006-15"></script>
 <!-- Vercel Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
