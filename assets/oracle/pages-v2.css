@@ -781,10 +781,12 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
 #pg-maker .om-letter .om-sign::before { content: ""; display: inline-block; width: 46px; height: 1px; background: var(--gold); vertical-align: middle; margin-right: 18px; }
 
 #pg-maker .om-letter { padding-bottom: clamp(40px, 4vw, 64px); }
-#pg-maker .om-follow { max-width: 640px; margin: 0 auto; padding: 30px 24px clamp(64px, 7vw, 110px); display: flex; align-items: center; justify-content: flex-end; gap: 20px; border-top: 0; }
+#pg-maker .om-follow { max-width: 640px; margin: 0 auto; padding: 30px 24px clamp(64px, 7vw, 110px); display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+#pg-maker .om-follow p { margin: 0; display: flex; align-items: center; gap: 20px; }
 #pg-maker .om-follow span { font: 10px/1 var(--label); letter-spacing: .34em; color: var(--gold); }
-#pg-maker .om-follow a { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; border: 1px solid var(--ink); border-radius: 999px; padding: 13px 24px; font: 500 14px/1 var(--display); letter-spacing: .08em; transition: background .2s, color .2s; }
+#pg-maker .om-follow a { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; border: 1px solid var(--ink); border-radius: 999px; padding: 13px 24px; min-width: 268px; justify-content: space-between; font: 500 13px/1 var(--mincho); letter-spacing: .1em; transition: background .2s, color .2s; }
 #pg-maker .om-follow a:hover { background: var(--ink); color: var(--ivory); }
+#pg-maker .om-follow .is-latin a { font: 500 14px/1 var(--display); letter-spacing: .08em; }
 #pg-maker .om-follow i { font-style: normal; }
 
 /* now */
@@ -816,7 +818,8 @@ body:has(#pg-home-en.active) .on-links [data-p="home"] { border-bottom-color: va
   #pg-maker .maker-motto { letter-spacing: .2em; }
   #pg-maker .maker-motto::before, #pg-maker .maker-motto::after { width: 18px; margin: 0 10px; }
   #pg-maker .om-letter p { font-size: 14.5px; letter-spacing: .04em; }
-  #pg-maker .om-follow { flex-direction: column; align-items: flex-end; gap: 14px; padding: 26px 22px 64px; }
+  #pg-maker .om-follow { gap: 18px; padding: 26px 22px 64px; }
+  #pg-maker .om-follow p { flex-direction: column; align-items: flex-end; gap: 8px; }
   #pg-maker .om-letter p:first-child { font-size: 17px; letter-spacing: .06em; }
   #pg-maker .om-letter .om-em { font-size: 16.5px; letter-spacing: .02em; }
   #pg-maker .om-letter .om-pull { font-size: 16.5px; letter-spacing: .02em; }
