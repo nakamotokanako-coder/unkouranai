@@ -723,11 +723,11 @@ img {
   </div>
 </nav>
 
-<link rel="stylesheet" href="assets/oracle/home.css?v=20261020-1">
+<link rel="stylesheet" href="assets/oracle/home.css?v=20261020-2">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/oracle/home-v2.css?v=20261020-1">
-<link rel="stylesheet" href="assets/oracle/pages-v2.css?v=20261020-1">
-<!-- ===== HOME JA ===== -->
+<link rel="stylesheet" href="assets/oracle/home-v2.css?v=20261020-2">
+<link rel="stylesheet" href="assets/oracle/pages-v2.css?v=20261020-2">
+<!-- ===== HOME（日本語・英語どちらもこのページ。英語は data-en で切り替え） ===== -->
 <div id="pg-home-ja" class="page active">
   <div class="oracle-home-v2">
 
@@ -737,13 +737,13 @@ img {
         <svg class="oh2-logo-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.7 7.2 4.8 11.3 12 12-7.2.7-11.3 4.8-12 12-.7-7.2-4.8-11.3-12-12C7.200 11.300 11.300 7.200 12 0z"/></svg>
         <span>UNKO ORACLE</span>
       </button>
-      <nav class="oh2-nav" aria-label="主な案内">
+      <nav class="oh2-nav" aria-label="主な案内" data-en-label="Main navigation">
         <button type="button" class="is-current" onclick="go('home')">HOME</button>
         <button type="button" onclick="go('maker')">ABOUT</button>
         <button type="button" onclick="go('zukan')">CHARACTERS</button>
         <button type="button" onclick="go('diag')">DIAGNOSIS</button>
         <button type="button" onclick="go('genesis')">LIBRARY</button>
-        <span class="oh2-soon" title="準備中">SHOP</span>
+        <span class="oh2-soon" title="準備中" data-en-title="Coming soon">SHOP</span>
         <button type="button" onclick="go('column')">COLUMN</button>
       </nav>
       <div class="oh2-header-right">
@@ -759,7 +759,7 @@ img {
             <button type="button" onclick="this.closest('details').open=false;go('column')">COLUMN<small data-en="Read">読みもの</small></button>
             <button type="button" onclick="this.closest('details').open=false;openUnsei()">MONTHLY FLOW<small data-en="This month’s flow">今月のうん勢</small></button>
             <button type="button" onclick="this.closest('details').open=false;go('compat')">SACRED UNION<small data-en="Compatibility">相性占い</small></button>
-            <button type="button" onclick="this.closest('details').open=false;tl()">ENGLISH<small>言語を切り替える</small></button>
+            <button type="button" onclick="this.closest('details').open=false;tl()"><span data-en="日本語">ENGLISH</span><small data-en="Switch language">言語を切り替える</small></button>
           </div>
         </details>
       </div>
@@ -800,14 +800,14 @@ img {
         </div>
       </div>
       <div class="oh2-hero-bottom">
-        <p class="oh2-hero-jp">うんこ占い</p>
-        <p class="oh2-hero-tag">うんこに聞けば、だいたいわかる。</p>
-        <button class="oh2-pill oh2-pill-lg" type="button" onclick="go('diag')">無料で診断をはじめる <span aria-hidden="true">→</span></button>
+        <p class="oh2-hero-jp" data-en="Poop Fortune-Telling">うんこ占い</p>
+        <p class="oh2-hero-tag" data-en="Ask your poop. It mostly knows.">うんこに聞けば、だいたいわかる。</p>
+        <button class="oh2-pill oh2-pill-lg" type="button" onclick="go('diag')"><span data-en="Start the free reading">無料で診断をはじめる</span> <span aria-hidden="true">→</span></button>
       </div>
     </section>
 
     <!-- 04 FIVE VISUAL NAVIGATION -->
-    <nav class="oh2-five" aria-label="ページ案内">
+    <nav class="oh2-five" aria-label="ページ案内" data-en-label="Pages">
       <button type="button" class="oh2-five-cell" onclick="go('maker')">
         <span class="oh2-five-art" aria-hidden="true">
           <img class="oh2-l f1-pink" src="assets/oracle/home/pink-brush.webp" alt="" loading="lazy" decoding="async">
@@ -815,7 +815,7 @@ img {
           <img class="oh2-l f1-star" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
         </span>
         <span class="oh2-five-en">ABOUT</span>
-        <span class="oh2-five-jp">うんこ占いとは<i aria-hidden="true">→</i></span>
+        <span class="oh2-five-jp"><span data-en="Who made this">うんこ占いとは</span><i aria-hidden="true">→</i></span>
       </button>
       <button type="button" class="oh2-five-cell" onclick="go('zukan')">
         <span class="oh2-five-art" aria-hidden="true">
@@ -825,7 +825,7 @@ img {
           <img class="oh2-l f2-char-c" src="assets/oracle/home/characters/02.webp" alt="" loading="lazy" decoding="async">
         </span>
         <span class="oh2-five-en">CHARACTERS</span>
-        <span class="oh2-five-jp">キャラクター図鑑<i aria-hidden="true">→</i></span>
+        <span class="oh2-five-jp"><span data-en="The 12 characters">キャラクター図鑑</span><i aria-hidden="true">→</i></span>
       </button>
       <button type="button" class="oh2-five-cell" onclick="go('diag')">
         <span class="oh2-five-art" aria-hidden="true">
@@ -834,7 +834,7 @@ img {
           <img class="oh2-l f3-eye" src="assets/oracle/home/eye.webp" alt="" loading="lazy" decoding="async">
         </span>
         <span class="oh2-five-en">DIAGNOSIS</span>
-        <span class="oh2-five-jp">無料でうんこ診断<i aria-hidden="true">→</i></span>
+        <span class="oh2-five-jp"><span data-en="Free poop reading">無料でうんこ診断</span><i aria-hidden="true">→</i></span>
       </button>
       <button type="button" class="oh2-five-cell" onclick="go('genesis')">
         <span class="oh2-five-art" aria-hidden="true">
@@ -843,7 +843,7 @@ img {
           <img class="oh2-l f4-quill" src="assets/oracle/home/quill-hand.webp" alt="" loading="lazy" decoding="async">
         </span>
         <span class="oh2-five-en">LIBRARY</span>
-        <span class="oh2-five-jp">読みもの<i aria-hidden="true">→</i></span>
+        <span class="oh2-five-jp"><span data-en="Read">読みもの</span><i aria-hidden="true">→</i></span>
       </button>
       <div class="oh2-five-cell is-soon">
         <span class="oh2-five-art" aria-hidden="true">
@@ -853,27 +853,27 @@ img {
           <span class="oh2-tape tp-shop" aria-hidden="true"><b style="--i:0">C</b><b style="--i:1">O</b><b style="--i:2">M</b><b style="--i:3">I</b><b style="--i:4">N</b><b style="--i:5">G</b><b class="sp"></b><b style="--i:6">S</b><b style="--i:7">O</b><b style="--i:8">O</b><b style="--i:9">N</b></span>
         </span>
         <span class="oh2-five-en">SHOP</span>
-        <span class="oh2-five-jp">グッズ・ダウンロード</span>
+        <span class="oh2-five-jp" data-en="Goods &amp; downloads">グッズ・ダウンロード</span>
       </div>
     </nav>
 
     <!-- 05 BLACK MESSAGE BAND -->
-    <section class="oh2-band" aria-label="UNKO ORACLE のことば">
+    <section class="oh2-band" aria-label="UNKO ORACLE のことば" data-en-label="Words from UNKO ORACLE">
       <div class="oh2-band-art-l" aria-hidden="true">
         <img class="oh2-l b-line" src="assets/oracle/home/line-twelve.webp" alt="" loading="lazy" decoding="async">
         <img class="oh2-l b-hand" src="assets/oracle/home/hand-open.webp" alt="" loading="lazy" decoding="async">
         <img class="oh2-l b-pearl" src="assets/oracle/home/pearl.webp" alt="" loading="lazy" decoding="async">
-        <span class="oh2-tape tp-band is-pink" aria-hidden="true"><b style="--i:0">ダ</b><b style="--i:1">ス</b><b style="--i:2">コ</b><b style="--i:3">ト</b><b style="--i:4">ハ</b><b class="sp"></b><b style="--i:5">イ</b><b style="--i:6">キ</b><b style="--i:7">ル</b><b style="--i:8">コ</b><b style="--i:9">ト</b></span>
+        <span class="oh2-tape tp-band is-pink" aria-hidden="true" data-en="<b style=&quot;--i:0&quot;>T</b><b style=&quot;--i:1&quot;>O</b><b class=&quot;sp&quot;></b><b style=&quot;--i:2&quot;>R</b><b style=&quot;--i:3&quot;>E</b><b style=&quot;--i:4&quot;>L</b><b style=&quot;--i:5&quot;>E</b><b style=&quot;--i:6&quot;>A</b><b style=&quot;--i:7&quot;>S</b><b style=&quot;--i:8&quot;>E</b><b class=&quot;sp&quot;></b><b style=&quot;--i:9&quot;>I</b><b style=&quot;--i:10&quot;>S</b><b class=&quot;sp&quot;></b><b style=&quot;--i:11&quot;>T</b><b style=&quot;--i:12&quot;>O</b><b class=&quot;sp&quot;></b><b style=&quot;--i:13&quot;>L</b><b style=&quot;--i:14&quot;>I</b><b style=&quot;--i:15&quot;>V</b><b style=&quot;--i:16&quot;>E</b>"><b style="--i:0">ダ</b><b style="--i:1">ス</b><b style="--i:2">コ</b><b style="--i:3">ト</b><b style="--i:4">ハ</b><b class="sp"></b><b style="--i:5">イ</b><b style="--i:6">キ</b><b style="--i:7">ル</b><b style="--i:8">コ</b><b style="--i:9">ト</b></span>
       </div>
       <blockquote class="oh2-band-quote">
-        <p>うんこはね、<br>どんな自分も受け止めて流してくれる。<br>だから、あなたはもっと自由でいいんだよ。</p>
+        <p data-en="Poop, you know,<br>takes in every version of you and lets it flow.<br>So you’re allowed to be a lot more free.">うんこはね、<br>どんな自分も受け止めて流してくれる。<br>だから、あなたはもっと自由でいいんだよ。</p>
         <cite>— UNKO ORACLE</cite>
       </blockquote>
       <div class="oh2-band-art-r">
         <img class="oh2-l b-bust" src="assets/oracle/home/bust-gazing.webp" alt="" loading="lazy" decoding="async" aria-hidden="true">
         <button class="oh2-band-note" type="button" onclick="go('diag')">
           <img src="assets/oracle/home/pink-wide.webp" alt="" loading="lazy" decoding="async" aria-hidden="true">
-          <span>あなたの中に眠る<br>本当のうんこを、<br>見つけにいこう。<i aria-hidden="true">→</i></span>
+          <span><span data-en="Go find<br>the true poop<br>sleeping inside you.">あなたの中に眠る<br>本当のうんこを、<br>見つけにいこう。</span><i aria-hidden="true">→</i></span>
         </button>
       </div>
     </section>
@@ -881,11 +881,11 @@ img {
     <!-- 06 LATEST / CENTRAL COLLAGE / LETTER -->
     <section class="oh2-trio">
       <div class="oh2-latest">
-        <h2 class="oh2-h-sm">LATEST<small>最新の読みもの</small></h2>
+        <h2 class="oh2-h-sm">LATEST<small data-en="New reads">最新の読みもの</small></h2>
         <ul class="oh2-latest-list">
-          <li><button type="button" onclick="go('genesis')"><span class="oh2-tag">LIBRARY</span><strong>便器界創世記</strong><em>すべての流れは、ここから始まった。</em><i aria-hidden="true">→</i></button></li>
-          <li><button type="button" onclick="openUnsei()"><span class="oh2-tag">MONTHLY FLOW</span><strong>今月のうん勢</strong><em>十二の原型、それぞれの今月の流れ。</em><i aria-hidden="true">→</i></button></li>
-          <li><button type="button" onclick="go('column')"><span class="oh2-tag">COLUMN</span><strong>なんで、うんこ占いをつくったの？</strong><em>とにかく、みんなに笑ってほしくって。</em><i aria-hidden="true">→</i></button></li>
+          <li><button type="button" onclick="go('genesis')"><span class="oh2-tag">LIBRARY</span><strong data-en="Genesis of the Toilet World">便器界創世記</strong><em data-en="Every flow began here.">すべての流れは、ここから始まった。</em><i aria-hidden="true">→</i></button></li>
+          <li><button type="button" onclick="openUnsei()"><span class="oh2-tag">MONTHLY FLOW</span><strong data-en="This month’s flow">今月のうん勢</strong><em data-en="Twelve archetypes, twelve flows this month.">十二の原型、それぞれの今月の流れ。</em><i aria-hidden="true">→</i></button></li>
+          <li><button type="button" onclick="go('column')"><span class="oh2-tag">COLUMN</span><strong data-en="Why did I make Unko Uranai?">なんで、うんこ占いをつくったの？</strong><em data-en="Honestly, I just wanted everyone to laugh.">とにかく、みんなに笑ってほしくって。</em><i aria-hidden="true">→</i></button></li>
         </ul>
       </div>
       <div class="oh2-trio-art" aria-hidden="true">
@@ -899,17 +899,17 @@ img {
         <img class="oh2-l t-star" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
       </div>
       <div class="oh2-letter">
-        <h2 class="oh2-h-sm">UNKO LETTER<small>うんこレター</small></h2>
-        <p>便器界からのおたよりを、ときどき。<br>うん勢や新しい読みものをお届けします。</p>
+        <h2 class="oh2-h-sm">UNKO LETTER<small data-en="Poop letters">うんこレター</small></h2>
+        <p data-en="Letters from the Toilet World, now and then.<br>Monthly flows and new reads, delivered to you.">便器界からのおたよりを、ときどき。<br>うん勢や新しい読みものをお届けします。</p>
         <form class="oh2-letter-form" onsubmit="return false" aria-disabled="true">
           <div class="oh2-letter-row">
-            <input type="email" placeholder="メールアドレス" disabled aria-label="メールアドレス（準備中）">
-            <button type="button" disabled>登録</button>
+            <input type="email" placeholder="メールアドレス" disabled aria-label="メールアドレス（準備中）" data-en-placeholder="Email address" data-en-label="Email address (coming soon)">
+            <button type="button" disabled data-en="Sign up">登録</button>
           </div>
-          <label class="oh2-letter-check"><input type="checkbox" disabled> プライバシーポリシーに同意する</label>
-          <p class="oh2-fine">メール登録は準備中です。</p>
+          <label class="oh2-letter-check"><input type="checkbox" disabled> <span data-en="I agree to the privacy policy">プライバシーポリシーに同意する</span></label>
+          <p class="oh2-fine" data-en="Email sign-up is coming soon.">メール登録は準備中です。</p>
         </form>
-        <a class="oh2-textlink" href="https://lin.ee/WhhLB2R" target="_blank" rel="noopener noreferrer">いまはLINEで受け取る <span aria-hidden="true">→</span></a>
+        <a class="oh2-textlink" href="https://lin.ee/WhhLB2R" target="_blank" rel="noopener noreferrer"><span data-en="Get them on LINE for now">いまはLINEで受け取る</span> <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -919,34 +919,34 @@ img {
         <div class="oh2-arche-head">
           <div>
             <h2 class="oh2-h" id="oh2-arche-title"><span>THE TWELVE</span><span>ARCHETYPES</span></h2>
-            <p class="oh2-h-jp">便器界十二原型</p>
+            <p class="oh2-h-jp" data-en="The twelve of the Toilet World">便器界十二原型</p>
           </div>
           <div class="oh2-arche-lede">
-            <p>この世界には、十二のうんこがいる。<br>あなたの中にも、必ずそのひとつが宿っています。</p>
+            <p data-en="There are twelve poops in this world.<br>One of them is surely living inside you, too.">この世界には、十二のうんこがいる。<br>あなたの中にも、必ずそのひとつが宿っています。</p>
             <button class="oh2-textlink" type="button" onclick="go('zukan')">VIEW ALL <span aria-hidden="true">→</span></button>
           </div>
         </div>
         <ul class="oh2-arche-grid">
-          <li><button type="button" onclick="showDetail(1)"><img src="assets/oracle/home/characters/01.webp" alt="ノンストップうんこ" loading="lazy" decoding="async"><strong>ノンストップ</strong></button></li>
-          <li><button type="button" onclick="showDetail(2)"><img src="assets/oracle/home/characters/02.webp" alt="癒しうんこ" loading="lazy" decoding="async"><strong>癒し</strong></button></li>
-          <li><button type="button" onclick="showDetail(3)"><img src="assets/oracle/home/characters/03.webp" alt="カラフルうんこ" loading="lazy" decoding="async"><strong>カラフル</strong></button></li>
-          <li><button type="button" onclick="showDetail(4)"><img src="assets/oracle/home/characters/04.webp" alt="カチカチうんこ" loading="lazy" decoding="async"><strong>カチカチ</strong></button></li>
-          <li><button type="button" onclick="showDetail(5)"><img src="assets/oracle/home/characters/05.webp" alt="アメーバうんこ" loading="lazy" decoding="async"><strong>アメーバ</strong></button></li>
-          <li><button type="button" onclick="showDetail(6)"><img src="assets/oracle/home/characters/06.webp" alt="おかんうんこ" loading="lazy" decoding="async"><strong>おかん</strong></button></li>
-          <li><button type="button" onclick="showDetail(7)"><img src="assets/oracle/home/characters/07.webp" alt="孤高の一本うんこ" loading="lazy" decoding="async"><strong>孤高の一本</strong></button></li>
-          <li><button type="button" onclick="showDetail(8)"><img src="assets/oracle/home/characters/08.webp" alt="サバイバルうんこ" loading="lazy" decoding="async"><strong>サバイバル</strong></button></li>
-          <li><button type="button" onclick="showDetail(9)"><img src="assets/oracle/home/characters/09.webp" alt="悟りうんこ" loading="lazy" decoding="async"><strong>悟り</strong></button></li>
-          <li><button type="button" onclick="showDetail(11)"><img src="assets/oracle/home/characters/11.webp" alt="第六感うんこ" loading="lazy" decoding="async"><strong>第六感</strong></button></li>
-          <li><button type="button" onclick="showDetail(22)"><img src="assets/oracle/home/characters/22.webp" alt="建築家うんこ" loading="lazy" decoding="async"><strong>建築家</strong></button></li>
-          <li><button type="button" onclick="showDetail(33)"><img src="assets/oracle/home/characters/33.webp" alt="芸術家うんこ" loading="lazy" decoding="async"><strong>芸術家</strong></button></li>
+          <li><button type="button" onclick="showDetail(1)"><img src="assets/oracle/home/characters/01.webp" alt="ノンストップうんこ" data-en-alt="Nonstop Unko" loading="lazy" decoding="async"><strong data-en="Nonstop">ノンストップ</strong></button></li>
+          <li><button type="button" onclick="showDetail(2)"><img src="assets/oracle/home/characters/02.webp" alt="癒しうんこ" data-en-alt="Healing Unko" loading="lazy" decoding="async"><strong data-en="Healing">癒し</strong></button></li>
+          <li><button type="button" onclick="showDetail(3)"><img src="assets/oracle/home/characters/03.webp" alt="カラフルうんこ" data-en-alt="Colorful Unko" loading="lazy" decoding="async"><strong data-en="Colorful">カラフル</strong></button></li>
+          <li><button type="button" onclick="showDetail(4)"><img src="assets/oracle/home/characters/04.webp" alt="カチカチうんこ" data-en-alt="Solid Unko" loading="lazy" decoding="async"><strong data-en="Solid">カチカチ</strong></button></li>
+          <li><button type="button" onclick="showDetail(5)"><img src="assets/oracle/home/characters/05.webp" alt="アメーバうんこ" data-en-alt="Amoeba Unko" loading="lazy" decoding="async"><strong data-en="Amoeba">アメーバ</strong></button></li>
+          <li><button type="button" onclick="showDetail(6)"><img src="assets/oracle/home/characters/06.webp" alt="おかんうんこ" data-en-alt="Mama Unko" loading="lazy" decoding="async"><strong data-en="Mama">おかん</strong></button></li>
+          <li><button type="button" onclick="showDetail(7)"><img src="assets/oracle/home/characters/07.webp" alt="孤高の一本うんこ" data-en-alt="Solitary Unko" loading="lazy" decoding="async"><strong data-en="Solitary">孤高の一本</strong></button></li>
+          <li><button type="button" onclick="showDetail(8)"><img src="assets/oracle/home/characters/08.webp" alt="サバイバルうんこ" data-en-alt="Survival Unko" loading="lazy" decoding="async"><strong data-en="Survival">サバイバル</strong></button></li>
+          <li><button type="button" onclick="showDetail(9)"><img src="assets/oracle/home/characters/09.webp" alt="悟りうんこ" data-en-alt="Enlightened Unko" loading="lazy" decoding="async"><strong data-en="Enlightened">悟り</strong></button></li>
+          <li><button type="button" onclick="showDetail(11)"><img src="assets/oracle/home/characters/11.webp" alt="第六感うんこ" data-en-alt="Sixth Sense Unko" loading="lazy" decoding="async"><strong data-en="Sixth Sense">第六感</strong></button></li>
+          <li><button type="button" onclick="showDetail(22)"><img src="assets/oracle/home/characters/22.webp" alt="建築家うんこ" data-en-alt="Architect Unko" loading="lazy" decoding="async"><strong data-en="Architect">建築家</strong></button></li>
+          <li><button type="button" onclick="showDetail(33)"><img src="assets/oracle/home/characters/33.webp" alt="芸術家うんこ" data-en-alt="Artist Unko" loading="lazy" decoding="async"><strong data-en="Artist">芸術家</strong></button></li>
         </ul>
       </div>
       <div class="oh2-origin" aria-labelledby="oh2-origin-title">
         <div class="oh2-origin-copy">
           <h2 class="oh2-h" id="oh2-origin-title"><span>THE BOOK</span><span>OF ORIGIN</span></h2>
-          <p class="oh2-h-jp">便器界創世記</p>
-          <p>すべての流れは、ここから始まった。<br>便器界に伝わる、はじまりの物語。</p>
-          <button class="oh2-pill" type="button" onclick="go('genesis')">読む <span aria-hidden="true">→</span></button>
+          <p class="oh2-h-jp" data-en="Genesis of the Toilet World">便器界創世記</p>
+          <p data-en="Every flow began here.<br>The origin story handed down in the Toilet World.">すべての流れは、ここから始まった。<br>便器界に伝わる、はじまりの物語。</p>
+          <button class="oh2-pill" type="button" onclick="go('genesis')"><span data-en="Read">読む</span> <span aria-hidden="true">→</span></button>
         </div>
         <div class="oh2-origin-art" aria-hidden="true">
           <img class="oh2-l o-line" src="assets/oracle/home/line-orbit.webp" alt="" loading="lazy" decoding="async">
@@ -964,8 +964,8 @@ img {
       <div class="oh2-feat oh2-feat-monthly">
         <div class="oh2-feat-copy">
           <h2 class="oh2-h oh2-h-md"><span>THE</span><span>MONTHLY</span><span>FLOW</span></h2>
-          <p class="oh2-h-jp">今月のうん勢</p>
-          <button id="btn-unsei-ja" class="oh2-pill" type="button" onclick="openUnsei()">今月のうん勢をみる <span aria-hidden="true">→</span></button>
+          <p class="oh2-h-jp" data-en="This month’s flow">今月のうん勢</p>
+          <button id="btn-unsei-ja" class="oh2-pill" type="button" onclick="openUnsei()"><span data-en="See this month’s flow">今月のうん勢をみる</span> <span aria-hidden="true">→</span></button>
         </div>
         <div class="oh2-feat-art" aria-hidden="true">
           <img class="oh2-l m-line" src="assets/oracle/home/line-moonphase.webp" alt="" loading="lazy" decoding="async">
@@ -977,8 +977,8 @@ img {
       <div class="oh2-feat oh2-feat-union">
         <div class="oh2-feat-copy">
           <h2 class="oh2-h oh2-h-md"><span>THE SACRED</span><span>UNION</span></h2>
-          <p class="oh2-h-jp">相性占い</p>
-          <button class="oh2-pill" type="button" onclick="go('compat')">相性をみる <span aria-hidden="true">→</span></button>
+          <p class="oh2-h-jp" data-en="Compatibility">相性占い</p>
+          <button class="oh2-pill" type="button" onclick="go('compat')"><span data-en="Check compatibility">相性をみる</span> <span aria-hidden="true">→</span></button>
         </div>
         <div class="oh2-feat-art" aria-hidden="true">
           <img class="oh2-l u-line" src="assets/oracle/home/line-twelve.webp" alt="" loading="lazy" decoding="async">
@@ -990,8 +990,8 @@ img {
       <div class="oh2-feat oh2-feat-goods">
         <div class="oh2-feat-copy">
           <h2 class="oh2-h oh2-h-md"><span>GOODS</span></h2>
-          <p class="oh2-h-jp">グッズ・ダウンロード</p>
-          <span class="oh2-tape tp-goods"><b style="--i:0">C</b><b style="--i:1">O</b><b style="--i:2">M</b><b style="--i:3">I</b><b style="--i:4">N</b><b style="--i:5">G</b><b class="sp"></b><b style="--i:6">S</b><b style="--i:7">O</b><b style="--i:8">O</b><b style="--i:9">N</b></span><span class="oh2-fine oh2-goods-note">準備中</span>
+          <p class="oh2-h-jp" data-en="Goods &amp; downloads">グッズ・ダウンロード</p>
+          <span class="oh2-tape tp-goods"><b style="--i:0">C</b><b style="--i:1">O</b><b style="--i:2">M</b><b style="--i:3">I</b><b style="--i:4">N</b><b style="--i:5">G</b><b class="sp"></b><b style="--i:6">S</b><b style="--i:7">O</b><b style="--i:8">O</b><b style="--i:9">N</b></span><span class="oh2-fine oh2-goods-note" data-en="Coming soon">準備中</span>
         </div>
         <div class="oh2-feat-art" aria-hidden="true">
           <img class="oh2-l g-pink" src="assets/oracle/home/pink-brush.webp" alt="" loading="lazy" decoding="async">
@@ -1008,7 +1008,7 @@ img {
         <p class="oh2-footer-logo">UNKO ORACLE</p>
         <p class="oh2-footer-sub">THE ANCIENT ORDER OF THE SACRED FLOW</p>
       </div>
-      <nav class="oh2-footer-nav" aria-label="フッター案内">
+      <nav class="oh2-footer-nav" aria-label="フッター案内" data-en-label="Footer navigation">
         <button type="button" onclick="go('maker')">ABOUT</button>
         <button type="button" onclick="go('zukan')">CHARACTERS</button>
         <button type="button" onclick="go('diag')">DIAGNOSIS</button>
@@ -1023,49 +1023,10 @@ img {
       </div>
       <div class="oh2-footer-legal">
         <a href="/contact.html">CONTACT</a><a href="/privacy.html">PRIVACY</a><a href="/terms.html">TERMS</a>
-        <button type="button" onclick="tl()">ENGLISH</button>
+        <button type="button" onclick="tl()" data-en="日本語">ENGLISH</button>
         <span>© UNKO ORACLE</span>
       </div>
     </footer>
-  </div>
-</div>
-
-<!-- ===== HOME EN ===== -->
-<div id="pg-home-en" class="page">
-  <div class="oracle-home">
-    <div class="oracle-navline"><div class="oracle-wordmark">UNKO ORACLE</div><div class="oracle-navlinks"><button onclick="go('diag')">ORACLE</button><button onclick="go('zukan')">ARCHETYPES</button><button onclick="go('genesis')">ORIGIN</button><button onclick="go('compat')">UNION</button></div></div>
-    <section class="oracle-hero"><div class="oracle-hero-copy"><div class="oracle-kicker">THE ANCIENT ORDER / OF THE SACRED FLOW</div><h1 class="oracle-title"><span>UNKO</span><span>ORACLE</span></h1><p class="oracle-jp">To release is to live.<br>Laugh, flush, and let it all go.</p><button class="oracle-cta" onclick="go('diag')">Summon your archetype <span>→</span></button></div><div class="oracle-hero-art"><img class="oracle-asset oracle-bust" src="assets/oracle/cutouts/cutout_classical_bust_style-master.png" loading="lazy" decoding="async" alt="classical sculpture bust"><img class="oracle-asset oracle-orbit" src="assets/oracle/sigils/sacred-line_celestial-orbit_style-master.png" loading="lazy" decoding="async" alt=""><img class="oracle-asset oracle-pink" src="assets/oracle/pink/pink_torn-paper_style-master.png" loading="lazy" decoding="async" alt=""></div><div class="oracle-hero-note">A contemporary reading of an old secret tradition.<br><br>SCROLL TO ENTER</div></section>
-    <section class="oracle-chapter oracle-collection" aria-labelledby="oracle-archive-en">
-      <span class="oracle-chapter-index">02 / 07 — THE COLLECTION</span>
-      <div class="oracle-collection-head"><div><h2 id="oracle-archive-en"><span>THE TWELVE</span><span>ARCHETYPES</span></h2><p class="oracle-chapter-subtitle">Twelve inhabitants of the Toilet World</p></div><p>Twelve archetypes. Twelve ways of being.<br>Somewhere here, you may find yourself.</p></div>
-      <ul class="oracle-archive" data-oracle-characters="en" aria-label="The twelve official archetypes"></ul>
-      <div class="oracle-collection-footer"><button class="oracle-cta" onclick="go('zukan')">Open the archive <span aria-hidden="true">→</span></button><p class="oracle-caption">TWELVE ARCHETYPES / THE COMPLETE INDEX<br>SELECT AN ARCHETYPE TO READ ITS STORY.</p></div>
-    </section>
-    <section class="oracle-chapter oracle-reading" aria-labelledby="oracle-reading-en">
-      <span class="oracle-chapter-index">03 / 07 — THE ORACLE</span>
-      <div class="oracle-chapter-copy"><h2 id="oracle-reading-en"><span>YOUR</span><span>ARCHETYPE</span></h2><p class="oracle-chapter-subtitle">A reading of your own flow</p><p>Enter your birthday.<br>One inhabitant of the Toilet World will appear.</p><button class="oracle-cta" onclick="go('diag')">Start the reading <span aria-hidden="true">→</span></button></div>
-      <div class="oracle-chapter-art" aria-hidden="true"><img class="oracle-reading-circle" data-oracle-asset="sacred-line-twelve-division" alt="" width="1262" height="1246" loading="lazy" decoding="async"></div>
-    </section>
-    <section class="oracle-chapter oracle-origin" aria-labelledby="oracle-origin-en">
-      <span class="oracle-chapter-index">04 / 07 — THE ORIGIN</span>
-      <div class="oracle-chapter-copy"><h2 id="oracle-origin-en"><span>THE BOOK</span><span>OF ORIGIN</span></h2><p class="oracle-chapter-subtitle">The genesis of the Toilet World</p><p>A story of beginnings, and of flow.<br>Discover the Toilet World, one chapter at a time.</p><button class="oracle-cta" onclick="go('genesis')">Read the origin <span aria-hidden="true">→</span></button></div>
-      <div class="oracle-chapter-art" aria-hidden="true"><img class="oracle-chapter-photo oracle-origin-book" data-oracle-asset="cutout-antique-open-book" alt="" width="1536" height="1024" loading="lazy" decoding="async"></div>
-    </section>
-    <section class="oracle-chapter oracle-monthly" aria-labelledby="oracle-monthly-en">
-      <span class="oracle-chapter-index">05 / 07 — THE MONTHLY FLOW</span>
-      <div class="oracle-chapter-copy"><h2 id="oracle-monthly-en"><span>THE</span><span>MONTHLY</span><span>FLOW</span></h2><p class="oracle-chapter-subtitle">Your monthly reading</p><p>What kind of flow awaits this month?<br>A reading for each of the twelve archetypes.</p><button id="btn-unsei-en" class="oracle-cta" onclick="openUnsei()">See this month's flow <span aria-hidden="true">→</span></button></div>
-      <div class="oracle-chapter-art" aria-hidden="true"><img class="oracle-chapter-photo oracle-monthly-moon" data-oracle-asset="cutout-crescent-moon" alt="" width="1295" height="1214" loading="lazy" decoding="async"></div>
-    </section>
-    <section class="oracle-chapter oracle-union" aria-labelledby="oracle-union-en">
-      <span class="oracle-chapter-index">06 / 07 — THE SACRED UNION</span>
-      <div class="oracle-chapter-copy"><h2 id="oracle-union-en"><span>THE SACRED</span><span>UNION</span></h2><p class="oracle-chapter-subtitle">Two lives, one reading</p><p>When two currents meet.<br>Explore your compatibility through the Toilet World.</p><button class="oracle-cta" onclick="go('compat')">Read the union <span aria-hidden="true">→</span></button></div>
-      <div class="oracle-chapter-art" aria-hidden="true"><img class="oracle-chapter-photo oracle-union-hand" data-oracle-asset="cutout-hand-reaching-downward" alt="" width="1024" height="1536" loading="lazy" decoding="async"><img class="oracle-union-heart" data-oracle-asset="pink-hand-drawn-heart" alt="" width="1297" height="1213" loading="lazy" decoding="async"></div>
-    </section>
-    <section class="oracle-chapter oracle-maker" aria-labelledby="oracle-maker-en">
-      <div><span class="oracle-chapter-index">07 / 07 — ABOUT / BURI-CHAN</span><h2 id="oracle-maker-en"><span>THE</span><span>HUMAN.</span></h2><p class="oracle-chapter-subtitle">Meet Buri-chan, the creator</p></div>
-      <div class="oracle-maker-note"><p>Hey! It's Buri-chan!</p><blockquote>I made Unko Uranai because, above all, I wanted to make everyone laugh.</blockquote><button class="oracle-cta" onclick="go('maker')">Meet the maker <span aria-hidden="true">→</span></button></div>
-    </section>
-    <footer class="oracle-footer"><span>UNKO ORACLE / TO RELEASE IS TO LIVE.</span><div class="oracle-footer-links"><a href="https://www.instagram.com/unkouranai" target="_blank" rel="noopener noreferrer">INSTAGRAM</a><a href="/contact.html">CONTACT</a><a href="/privacy.html">PRIVACY</a><a href="/terms.html">TERMS</a></div></footer>
   </div>
 </div>
 
@@ -1400,7 +1361,7 @@ function go(p) {
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   const navBar = document.getElementById('genesis-nav-bar');
   if (navBar) navBar.style.display = p === 'genesis' ? 'flex' : 'none';
-  const suf = p==='home' ? (lang==='en'?'-en':'-ja') : (p==='detail'?'':'');
+  const suf = p==='home' ? '-ja' : '';
   const el = document.getElementById('pg-'+p+suf);
   if(el) el.classList.add('active');
   curPage = p;
@@ -1464,6 +1425,14 @@ function applyStaticLang(){
   document.querySelectorAll('[data-en-label]').forEach(el=>{
     if(el.dataset.jaLabel===undefined) el.dataset.jaLabel=el.getAttribute('aria-label')||'';
     el.setAttribute('aria-label',en?el.dataset.enLabel:el.dataset.jaLabel);
+  });
+  document.querySelectorAll('[data-en-placeholder]').forEach(el=>{
+    if(el.dataset.jaPlaceholder===undefined) el.dataset.jaPlaceholder=el.getAttribute('placeholder')||'';
+    el.setAttribute('placeholder',en?el.dataset.enPlaceholder:el.dataset.jaPlaceholder);
+  });
+  document.querySelectorAll('[data-en-alt]').forEach(el=>{
+    if(el.dataset.jaAlt===undefined) el.dataset.jaAlt=el.getAttribute('alt')||'';
+    el.setAttribute('alt',en?el.dataset.enAlt:el.dataset.jaAlt);
   });
   document.querySelectorAll('[data-en-title]').forEach(el=>{
     if(el.dataset.jaTitle===undefined) el.dataset.jaTitle=el.getAttribute('title')||'';
@@ -3490,11 +3459,11 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
 </div>
 
 
-<script defer src="assets/oracle/home.js?v=20261020-1"></script>
-<script defer src="assets/oracle/detail-v2.js?v=20261020-1"></script>
-<script defer src="assets/oracle/zukan-v2.js?v=20261020-1"></script>
-<script defer src="assets/oracle/compat-v2.js?v=20261020-1"></script>
-<script defer src="assets/oracle/unsei-v2.js?v=20261020-1"></script>
+<script defer src="assets/oracle/home.js?v=20261020-2"></script>
+<script defer src="assets/oracle/detail-v2.js?v=20261020-2"></script>
+<script defer src="assets/oracle/zukan-v2.js?v=20261020-2"></script>
+<script defer src="assets/oracle/compat-v2.js?v=20261020-2"></script>
+<script defer src="assets/oracle/unsei-v2.js?v=20261020-2"></script>
 <!-- Vercel Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
