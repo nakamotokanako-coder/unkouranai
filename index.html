@@ -33,6 +33,7 @@ body{font-family:'Zen Maru Gothic',sans-serif;background:#0a0a0a;color:#fff;over
 .nav-right button{font-size:11px;color:rgba(255,255,255,0.7);background:none;border:none;cursor:pointer;font-family:'Zen Maru Gothic',sans-serif;transition:color .15s}
 .nav-right button:hover{color:#00ffcc}
 .lang-btn{font-size:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:3px 10px;cursor:pointer;font-family:'Zen Maru Gothic',sans-serif;color:rgba(255,255,255,0.8);transition:background .15s}
+html.lang-en [data-only="ja"],html:not(.lang-en) [data-only="en"]{display:none!important}
 .lang-btn:hover{background:rgba(0,255,200,0.2);border-color:#00ffcc}
 
 /* ======= HOME: NEON BLACK ======= */
@@ -689,8 +690,8 @@ img {
 <body>
 
 <!-- NAV -->
-<nav class="nav on-nav" aria-label="サイト全体の案内">
-  <button class="on-logo" type="button" onclick="go('home')" aria-label="UNKO ORACLE ホーム">
+<nav class="nav on-nav" aria-label="サイト全体の案内" data-en-label="Site navigation">
+  <button class="on-logo" type="button" onclick="go('home')" aria-label="UNKO ORACLE ホーム" data-en-label="UNKO ORACLE home">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.7 7.2 4.8 11.3 12 12-7.2.7-11.3 4.8-12 12-.7-7.2-4.8-11.3-12-12C7.2 11.3 11.3 7.2 12 0z"/></svg>
     <span>UNKO ORACLE</span>
   </button>
@@ -700,39 +701,39 @@ img {
     <button type="button" data-p="zukan" onclick="go('zukan')">CHARACTERS</button>
     <button type="button" data-p="diag" onclick="go('diag')">DIAGNOSIS</button>
     <button type="button" data-p="genesis" onclick="go('genesis')">LIBRARY</button>
-    <span class="on-soon" title="準備中">SHOP</span>
+    <span class="on-soon" title="準備中" data-en-title="Coming soon">SHOP</span>
     <button type="button" data-p="column" onclick="go('column')">COLUMN</button>
   </div>
   <div class="on-right">
-    <button class="on-pill" type="button" onclick="go('diag')">診断をはじめる <span aria-hidden="true">→</span></button>
+    <button class="on-pill" type="button" onclick="go('diag')"><span data-en="Get your reading">診断をはじめる</span> <span aria-hidden="true">→</span></button>
     <button class="lang-btn" id="lb" type="button" onclick="tl()">EN</button>
     <details class="on-menu">
-      <summary aria-label="メニュー"><span></span><span></span><span></span></summary>
+      <summary aria-label="メニュー" data-en-label="Menu"><span></span><span></span><span></span></summary>
       <div class="on-menu-panel">
         <button type="button" onclick="this.closest('details').open=false;go('home')">HOME</button>
-        <button type="button" onclick="this.closest('details').open=false;go('maker')">ABOUT<small>うんこ占いとは</small></button>
-        <button type="button" onclick="this.closest('details').open=false;go('zukan')">CHARACTERS<small>キャラクター図鑑</small></button>
-        <button type="button" onclick="this.closest('details').open=false;go('diag')">DIAGNOSIS<small>無料でうんこ診断</small></button>
-        <button type="button" onclick="this.closest('details').open=false;go('genesis')">LIBRARY<small>便器界創世記</small></button>
-            <button type="button" onclick="this.closest('details').open=false;go('column')">COLUMN<small>読みもの</small></button>
-        <button type="button" onclick="this.closest('details').open=false;openUnsei()">MONTHLY FLOW<small>今月のうん勢</small></button>
-        <button type="button" onclick="this.closest('details').open=false;go('compat')">SACRED UNION<small>相性占い</small></button>
+        <button type="button" onclick="this.closest('details').open=false;go('maker')">ABOUT<small data-en="Who made this">うんこ占いとは</small></button>
+        <button type="button" onclick="this.closest('details').open=false;go('zukan')">CHARACTERS<small data-en="The 12 characters">キャラクター図鑑</small></button>
+        <button type="button" onclick="this.closest('details').open=false;go('diag')">DIAGNOSIS<small data-en="Free poop reading">無料でうんこ診断</small></button>
+        <button type="button" onclick="this.closest('details').open=false;go('genesis')">LIBRARY<small data-en="Genesis of the Toilet World">便器界創世記</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('column')">COLUMN<small data-en="Read">読みもの</small></button>
+        <button type="button" onclick="this.closest('details').open=false;openUnsei()">MONTHLY FLOW<small data-en="This month’s flow">今月のうん勢</small></button>
+        <button type="button" onclick="this.closest('details').open=false;go('compat')">SACRED UNION<small data-en="Compatibility">相性占い</small></button>
       </div>
     </details>
   </div>
 </nav>
 
-<link rel="stylesheet" href="assets/oracle/home.css?v=20261006-15">
+<link rel="stylesheet" href="assets/oracle/home.css?v=20261020-1">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/oracle/home-v2.css?v=20261006-15">
-<link rel="stylesheet" href="assets/oracle/pages-v2.css?v=20261006-15">
+<link rel="stylesheet" href="assets/oracle/home-v2.css?v=20261020-1">
+<link rel="stylesheet" href="assets/oracle/pages-v2.css?v=20261020-1">
 <!-- ===== HOME JA ===== -->
 <div id="pg-home-ja" class="page active">
   <div class="oracle-home-v2">
 
     <!-- 01 HEADER -->
     <header class="oh2-header">
-      <button class="oh2-logo" type="button" onclick="go('home')" aria-label="UNKO ORACLE ホーム">
+      <button class="oh2-logo" type="button" onclick="go('home')" aria-label="UNKO ORACLE ホーム" data-en-label="UNKO ORACLE home">
         <svg class="oh2-logo-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.7 7.2 4.8 11.3 12 12-7.2.7-11.3 4.8-12 12-.7-7.2-4.8-11.3-12-12C7.200 11.300 11.300 7.200 12 0z"/></svg>
         <span>UNKO ORACLE</span>
       </button>
@@ -746,18 +747,18 @@ img {
         <button type="button" onclick="go('column')">COLUMN</button>
       </nav>
       <div class="oh2-header-right">
-        <button class="oh2-pill" type="button" onclick="go('diag')">診断をはじめる <span aria-hidden="true">→</span></button>
+        <button class="oh2-pill" type="button" onclick="go('diag')"><span data-en="Get your reading">診断をはじめる</span> <span aria-hidden="true">→</span></button>
         <details class="oh2-menu">
-          <summary aria-label="メニュー"><span></span><span></span><span></span></summary>
+          <summary aria-label="メニュー" data-en-label="Menu"><span></span><span></span><span></span></summary>
           <div class="oh2-menu-panel">
             <button type="button" onclick="this.closest('details').open=false;go('home')">HOME</button>
-            <button type="button" onclick="this.closest('details').open=false;go('maker')">ABOUT<small>うんこ占いとは</small></button>
-            <button type="button" onclick="this.closest('details').open=false;go('zukan')">CHARACTERS<small>キャラクター図鑑</small></button>
-            <button type="button" onclick="this.closest('details').open=false;go('diag')">DIAGNOSIS<small>無料でうんこ診断</small></button>
-            <button type="button" onclick="this.closest('details').open=false;go('genesis')">LIBRARY<small>便器界創世記</small></button>
-            <button type="button" onclick="this.closest('details').open=false;go('column')">COLUMN<small>読みもの</small></button>
-            <button type="button" onclick="this.closest('details').open=false;openUnsei()">MONTHLY FLOW<small>今月のうん勢</small></button>
-            <button type="button" onclick="this.closest('details').open=false;go('compat')">SACRED UNION<small>相性占い</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('maker')">ABOUT<small data-en="Who made this">うんこ占いとは</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('zukan')">CHARACTERS<small data-en="The 12 characters">キャラクター図鑑</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('diag')">DIAGNOSIS<small data-en="Free poop reading">無料でうんこ診断</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('genesis')">LIBRARY<small data-en="Genesis of the Toilet World">便器界創世記</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('column')">COLUMN<small data-en="Read">読みもの</small></button>
+            <button type="button" onclick="this.closest('details').open=false;openUnsei()">MONTHLY FLOW<small data-en="This month’s flow">今月のうん勢</small></button>
+            <button type="button" onclick="this.closest('details').open=false;go('compat')">SACRED UNION<small data-en="Compatibility">相性占い</small></button>
             <button type="button" onclick="this.closest('details').open=false;tl()">ENGLISH<small>言語を切り替える</small></button>
           </div>
         </details>
@@ -1088,9 +1089,9 @@ img {
           <div class="r-area" id="ra"></div>
         </div>
         <ol class="od-steps" aria-hidden="true">
-          <li><i>01</i><b>INPUT</b><span>生年月日を入力</span></li>
-          <li><i>02</i><b>ANALYSIS</b><span>便器界の図鑑を照合</span></li>
-          <li><i>03</i><b>REVEAL</b><span>あなたのうんこが現れる</span></li>
+          <li><i>01</i><b>INPUT</b><span data-en="Enter your birthday">生年月日を入力</span></li>
+          <li><i>02</i><b>ANALYSIS</b><span data-en="Check the Toilet World archive">便器界の図鑑を照合</span></li>
+          <li><i>03</i><b>REVEAL</b><span data-en="Your Unko appears">あなたのうんこが現れる</span></li>
         </ol>
       </div>
       <div class="od-art" aria-hidden="true">
@@ -1108,8 +1109,8 @@ img {
       </div>
     </section>
     <footer class="od-footer">
-      <div class="od-footer-logo">UNKO ORACLE<small>うんこ占い / Unko-dō</small></div>
-      <div class="od-footer-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
+      <div class="od-footer-logo">UNKO ORACLE<small data-en="Unko Uranai / Unko-dō">うんこ占い / Unko-dō</small></div>
+      <div class="od-footer-links"><a href="/contact.html" data-en="Contact">お問い合わせ</a><a href="/terms.html" data-en="Terms">利用規約</a><a href="/privacy.html" data-en="Privacy">プライバシー</a></div>
       <div class="od-footer-copy">© 2026 Unko-dō Project.</div>
     </footer>
   </div>
@@ -1138,8 +1139,8 @@ img {
         </div>
       </div>
       <div class="view-toggle">
-  <button class="view-btn" id="btn-mag" onclick="setView('mag')">📖 マガジン</button>
-  <button class="view-btn active" id="btn-grid" onclick="setView('grid')">⊞ グリッド</button>
+  <button class="view-btn" id="btn-mag" onclick="setView('mag')" data-en="📖 Magazine">📖 マガジン</button>
+  <button class="view-btn active" id="btn-grid" onclick="setView('grid')" data-en="⊞ Grid">⊞ グリッド</button>
 </div>
 <div class="char-grid" id="zg"></div>
       <ul class="oz-grid" id="oz-grid"></ul>
@@ -1153,8 +1154,8 @@ img {
       </div>
     </section>
     <footer class="pastel-footer">
-      <div class="f-logo">うんこ占い / Unko-dō</div>
-      <div class="f-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
+      <div class="f-logo" data-en="Unko Uranai / Unko-dō">うんこ占い / Unko-dō</div>
+      <div class="f-links"><a href="/contact.html" data-en="Contact">お問い合わせ</a><a href="/terms.html" data-en="Terms">利用規約</a><a href="/privacy.html" data-en="Privacy">プライバシー</a></div>
       <div class="f-copy">© 2026 Unko-dō Project.</div>
     </footer>
   </div>
@@ -1164,12 +1165,12 @@ img {
 <div id="pg-detail" class="page">
   <div class="pastel-body">
     <section class="sec" style="max-width:640px">
-      <button class="detail-back" onclick="go(prevPage||'zukan')">← 戻る</button>
+      <button class="detail-back" onclick="go(prevPage||'zukan')" data-en="← Back">← 戻る</button>
       <div id="detail-content"></div>
     </section>
     <footer class="pastel-footer">
-      <div class="f-logo">うんこ占い / Unko-dō</div>
-      <div class="f-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
+      <div class="f-logo" data-en="Unko Uranai / Unko-dō">うんこ占い / Unko-dō</div>
+      <div class="f-links"><a href="/contact.html" data-en="Contact">お問い合わせ</a><a href="/terms.html" data-en="Terms">利用規約</a><a href="/privacy.html" data-en="Privacy">プライバシー</a></div>
       <div class="f-copy">© 2026 Unko-dō Project.</div>
     </footer>
   </div>
@@ -1203,9 +1204,9 @@ img {
 
 <!-- Genesis Nav Bar (fixed, outside all page divs) -->
 <div id="genesis-nav-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:500;align-items:center;justify-content:center;gap:16px;padding:14px 20px;background:linear-gradient(transparent,rgba(0,0,0,0.5));pointer-events:all">
-  <button onclick="genesisNav(-1)" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:40px;padding:8px 20px;font-size:12px;font-family:'Zen Maru Gothic',sans-serif;cursor:pointer;transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">← 前</button>
+  <button onclick="genesisNav(-1)" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:40px;padding:8px 20px;font-size:12px;font-family:'Zen Maru Gothic',sans-serif;cursor:pointer;transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'" data-en="← Prev">← 前</button>
   <div id="genesis-dots-fixed" style="display:flex;gap:6px"></div>
-  <button onclick="genesisNav(1)" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:40px;padding:8px 20px;font-size:12px;font-family:'Zen Maru Gothic',sans-serif;cursor:pointer;transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">次 →</button>
+  <button onclick="genesisNav(1)" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:40px;padding:8px 20px;font-size:12px;font-family:'Zen Maru Gothic',sans-serif;cursor:pointer;transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'" data-en="Next →">次 →</button>
 </div>
 
 
@@ -1451,10 +1452,30 @@ function updateNav(){
   document.querySelectorAll('[data-nav]').forEach(b=>{const k=b.getAttribute('data-nav');if(t[k])b.textContent=t[k][0];});
 }
 
+// 決まった文言の切り替え。data-en に英語、日本語は最初の中身を data-ja に取っておく
+function applyStaticLang(){
+  const en=lang==='en';
+  document.documentElement.lang=en?'en':'ja';
+  document.documentElement.classList.toggle('lang-en',en);
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    if(el.dataset.ja===undefined) el.dataset.ja=el.innerHTML;
+    el.innerHTML=en?el.dataset.en:el.dataset.ja;
+  });
+  document.querySelectorAll('[data-en-label]').forEach(el=>{
+    if(el.dataset.jaLabel===undefined) el.dataset.jaLabel=el.getAttribute('aria-label')||'';
+    el.setAttribute('aria-label',en?el.dataset.enLabel:el.dataset.jaLabel);
+  });
+  document.querySelectorAll('[data-en-title]').forEach(el=>{
+    if(el.dataset.jaTitle===undefined) el.dataset.jaTitle=el.getAttribute('title')||'';
+    el.setAttribute('title',en?el.dataset.enTitle:el.dataset.jaTitle);
+  });
+}
+
 function tl(){
   lang=lang==='ja'?'en':'ja';
   try{localStorage.setItem('unko-lang', lang);}catch(e){}
-  document.getElementById('lb').textContent=lang==='ja'?'EN':'日';
+  document.getElementById('lb').textContent=lang==='ja'?'EN':'JA';
+  applyStaticLang();
   updateNav();
   updateInstaMsg();
   renderMonthly();
@@ -2944,7 +2965,7 @@ function openUnsei() {
     : now.getFullYear() + '年' + (now.getMonth()+1) + '月';
 
   document.getElementById('unsei-title').textContent = isEn ? "This Month's Unsei" : '今月のうん勢';
-  document.getElementById('unsei-sub').textContent = monthLabel + ' / 全12体';
+  document.getElementById('unsei-sub').textContent = monthLabel + (isEn ? ' / All 12' : ' / 全12体');
 
   const list = document.getElementById('unsei-list');
   list.innerHTML = CHARS.map(c => {
@@ -2953,21 +2974,25 @@ function openUnsei() {
     const imgHtml = c.img && c.img.startsWith('data:')
       ? '<img src="' + c.img + '" alt="" onerror="this.style.opacity=0">'
       : '<span>' + c.em + '</span>';
+    const name = isEn ? c.e : c.n;
+    const msg = isEn && m.en ? m.en : m.ja;
+    const lucky = isEn && m.lucky_en ? m.lucky_en : m.lucky;
+    const luckyLabel = isEn ? '✦ Lucky Action' : '✦ 開うん行動';
     const face = UNSEI_FACE[c.num];
     if (face && face[m.theme]) return '<div class="unsei-card unsei-card-kao">' +
       '<div class="unsei-card-img"><img src="kao/' + c.num + '_' + face[m.theme] + '.jpg" alt=""></div>' +
       '<div class="unsei-card-body">' +
-        '<div class="unsei-card-name">' + c.n + '</div>' +
-        '<div class="unsei-card-msg">' + m.ja + '</div>' +
-        '<div class="unsei-card-lucky unsei-lucky-kao"><img src="kao/' + c.num + '_' + face.lucky + '.jpg" alt=""><div><span style="display:block;margin-bottom:2px">✦ 開うん行動</span>' + m.lucky + '</div></div>' +
+        '<div class="unsei-card-name">' + name + '</div>' +
+        '<div class="unsei-card-msg">' + msg + '</div>' +
+        '<div class="unsei-card-lucky unsei-lucky-kao"><img src="kao/' + c.num + '_' + face.lucky + '.jpg" alt=""><div><span style="display:block;margin-bottom:2px">' + luckyLabel + '</span>' + lucky + '</div></div>' +
       '</div>' +
     '</div>';
     return '<div class="unsei-card">' +
       '<div class="unsei-card-img">' + imgHtml + '</div>' +
       '<div class="unsei-card-body">' +
-        '<div class="unsei-card-name">' + c.n + '</div>' +
-        '<div class="unsei-card-msg">' + m.ja + '</div>' +
-        '<div class="unsei-card-lucky" style="display:block"><span style="display:block;margin-bottom:2px">✦ 開うん行動</span>' + m.lucky + '</div>' +
+        '<div class="unsei-card-name">' + name + '</div>' +
+        '<div class="unsei-card-msg">' + msg + '</div>' +
+        '<div class="unsei-card-lucky" style="display:block"><span style="display:block;margin-bottom:2px">' + luckyLabel + '</span>' + lucky + '</div>' +
       '</div>' +
     '</div>';
   }).join('');
@@ -3069,7 +3094,8 @@ function diagCompat() {
   const n2 = lifePathNum(y2,m2,d2);
   const key = getCompatKey(n1, n2);
   const data = COMPAT[key];
-  const text = data ? data.text : '二人の流れは、まだ謎に包まれている。';
+  const text = data ? (isEn && data.texte ? data.texte : data.text)
+    : (isEn ? 'The flow between you two is still shrouded in mystery.' : '二人の流れは、まだ謎に包まれている。');
   const c1 = CHARS.find(x => x.num === n1) || CHARS[0];
   const c2 = CHARS.find(x => x.num === n2) || CHARS[0];
 
@@ -3082,7 +3108,7 @@ function diagCompat() {
   document.getElementById('cr-name1').textContent = isEn ? c1.e : c1.n;
   document.getElementById('cr-name2').textContent = isEn ? c2.e : c2.n;
   const score = data ? data.score : 3;
-  const point = data ? data.point : '';
+  const point = data ? (isEn && data.pointe ? data.pointe : data.point) : '';
   document.getElementById('cr-text').textContent = text;
   // Score
   const scoreEl = document.getElementById('cr-score');
@@ -3091,7 +3117,7 @@ function diagCompat() {
   const pointEl = document.getElementById('cr-point');
   if(pointEl) pointEl.textContent = point;
   const teaseEl = document.getElementById('cr-tease');
-  if(teaseEl) teaseEl.textContent = data ? (data.story || '') : '';
+  if(teaseEl) teaseEl.textContent = data ? ((isEn && data.storye) || data.story || '') : '';
 
   document.getElementById('compat-result').classList.add('show');
   document.getElementById('compat-result').scrollIntoView({behavior:'smooth'});
@@ -3192,38 +3218,38 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
         <img class="om-l a-star2" src="assets/oracle/home/star-four.webp" alt="" loading="lazy" decoding="async">
       </div>
       <div class="om-head">
-      <div class="maker-tag">つくった人</div>
+      <div class="maker-tag" data-en="The maker">つくった人</div>
       <p class="om-title" aria-hidden="true">ABOUT</p>
-      <div class="maker-name">ぶりちゃん</div>
-      <div class="maker-type"><button onclick="showDetail(33)"><span id="maker-type-img"></span>うんこタイプ：芸術家うんこ ›</button></div>
-      <div class="maker-motto">出すことは、生きること</div>
+      <div class="maker-name" data-en="Buri-chan">ぶりちゃん</div>
+      <div class="maker-type"><button onclick="showDetail(33)"><span id="maker-type-img"></span><span data-en="Unko type: Artist Unko ›">うんこタイプ：芸術家うんこ ›</span></button></div>
+      <div class="maker-motto" data-en="To release is to live">出すことは、生きること</div>
       </div>
 
       <div class="om-profile">
-        <p class="om-thanks">うんこ占いに遊びに来てくれて<br>ありがとう♡</p>
-        <p class="om-bio">ぶりちゃんです。<br>占い師で、つくる人。</p>
-        <p class="om-bio">ふだんはめちゃ真面目に占いの研究をしていて、<br>うんこ占いと、占い師さんの道具をつくってます。</p>
+        <p class="om-thanks" data-en="Thanks so much for stopping by<br>Unko Uranai ♡">うんこ占いに遊びに来てくれて<br>ありがとう♡</p>
+        <p class="om-bio" data-en="I’m Buri-chan.<br>A fortune-teller who makes things.">ぶりちゃんです。<br>占い師で、つくる人。</p>
+        <p class="om-bio" data-en="Most of the time I study fortune-telling very seriously,<br>and I make Unko Uranai and tools for fortune-tellers.">ふだんはめちゃ真面目に占いの研究をしていて、<br>うんこ占いと、占い師さんの道具をつくってます。</p>
         <dl class="om-works">
-          <dt>作品</dt><dd>うんこ占い</dd>
-          <dt>仕事</dt><dd>占い師さんのどうぐや</dd>
+          <dt data-en="Work">作品</dt><dd data-en="Unko Uranai">うんこ占い</dd>
+          <dt data-en="Job">仕事</dt><dd data-en="Tool shop for fortune-tellers">占い師さんのどうぐや</dd>
         </dl>
       </div>
       <div class="om-excerpt">
         <p class="om-excerpt-label">COLUMN</p>
-        <p class="om-excerpt-title">なんで、うんこ占いをつくったの？</p>
-        <blockquote>とにかく、みんなに笑ってほしくって、<br>うんこ占いをつくったんだよ。</blockquote>
-        <button type="button" class="om-more" onclick="go('column')">つづきを読む <i aria-hidden="true">→</i></button>
+        <p class="om-excerpt-title" data-en="Why did I make Unko Uranai?">なんで、うんこ占いをつくったの？</p>
+        <blockquote data-en="Honestly, I just wanted everyone to laugh,<br>so I made Unko Uranai.">とにかく、みんなに笑ってほしくって、<br>うんこ占いをつくったんだよ。</blockquote>
+        <button type="button" class="om-more" onclick="go('column')"><span data-en="Read more">つづきを読む</span> <i aria-hidden="true">→</i></button>
       </div>
       <div class="om-follow">
         <p class="is-latin"><span>INSTAGRAM</span><a href="https://www.instagram.com/brichan_unkouranai/" target="_blank" rel="noopener noreferrer">@brichan_unkouranai <i aria-hidden="true">→</i></a></p>
-        <p><span>WORKS</span><a href="https://brichan-works.vercel.app/" target="_blank" rel="noopener noreferrer">ぶりちゃんのポートフォリオ <i aria-hidden="true">→</i></a></p>
-        <p><span>REQUEST</span><a href="https://brichan-works.vercel.app/lp" target="_blank" rel="noopener noreferrer">占い師さんのどうぐや <i aria-hidden="true">→</i></a></p>
+        <p><span>WORKS</span><a href="https://brichan-works.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-en="Buri-chan’s portfolio">ぶりちゃんのポートフォリオ</span> <i aria-hidden="true">→</i></a></p>
+        <p><span>REQUEST</span><a href="https://brichan-works.vercel.app/lp" target="_blank" rel="noopener noreferrer"><span data-en="Tool shop for fortune-tellers">占い師さんのどうぐや</span> <i aria-hidden="true">→</i></a></p>
       </div>
-      <button class="maker-back" onclick="go('home')">← トップへ</button>
+      <button class="maker-back" onclick="go('home')" data-en="← Back to top">← トップへ</button>
     </div>
     <div class="home-footer">
-      <div class="f-logo">うんこ占い / Unko-dō</div>
-      <div class="f-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
+      <div class="f-logo" data-en="Unko Uranai / Unko-dō">うんこ占い / Unko-dō</div>
+      <div class="f-links"><a href="/contact.html" data-en="Contact">お問い合わせ</a><a href="/terms.html" data-en="Terms">利用規約</a><a href="/privacy.html" data-en="Privacy">プライバシー</a></div>
       <div class="f-copy">© 2026 Unko-dō Project.</div>
     </div>
   </div>
@@ -3243,10 +3269,10 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
           <img class="om-l c-star" src="assets/oracle/home/star-eight.webp" alt="" loading="lazy" decoding="async">
         </div>
         <p class="oc-kicker">COLUMN</p>
-        <h1 class="oc-title">なんで、うんこ占いを<br>つくったの？</h1>
-        <p class="oc-by">文　ぶりちゃん</p>
+        <h1 class="oc-title" data-en="Why did I make<br>Unko Uranai?">なんで、うんこ占いを<br>つくったの？</h1>
+        <p class="oc-by" data-en="By Buri-chan">文　ぶりちゃん</p>
       </div>
-      <div class="om-letter">
+      <div class="om-letter" data-only="ja">
         <p>どうも～！！ぶりちゃんだよっ！</p>
         <p>ふだんはめちゃ真面目に占いの研究してきたんだけど、<br>考えすぎて頭のねじが飛んでっちゃって、<br>ついに思いついたのが</p>
         <p class="om-em">うんこ占いっ！！</p>
@@ -3305,15 +3331,74 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
         <p>そしたらまた、<br>新しい一日が始まるから。</p>
         <p class="om-sign">ぶりちゃん</p>
       </div>
-      <div class="oc-end">
-        <button type="button" class="om-more" onclick="go('maker')">ぶりちゃんのプロフィール <i aria-hidden="true">→</i></button>
-        <button type="button" class="om-more is-line" onclick="go('diag')">無料で診断をはじめる <i aria-hidden="true">→</i></button>
+      <div class="om-letter" data-only="en" lang="en">
+        <p>Heyyy!! It's Buri-chan!</p>
+        <p>Most of the time I've been studying fortune-telling super seriously,<br>but I thought about it so hard that a screw came loose in my head,<br>and what I finally came up with was</p>
+        <p class="om-em">poop fortune-telling!!</p>
+        <p>I mean, worries and bad stuff,<br>once you laugh at them, they suddenly don't matter so much, right?</p>
+        <p>So why not take everyone's worries,<br>laugh at them with Unko Uranai,<br>and just flush them down the toilet!!</p>
+        <p>…is what I seriously thought lol</p>
+        <p>So,</p>
+        <p>"How do I actually make this thing?"</p>
+        <p>That's when I ran into this thing called AI.</p>
+        <p>It was like lightning struck my brain.</p>
+        <p class="om-em">This is basically Doraemon!!</p>
+        <p>Stuff I'd only ever imagined in my head<br>actually started taking shape with AI.</p>
+        <p>I was SO moved,<br>and after that I skipped sleep and talked to AI about poop<br>for like 10 hours a day lol</p>
+        <p>"What's this poop's personality?"<br>"What happens if this guy goes dark?"<br>"What kind of place is the Toilet World?"</p>
+        <p>Stuff like that.</p>
+        <p>If you think about it calmly,<br>it's like, why are you talking about this so seriously lololol</p>
+        <p>Then Unko Uranai was finished,<br>and when I showed it to everyone,</p>
+        <p>everyone loved it!!</p>
+        <p>Even a husband you can't stand<br>gets a little funny once you compare him to poop.</p>
+        <p>Like, "He is SO a Solid Unko!!" lol</p>
+        <p>But at the same time,</p>
+        <p class="om-em">"Wait, I'm the Solitary Unko!?"</p>
+        <p>and you trip over yourself too lololol</p>
+        <p>But I think that's totally fine.</p>
+        <p class="om-pull">Honestly, I just wanted everyone to laugh,<br>so I made Unko Uranai.</p>
+        <p>And then.</p>
+        <p>After I made it,</p>
+        <p class="om-em">"…So, what now?"</p>
+        <p>is where I ended up lololol</p>
+        <p>I'm bad at thinking about what comes next lol</p>
+        <p>But you know what?</p>
+        <p>Thanks to Unko Uranai,<br>I got to meet so many people I'd never have known.</p>
+        <p>People laughed and said "Unko Uranai is so fun!",<br>and told their friends about it.</p>
+        <p>At first I just thought,</p>
+        <p class="om-em">"Wouldn't it be funny if this existed?"</p>
+        <p>That's all it was.</p>
+        <p>And before I knew it,<br>people were connecting with each other through it.</p>
+        <p>And the one who probably changed the most<br>was me, Buri-chan.</p>
+        <p>Instead of keeping the things in my head locked away,<br>thinking "this is so dumb,"</p>
+        <p class="om-em">I actually let them out.</p>
+        <p>And then<br>someone laughs,<br>someone finds it,<br>and something new starts from there.</p>
+        <p>Poop, right?</p>
+        <p>If you keep it in your belly forever, it hurts.</p>
+        <p>Worries, ideas, feelings—<br>maybe they're all the same.</p>
+        <p class="om-pull">Let it out, and something starts to move.</p>
+        <p>That's why this site says</p>
+        <p class="om-close">To release is to live</p>
+        <p>right there.</p>
+        <p>That sounds super grand,<br>but it's a story about poop lololol</p>
+        <p>But,</p>
+        <p>on a day when something a little bad happened,<br>or a day when your head is full from overthinking,</p>
+        <p>"Oh yeah, there was that weird poop website"</p>
+        <p>if you remember it</p>
+        <p>and come back to visit the Toilet World, that'd make me really happy.</p>
+        <p>Laugh, let it out, flush it away.</p>
+        <p>And then<br>a brand-new day begins.</p>
+        <p class="om-sign">Buri-chan</p>
       </div>
-      <button class="maker-back" onclick="go('home')">← トップへ</button>
+      <div class="oc-end">
+        <button type="button" class="om-more" onclick="go('maker')"><span data-en="About Buri-chan">ぶりちゃんのプロフィール</span> <i aria-hidden="true">→</i></button>
+        <button type="button" class="om-more is-line" onclick="go('diag')"><span data-en="Start the free reading">無料で診断をはじめる</span> <i aria-hidden="true">→</i></button>
+      </div>
+      <button class="maker-back" onclick="go('home')" data-en="← Back to top">← トップへ</button>
     </div>
     <div class="home-footer">
-      <div class="f-logo">うんこ占い / Unko-dō</div>
-      <div class="f-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
+      <div class="f-logo" data-en="Unko Uranai / Unko-dō">うんこ占い / Unko-dō</div>
+      <div class="f-links"><a href="/contact.html" data-en="Contact">お問い合わせ</a><a href="/terms.html" data-en="Terms">利用規約</a><a href="/privacy.html" data-en="Privacy">プライバシー</a></div>
       <div class="f-copy">© 2026 Unko-dō Project.</div>
     </div>
   </div>
@@ -3397,19 +3482,19 @@ try { if (unseiReady()) document.getElementById('btn-unsei-ja').style.display = 
     </div>
    </div>
    <footer class="oc-footer">
-     <div class="oc-footer-logo">UNKO ORACLE<small>うんこ占い / Unko-dō</small></div>
-     <div class="oc-footer-links"><a href="/contact.html">お問い合わせ</a><a href="/terms.html">利用規約</a><a href="/privacy.html">プライバシー</a></div>
+     <div class="oc-footer-logo">UNKO ORACLE<small data-en="Unko Uranai / Unko-dō">うんこ占い / Unko-dō</small></div>
+     <div class="oc-footer-links"><a href="/contact.html" data-en="Contact">お問い合わせ</a><a href="/terms.html" data-en="Terms">利用規約</a><a href="/privacy.html" data-en="Privacy">プライバシー</a></div>
      <div class="oc-footer-copy">© 2026 Unko-dō Project.</div>
    </footer>
   </div>
 </div>
 
 
-<script defer src="assets/oracle/home.js?v=20261006-15"></script>
-<script defer src="assets/oracle/detail-v2.js?v=20261006-15"></script>
-<script defer src="assets/oracle/zukan-v2.js?v=20261006-15"></script>
-<script defer src="assets/oracle/compat-v2.js?v=20261006-15"></script>
-<script defer src="assets/oracle/unsei-v2.js?v=20261006-15"></script>
+<script defer src="assets/oracle/home.js?v=20261020-1"></script>
+<script defer src="assets/oracle/detail-v2.js?v=20261020-1"></script>
+<script defer src="assets/oracle/zukan-v2.js?v=20261020-1"></script>
+<script defer src="assets/oracle/compat-v2.js?v=20261020-1"></script>
+<script defer src="assets/oracle/unsei-v2.js?v=20261020-1"></script>
 <!-- Vercel Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

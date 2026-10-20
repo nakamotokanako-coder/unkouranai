@@ -217,7 +217,7 @@ function applyPlaceholders(){
   document.body.setAttribute('data-lang', saved);
   document.documentElement.lang = saved;
   var btn = document.getElementById('lb');
-  if (btn) btn.textContent = saved === 'ja' ? 'EN' : '日';
+  if (btn) btn.textContent = saved === 'ja' ? 'EN' : 'JA';
   document.title = saved === 'en' ? 'Contact | Unko Oracle' : 'お問い合わせ | うんこ占い.com';
   applyPlaceholders();
 })();
@@ -227,7 +227,7 @@ function tl() {
   document.body.setAttribute('data-lang', next);
   document.documentElement.lang = next;
   localStorage.setItem('unko-lang', next);
-  document.getElementById('lb').textContent = next === 'ja' ? 'EN' : '日';
+  document.getElementById('lb').textContent = next === 'ja' ? 'EN' : 'JA';
   document.title = next === 'en' ? 'Contact | Unko Oracle' : 'お問い合わせ | うんこ占い.com';
   applyPlaceholders();
 }
