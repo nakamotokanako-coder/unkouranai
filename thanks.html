@@ -97,7 +97,7 @@ h1 .grad{background:linear-gradient(90deg,#00ffcc,#ffea00,#ff6ef7);-webkit-backg
   document.body.setAttribute('data-lang', saved);
   document.documentElement.lang = saved;
   var btn = document.getElementById('lb');
-  if (btn) btn.textContent = saved === 'ja' ? 'EN' : '日';
+  if (btn) btn.textContent = saved === 'ja' ? 'EN' : 'JA';
   document.title = saved === 'en' ? 'Sent | Unko Oracle' : '送信完了 | うんこ占い.com';
 })();
 function tl() {
@@ -106,7 +106,7 @@ function tl() {
   document.body.setAttribute('data-lang', next);
   document.documentElement.lang = next;
   localStorage.setItem('unko-lang', next);
-  document.getElementById('lb').textContent = next === 'ja' ? 'EN' : '日';
+  document.getElementById('lb').textContent = next === 'ja' ? 'EN' : 'JA';
   document.title = next === 'en' ? 'Sent | Unko Oracle' : '送信完了 | うんこ占い.com';
 }
 </script>

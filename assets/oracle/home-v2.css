@@ -405,3 +405,11 @@
   .oracle-home-v2 * { transition: none !important; }
   .oracle-home-v2 .oh2-tape b { animation: none !important; }
 }
+
+/* 英語のとき：日本語用の広い字間だと英語の見出しが途中で折り返すので、少し詰める */
+html.lang-en .oracle-home-v2 .oh2-hero-jp { letter-spacing: .22em; padding-left: .22em; }
+html.lang-en .oracle-home-v2 .oh2-hero-tag { letter-spacing: .12em; }
+html.lang-en .oracle-home-v2 .oh2-h-jp { letter-spacing: .14em; line-height: 1.5; }
+@media (max-width: 760px) {
+  html.lang-en .oracle-home-v2 .oh2-hero-jp { font-size: 16px; letter-spacing: .12em; padding-left: .12em; white-space: nowrap; }
+}
